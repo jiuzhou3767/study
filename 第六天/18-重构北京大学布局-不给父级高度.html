@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>18-重构北京大学布局-不给父级高度</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        .total{
+            width: 970px;
+            margin:0 auto;
+        }
+        .total .header{
+            margin-bottom: 10px;
+            overflow:hidden;
+        }
+        .total .header .logo{
+            width: 277px;
+            height: 103px;
+            background: red;
+            float:left;
+        }
+        .total .header .nav .lang{
+            width:137px;
+            height:49px;
+            background: green;
+            float:right;
+            margin-bottom:8px;
+        }
+        .total .header .nav .nav_bottom{
+            width:679px;
+            height: 46px;
+            background: blueviolet;
+            float:right;
+        }
+        .total .center{
+            width:970px;
+            overflow:hidden;
+        }
+        .total .center .banner{
+            width: 310px;
+            height: 435px;
+            background: yellow;
+            float:left;
+        }
+        .total .center .column{
+            float:left;
+            margin-left: 10px;
+            width: 450px;
+            overflow:hidden;
+        }
+         .total .center .column .news{
+            width: 450px;
+            height: 240px;
+            margin-bottom: 10px;
+            background: blue;
+
+         }
+        .total .center .column .notice1{
+            width: 450px;
+            height: 110px;
+            margin-bottom: 10px;
+            background: blue;
+            float:left;
+         }
+        .total .center .column .notice2{
+            width: 450px;
+            height: 30px;
+            margin-bottom: 10px;
+            background: blue;
+            float:left;
+         }
+        .total .center .hot{
+            width: 190px;
+            height: 401px;
+            float:right;
+            background: #710f82;
+        }
+        .total .center .center_tips{
+            width: 650px;
+            height: 25px;
+            background: #6ab905;
+            float:right;
+            margin-top:10px;
+        }
+        .total .footer{
+            width: 970px;
+            height: 35px;
+            background: blueviolet;
+            margin-top:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="total">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="nav">
+                <div class="lang"></div>
+                <div class="nav_bottom"></div>
+            </div>
+
+        </div>
+        <div class="center">
+             <div class="banner"></div>
+             <div class="column">
+                 <div class="news"></div>
+                 <div class="notice1"></div>
+                 <div class="notice2"></div>
+             </div>
+             <div class="hot"></div>
+             <div class="center_tips"></div>
+
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+</html>
