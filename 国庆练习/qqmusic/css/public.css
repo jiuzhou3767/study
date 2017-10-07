@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ol, ul ,li{list-style: none;}
+a{
+    text-decoration: none;
+    color:#333;
+}
+.header{
+    height:142px;
+
+
+}
+.header{
+    margin: 0 auto;
+    width: 1250px;
+}
+
+/*头部第一个列表*/
+
+.header .list1{
+    height: 90px;
+    border-bottom:1px solid #F2F2F2;
+}
+
+.header .list1 h1{
+    background: url(../images/logo.png) no-repeat center;
+    float:left;
+    text-indent: -9999em;
+    width: 170px;
+    height: 90px;
+    margin-right: 28px;
+}
+.header .list1 li{
+    float:left;
+
+}
+.header .list1 li a{
+    font: 18px/90px "微软雅黑";
+    padding-left:15px;
+    padding-right:20px;
+    color:black;
+    display: inline-block;
+     text-align: center;
+}
+.header .list1 li:first-child a{
+    background: #31C27C;
+    color:white;
+}
+.header .list1 .btn1 a{
+    width: 109px;
+    height: 36px;
+    border:1px solid #31C27C;
+    border-radius: 2px;
+    background: #31C27C;
+    color:#fff;
+    display:inline-block;
+}
+.header .list1 .btn2 a{
+    width: 109px;
+    height: 36px;
+    border:1px solid #C9C9C9;
+    border-radius: 2px;
+    color:black;
+    display:inline-block;
+    margin-left: 10px;
+}
+.header .list1 .btn1,.header .list1 .btn2{
+    font:13px/36px "微软雅黑";
+    margin-top: 24px;
+    text-align:center;
+}
+.header .list1 .txt1 a{
+    font: 18px/90px "微软雅黑";
+    display: inline-block;
+    height: 90px;
+    margin:0 23px;
+}
+.header .list1 input{
+    float:left;
+    width: 208px;
+    height: 38px;
+    color:#B1B1C6;
+    margin-top: 26px;
+    margin-left: 58px;
+    border:1px solid #B1B1C6;
+    padding-left:12px;
+    background: url(../images/search.png) no-repeat center right];
+
+
+}
+.header .list1 span{
+    float: left;
+}
+/* 头部第二个列表*/
+.header .list2{
+    padding-left:206px;
+}
+.header .list2 ul li{
+    float:left;
+}
+.header .list2 ul li a{
+    display:inline-block;
+    font:15px/51px "微软雅黑";
+    margin:0 24px;
+}
+.header .list2 ul li a.cur{
+    color:#31C27C;
+}
+
+
+
+
+.content .column1{
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#F2F2F2), to(#fff));
+    height: 532px;
+    margin:  0 auto;
+
+}
+.content .column1 h1{
+    font:30px "微软雅黑";
+    margin:  0 auto;
+}
+.content .column1 ul.con-list{
+
+}
