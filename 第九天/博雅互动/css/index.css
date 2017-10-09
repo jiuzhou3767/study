@@ -1,0 +1,82 @@
+/* banner样式 */
+
+.banner{
+   background:#30BD71 url('../images/banner01.png') no-repeat center top;
+   height: 464px;
+   position:relative;
+}
+.banner ol{
+    width: 104px;
+    height: 12px;
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    margin-left: -52px;
+}
+.banner ol li{
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.7);
+    border-radius:50%;
+    float: left;
+    margin:0 7px;
+}
+.banner ol li.current{
+    background: #fff;
+}
+.pro-list{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top:50px;
+    height: 229px;
+    border-bottom: 1px solid #DBE1E7;
+    position:relative;
+}
+.pro-list ul{
+
+}
+.pro-list ul li{
+    float:left;
+    margin-right: 42px;
+}
+.pro-list ul li a img{
+    width: 218px;
+}
+.pro-list ul li a{
+    text-align: center;
+    display:inline-block;
+}
+.pro-list ul li a:hover{
+    background: #33b972;
+}
+.pro-list ul li a:hover h4,.pro-list ul li a:hover p{
+    color:#fff;
+}
+.pro-list ul li a h4{
+    font-size:14px;
+    line-height:32px;
+}
+.pro-list ul li a p{
+    color:#38b774;
+    line-height:25px;
+}
+.pro-list ol li{
+    width: 11px;
+    height: 11px;
+    border-radius:50%;
+    background:#b5c0cb;
+    margin-left: 15px;
+}
+.pro-list ol li.current{
+    background: #2fbc71;
+
+}
+.pro-list ol{
+    position:absolute;
+    background: #fff;
+    width: 68px;
+    height: 20px;
+    bottom:-15px;
+    left:50%;
+    margin-left:-34px;
+}

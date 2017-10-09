@@ -1,0 +1,82 @@
+*{margin: 0;padding: 0;}
+img{border:0;}
+ol, ul ,li{list-style: none;}
+        ul{
+            float:left;
+        }
+        li{
+            float:left;
+            display:inline-block;
+        }
+        a{
+            color:#444866;
+            text-decoration:none;
+        }
+        body{font:12px/1 "Microsoft Yahei","Arial";}
+        .margin0{
+            margin:0!important;
+        }
+        .nav{
+            height: 58px;
+            background:#191d3a;
+            overflow:hidden;
+        }
+        .nav .inner{
+            width: 1000px;
+            height: 58px;
+            margin:0 auto;
+        }
+        .nav .logo{
+            float:left;
+            width:157px;
+            margin-top:10px;
+            margin-left:19px;
+        }
+
+        .nav .ulnav li:first-child a{
+            color:#e2e4ed;
+            background: #252947;
+        }
+        .nav .ulnav a{
+            color:#818496;
+            font:14px "微软雅黑";
+            text-decoration:none;
+            display:inline-block;
+            border-left:1px solid #333333;
+            height: 58px;
+            line-height:58px;
+            width: 85px;
+            text-align:center;
+        }
+        .nav .ulnav a:hover{
+            color:#e2e4ed;
+        }
+        .lasta{
+            border-right:1px solid #333333;
+        }
+        .nav ul.ulnav{
+            margin-left: 48px;
+        }
+        .nav .joinus{
+            float:left;
+            background: #3aca7a;
+            height:34px;
+            width: 100px;
+            margin-left: 9px;
+            margin-top: 12px;
+            font:14px/34px "微软雅黑";
+            border-radius: 5px;
+            text-align: center;
+            color:#fff;
+        }
+        .nav .joinus:hover{
+            background: #38b774;
+        }
+        .nav .lang a{
+            font:14px/60px "微软雅黑";
+            margin-left: 15px;
+            float:right;
+        }
+        .nav .lang a.china{
+            color:#2ba364;
+        }

@@ -1,0 +1,59 @@
+.content .column1{
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#F2F2F2), to(#fff));
+    height: 482px;
+    margin:  0 auto;
+    text-align: center;
+    padding-top: 50px;
+
+}
+.content .column1 h1{
+    font:30px "微软雅黑";
+    letter-spacing: 10px;
+
+}
+.content .column1 ul{
+    margin: 0 auto;
+    width: 600px;
+    padding:16px  0;
+}
+
+.content .column1 .con-list li{
+    float:left;
+}
+.content .column1 .con-list li a{
+    display:inline-block;
+    font:15px/51px "微软雅黑";
+    margin:0 24px;
+}
+.content .column1 .con-list li a.cur{
+    color:#31C27C;
+}
+.content .column1 .show{
+    width: 1200px;
+    margin: 0 auto;
+
+
+}
+.content .column1 .show ul{
+    width: 1200px;
+}
+.content .column1 .show ul li{
+    width: 224px;
+    height: 300px;
+    margin-left: 20px;
+    text-align:left;
+    float:left;
+}
+.content .column1 .show ul li:first-child{
+    margin-left: 0;
+}
+.content .column1 .show ul li a{
+    font:14px/22px "微软雅黑";
+    color:#333333;
+
+}
+.content .column1 .show ul li p{
+    font:14px/22px "微软雅黑";
+    color:#999999;
+
+}
