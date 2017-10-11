@@ -4,12 +4,11 @@
     margin:  0 auto;
     text-align: center;
     padding-top: 50px;
-
+    position:relative;
 }
 .content .column1 h1{
     font:30px "微软雅黑";
     letter-spacing: 10px;
-
 }
 .content .column1 ul{
     margin: 0 auto;
@@ -31,8 +30,6 @@
 .content .column1 .show{
     width: 1200px;
     margin: 0 auto;
-
-
 }
 .content .column1 .show ul{
     width: 1200px;
@@ -57,3 +54,97 @@
     color:#999999;
 
 }
+/*下面的两个点*/
+.content .column1 ol{
+    position: absolute;
+    bottom:30px;
+    left:50%;
+    width: 60px;
+    height: 8px;
+    margin-left: -30px;
+}
+.content .column1 ol li{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #E6E6E6;
+    float:left;
+    margin:0 11px;
+}
+.content .column1 ol li.current{
+   background: #B3B3B3;
+}
+
+/*分栏2*/
+.inner{
+    width: 1200px;
+    margin: 0 auto;
+}
+.content .column2 a.playall{
+    width: 121px;
+    height: 36px;
+    border:1px solid #C9C9C9;
+    float:left;
+    font:14px/36px "微软雅黑";
+}
+.content .column2 a.playall img{
+    position:relative;
+    top:3px;
+    left:-5px;
+}
+.content .column2 ul{
+    margin: 0 auto;
+    width: 420px;
+    padding:16px  0;
+}
+
+.content .column2 .con-list li{
+    float:left;
+}
+.content .column2 .con-list li a{
+    display:inline-block;
+    font:15px/51px "微软雅黑";
+    margin:0 27px;
+}
+.content .column2 .con-list li a.cur{
+    color:#31C27C;
+}
+/*去除左边距*/
+.nomaringr{margin-right: 0!important;}
+.content .column2{height: 556px;}
+.content .column2 .show2 ul{width: 1200px;}
+.content .column2 .show2 ul li{float:left;width: 380px;height: 86px;border-top:1px solid #F2F2F2;margin-right: 30px;margin-bottom: 13px;margin-top: -1px;padding-top:12px;text-align:left;}
+.content .column2 .show2 ul li a{margin-left:13px;font:14px/24px "微软雅黑";}
+.content .column2 .show2 ul li h3{padding-top:23px;}
+.content .column2 .show2 ul li a.song-name:{margin-top:32px;}
+.content .column2 .show2 ul li a.singer{color:#999;}
+.content .column2 .show2 ul li a img{width: 86px;float:left;}
+.content .column2 .show2 ul li span{float:right;font:14px "微软雅黑";color:#999;position:relative;top:-35px}
+/*圆点*/
+.content .column2 ol{position: absolute;bottom:30px;left:50%;width: 120px;height: 8px;margin-left: -60px;}
+.content .column2 ol li{width: 8px;height: 8px;border-radius: 50%;background: #E6E6E6;float:left;margin:0 11px;}
+.content .column2 ol li.current{background: #B3B3B3;}
+.content .column2 ol li:hover{background: #B3B3B3;}
+/*分栏3*/
+.content .column3{background:-webkit-gradient(linear, 0 0, 0 100%, from(#F2F2F2), to(#fff));height: 368px;text-align: center;padding-top: 50px;position:relative;}
+.content .column3 .inner{width: 1200px;margin:  0 auto;}
+.content .column3 h1{font:30px "微软雅黑";letter-spacing: 10px;}
+.content .column3 .inner ul{margin-top: 33px;}
+.content .column3 .inner ul li{float:left;}
+.content .column3 .inner ul li.first{margin-right: 20px;}
+
+.content .column3 ol{position: absolute;bottom:30px;left:50%;width: 120px;height: 8px;margin-left: -60px;}
+.content .column3 ol li{width: 8px;height: 8px;border-radius: 50%;background: #E6E6E6;float:left;margin:0 11px;}
+.content .column3 ol li.current{background: #B3B3B3;}
+.content .column3 ol li:hover{background: #B3B3B3;}
+
+/*分栏4*/
+.content .column4{background:-webkit-gradient(linear, 0 0, 0 100%, from(#F2F2F2), to(#fff));height: 763px;text-align: center;padding-top: 50px;position:relative;}
+.content .column4 .inner{width: 1200px;margin:  0 auto;position: relative;}
+.content .column4 h1{font:30px "微软雅黑";letter-spacing: 10px;}
+
+.content .column4 .con-list{margin: 0 auto;width: 390px;padding:16px  0;}
+.content .column4 .con-list li{float:left;}
+.content .column4 .con-list li a{display:inline-block;font:15px/51px "微软雅黑";margin:0 24px;}
+.content .column4 .con-list li a.cur{color:#31C27C;}
+.content .column4 .inner .more{float:right; position: absolute;top:75px;right:0;}

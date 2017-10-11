@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>01-透明盒子</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        .banner{
+            width: 1226px;
+            height: 460px;
+            margin: 50px auto;
+            border:1px solid #000;
+            position:relative;
+        }
+        .banner span{
+            float:left;
+            width: 35px;
+            height: 60px;
+            background: url('img/img0607.png');
+            position:absolute;
+            top: 50%;
+            margin-top: -30px;
+        }
+        .banner span.left{
+            background-position:0 -411px;
+            left:0;
+        }
+        .banner span.left:hover{
+            background-position:-99px -411px;
+         }
+        .banner span.right{
+            background-position:-49px -411px;
+            right:0;
+        }
+        .banner span.right:hover{
+            background-position:-143px -411px;
+         }
+         .banner div.bg{
+            width: 1226px;
+            height: 30px;
+            background: #000;
+            opacity:0.5;
+            _filter:alpha(opacity=50);
+            position:absolute;
+            bottom:0;
+            left:0;
+         }
+         .banner p{
+            position:absolute;
+            bottom:0;
+            left:0;
+            color:#fff;
+         }
+    </style>
+</head>
+<body>
+    <div class="banner">
+            <img src="img/04.jpg" alt="">
+            <span class="left"></span>
+            <span class="right"></span>
+            <div class="bg"></div>
+            <p>神话继续!冰岛首进世界杯创历史 球迷玩嗨了</p>
+    </div>
+</body>
+</html>

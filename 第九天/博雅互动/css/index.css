@@ -80,3 +80,35 @@
     left:50%;
     margin-left:-34px;
 }
+.main{
+    background: url(../images/indexmainbg.jpg) no-repeat center top;
+}
+.main .inner{
+    width: 1000px;
+    height: 310px;
+    padding:53px 0 57px;
+    margin:0 auto;
+}
+.main .bynew{
+    width: 500px;
+    height: 310px;
+    background: url(../images/bynewsbg.jpg)no-repeat;
+    float: left;
+}
+.main .jobs{
+    width: 500px;
+    height: 310px;
+    background: url(../images/byhrbg3.jpg)no-repeat;
+    float: left;
+}
+/*500 310*/
+.main .bynew span a{
+    width: 64px;
+    height: 26px;
+    display:inline-block;
+    text-align:center;
+    font:12px/26px "微软雅黑";
+    border:1px solid #33B972;
+    border-radius:5px;
+    color:#30BD72;
+}
