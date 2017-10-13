@@ -1,0 +1,19 @@
+.banner{position:relative;height: 254px;}
+.banner img{position:absolute;top: 0;left:50%;margin-left:-960px;}
+
+.content{overflow:hidden;padding-bottom: 40px;}
+.content .nav-left{width: 195px; float:left;padding-top: 44px}
+.content .nav-left ul li{height: 80px;border-bottom:1px solid #CAD6E1;display: block;}
+.content .nav-left ul li a{font:16px/80px "微软雅黑";display:block;color:#444866;width: 155px;position:relative;padding-left: 40px;}
+.content .nav-left ul li a i{background: url(../images/pad.png)no-repeat;width: 36px;height: 36px;position: absolute;top:50%;left:0;margin-top: -20px;}
+.content .nav-left ul li.current{background: url(../images/arrow.png) no-repeat right center;}
+.content .main{width: 757px;float:right;overflow:hidden;padding-top: 44px;}
+.content .main ul{width: 999px;}
+.content .main ul li{width: 355px;height: 328px;margin-right: 43px;margin-bottom: 42px;border:1px solid #CAD6E1;float:left;border-radius:5px;}
+.content .main ul li h4{padding-top: 5px;height: 53px;line-height:53px;text-align:center;font-size:16px;}
+.content .main ul li h4 em{font-size:12px;color:#38b774;background: url(../images/arrow.png)no-repeat right center;padding-right: 15px;}
+.content .main ul li p{padding:0 12px 20px 12px;}
+.content .main ul li .download{text-align:center;}
+.content .main ul li .download span{height: 37px;width: 135px;display:inline-block;line-height:37px;font-size:14px;}
+.content .main ul li .download .apple{border-right:1px solid #C7D6E5;background: url(../images/icon.png)no-repeat 0 -345px;}
+.content .main ul li .download .qrcode{background: url(../images/icon.png)no-repeat 0 -445px;margin-left: 25px;}

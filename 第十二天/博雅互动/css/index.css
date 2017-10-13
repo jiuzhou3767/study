@@ -1,0 +1,134 @@
+/* banner样式 */
+
+.banner{
+   background:#30BD71 url('../images/banner01.png') no-repeat center top;
+   height: 464px;
+   position:relative;
+}
+.banner ol{
+    width: 104px;
+    height: 12px;
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    margin-left: -52px;
+}
+.banner ol li{
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.7);
+    border-radius:50%;
+    float: left;
+    margin:0 7px;
+}
+.banner ol li.current{
+    background: #fff;
+}
+.pro-list{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top:50px;
+    height: 229px;
+    border-bottom: 1px solid #DBE1E7;
+    position:relative;
+}
+.pro-list ul{
+
+}
+.pro-list ul li{
+    float:left;
+    margin-right: 42px;
+}
+.pro-list ul li a img{
+    width: 218px;
+}
+.pro-list ul li a{
+    text-align: center;
+    display:inline-block;
+}
+.pro-list ul li a:hover{
+    background: #33b972;
+}
+.pro-list ul li a:hover h4,.pro-list ul li a:hover p{
+    color:#fff;
+}
+.pro-list ul li a h4{
+    font-size:14px;
+    line-height:32px;
+}
+.pro-list ul li a p{
+    color:#38b774;
+    line-height:25px;
+}
+.pro-list ol li{
+    width: 11px;
+    height: 11px;
+    border-radius:50%;
+    background:#b5c0cb;
+    margin-left: 15px;
+    float:left;
+}
+.pro-list ol li.current{
+    background: #2fbc71;
+
+}
+.pro-list ol{
+    position:absolute;
+    background: #fff;
+    width: 68px;
+    height: 20px;
+    bottom:-15px;
+    left:50%;
+    margin-left:-34px;
+}
+.main{
+    background: url(../images/indexmainbg.jpg) no-repeat center top;
+}
+.main .inner{
+    width: 1000px;
+    height: 310px;
+    padding:53px 0 57px;
+    margin:0 auto;
+}
+.main .bynew{
+    width: 500px;
+    height: 310px;
+    background: url(../images/bynewsbg.jpg)no-repeat;
+    float: left;
+}
+.main .jobs{
+    width: 500px;
+    height: 310px;
+    background: url(../images/byhrbg3.jpg)no-repeat;
+    float: left;
+}
+/*500 310*/
+.main .bynew span a{
+    width: 64px;
+    height: 26px;
+    display:block;
+    text-align:center;
+    font:12px/26px "微软雅黑";
+    border:1px solid #33B972;
+    border-radius:5px;
+    color:#30BD72;
+}
+.main .bynew .news-hd{width: 500px;height: 110px;}
+.main .bynew .news-hd h3{text-indent:-9999em;}
+.main .bynew .news-hd span a{margin: 40px auto; width: 64px;}
+.main .bynew .news-bd ul li{height: 49px;line-height:49px;border-bottom:1px solid #dbe1e7;}
+.main .bynew .news-bd ul{padding:0 20px;}
+.main .bynew .news-bd ul li span{float:right; font:14px/49px "微软雅黑"; color:#dbe1e7;}
+.main .bynew .news-bd ul li{width: 460px; }
+.main .bynew .news-bd ul li a{font:14px/49px "微软雅黑"; color:#444866;}
+.main .jobs{ color:#fff;}
+.main .jobs .jobs-hd{width: 421px;height: 65px;padding-left:79px;padding-top: 45px;}
+.main .jobs .jobs-hd h3{float:left;}
+.main .jobs .jobs-hd h3>span{display:block;}
+.main .jobs .jobs-hd h3>span.b{font-size: 28px;}
+.main .jobs .jobs-hd h3>span.c{font-size:12px;font-weight: normal;}
+.main .jobs .jobs-hd span a{width: 64px;height: 26px;display:block;text-align:center;font:12px/26px "微软雅黑";border:1px solid #fff;border-radius:5px;color:#fff;float:left;margin-left: 27px;}
+.main .jobs .jobs-bd{padding-left: 20px;}
+.main .jobs .jobs-bd ul h4{font-size:14px;color:white;}
+.main .jobs .jobs-bd ul li{height: 37px;border-bottom:1px solid rgba(255,255,255,0.6);width: 305px;}
+.main .jobs .jobs-bd ul li a{font-size:14px;color:white;line-height:37px;}

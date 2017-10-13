@@ -1,0 +1,10 @@
+*{margin: 0;padding: 0;}
+img{border:0;}
+ol, ul ,li{list-style: none;display:block;}
+
+        a{
+            color:#444866;
+            text-decoration:none;
+        }
+        body{font:12px/1 "Microsoft Yahei","Arial";}
+        em,i{font-style:normal;}

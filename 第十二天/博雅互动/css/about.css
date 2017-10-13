@@ -1,0 +1,13 @@
+/*
+* @Author: name
+* @Date:   2017-10-12 19:15:31
+* @Last Modified by:   name
+* @Last Modified time: 2017-10-12 20:16:12
+*/
+.aboutWrap{padding-top:44px;overflow:hidden;margin-bottom: 40px;}
+.aboutWrap .nav-list{float:left;}
+.aboutWrap .nav-list ul li{height: 53px;width: 230px;border-bottom:1px solid #C7D6E5;padding-top: 19px;}
+.aboutWrap .nav-list ul li a h4{font:bold 16px "微软雅黑";}
+.aboutWrap .nav-list ul li a em{font:12px "微软雅黑";}
+.aboutWrap .about-right{float:right;width: 732px;font:14px/33px "微软雅黑";text-indent: 2em;color:#444866;}
+.aboutWrap .about-right{margin-bottom: 20px;}

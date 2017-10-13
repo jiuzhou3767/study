@@ -1,0 +1,23 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,a,img,input,textarea,select,table,tr,td{margin:0;padding:0;}
+ul,ol{list-style:none;}
+body{font:14px/1 "Microsoft Yahei","Arial";}
+a{color:#ccc;text-decoration:none;}
+img{vertical-align:top; /*解决图片垂直的缝隙*/}
+a{text-decoration: none;color:#000;}
+.header{height: 665px;}
+.header .inner{width: 1000px;margin: 0 auto;padding-top: 19px;}
+.header .nav{width: 992px;height: 91px;position:relative;z-index: 2;background: #fff;}
+.header .nav .logo{width: 151px;background: url(../image/logo.png);height: 103px;text-indent:-9999em;float:left;position:relative;z-index: 2;}
+.header .nav ul li{float:left;}
+.header .nav ul li a{display:block;width: 120px;height: 58px;padding-top: 33px;border-left:1px solid #EAEAEA; text-align:center;margin-left:-1px;}
+.header .nav ul li a:hover{border-top:4px solid #F28D00;position:relative;top:-4px;}
+.header .nav ul li a p{font:16px/16px "微软雅黑";color:#636363;}
+.header .nav ul li a span{font:12px/12px "微软雅黑";color:#C7C7C7}
+.header .banner{height: 555px;width: 1000px;position:relative;margin: 0 auto;}
+.header .banner ul li{height: 665px;position:absolute;top:-110px;left:50%;margin-left: -960px;z-index:-1;}
+.header .banner ul li.banner1{}
+.header .banner ol{margin-top: 110px;background: url(../image/list_boxbg.png)repeat-y 6px 0;}
+.header .banner ol li a{display:inline-block; width: 15px;height: 15px;margin-bottom: 70px;background: red;background: url(../image/num_bg.png)no-repeat;}
+.header .banner ol li.on a{background: url(../image/num_hover.png)no-repeat;overflow:visible;}
+.header .banner ol li.last{margin-bottom: 0;height: 15px;}
+.header .banner img.banner-video{position:absolute;bottom:26px;right:33px;border:5 solid #fff;}
