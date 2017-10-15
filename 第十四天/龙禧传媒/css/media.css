@@ -1,0 +1,10 @@
+.m-banner{height: 351px;}
+.m-header{height: 351px;}
+.content .long{padding:0 0 0 20px;height: 54px;line-height: 54px;width: 980px;}
+.content-bd{height: 497px;background: url(../images/cont_fruit_bg.png) no-repeat;padding-left: 70px;}
+.content-bd h2{font-size:29px;padding-top: 83px;}
+.content-bd p{margin-top: 33px;line-height:25px;color:#A1A1A1;font-size:14px;}
+.content-bd ul{margin-top: 28px;height: 75px;}
+.content-bd ul li{float: left;}
+.content-bd ul li a{width: 75px;height: 75px;display:block;margin-left: 2px;background-color: #EDEDED;text-align:center;line-height:75px;}
+.content-bd ul li a:hover{background-color: #F18400;color:#fff;}

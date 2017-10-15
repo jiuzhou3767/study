@@ -124,7 +124,7 @@ a:hover{color:#31c27c;}
 }
 
 /*footer尾部*/
-.footer{height: 506px;background: #333; color:#999;padding-top: 83px;}
+.footer{background: #333; color:#999;padding-top: 83px;}
 .footer a{color:#999;}
 .footer a:hover{color:#31c27c;}
 .footer .inner{width: 1200px;margin: 0 auto;}

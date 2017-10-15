@@ -12,12 +12,11 @@ a{text-decoration: none;color:#000;}
 .header .nav ul li a{display:block;width: 120px;height: 58px;padding-top: 33px;border-left:1px solid #EAEAEA; text-align:center;margin-left:-1px;}
 .header .nav ul li a:hover{border-top:4px solid #F28D00;position:relative;top:-4px;}
 .header .nav ul li a p{font:16px/16px "微软雅黑";color:#636363;}
-.header .nav ul li a span{font:12px/12px "微软雅黑";color:#C7C7C7}
+.header .nav ul li a span{font:12px/12px "微软雅黑";color:#C7C7C7;}
 .header .banner{height: 555px;width: 1000px;position:relative;margin: 0 auto;}
 .header .banner ul li{height: 665px;position:absolute;top:-110px;left:50%;margin-left: -960px;z-index:-1;}
-.header .banner ul li.banner1{}
 .header .banner ol{margin-top: 110px;background: url(../image/list_boxbg.png)repeat-y 6px 0;}
 .header .banner ol li a{display:inline-block; width: 15px;height: 15px;margin-bottom: 70px;background: red;background: url(../image/num_bg.png)no-repeat;}
-.header .banner ol li.on a{background: url(../image/num_hover.png)no-repeat;overflow:visible;}
+.header .banner ol li.on a:before{content:"";display:inline-block;width: 104px;height: 43px;background: url(../image/num_hover.png)no-repeat;}
 .header .banner ol li.last{margin-bottom: 0;height: 15px;}
 .header .banner img.banner-video{position:absolute;bottom:26px;right:33px;border:5 solid #fff;}

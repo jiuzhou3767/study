@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>淘宝搜索框</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        @font-face {
+          font-family: 'iconfont';
+          src: url('fonts/iconfont.eot');
+          src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+          url('fonts/iconfont.woff') format('woff'),
+          url('fonts/iconfont.ttf') format('truetype'),
+          url('fonts/iconfont.svg#iconfont') format('svg');
+}
+        i,em{font-style: normal;}
+        .search{width: 625px;height: 65px;margin: 100px auto;}
+        .search ul{height: 25px;}
+        .search ul li{width: 50px;height: 25px;float: left;font-size:12px;cursor:pointer;line-height:25px;text-align:center;}
+        .search ul li:hover{background-color:#f9e6e6;color:#fff;}
+        .search ul li.current{background-color:#f40;color:#fff;font-weight:bold; }
+        .search .search-box{width: 625px;height: 40px;background: #f40;}
+        .search .search-box button{border:none;background: #f40;outline:none;width: 122px;height: 40px;line-height:40px;text-align:center;float: right;font-size:18px;color:#fff;cursor:pointer;}
+        .search .search-box .search-input{float:left;padding:3px 0 3px 3px; position:relative;}
+        .search .search-box .search-input input{padding-left: 28px;height: 34px;width: 472px;border:none;outline:none;}
+        .search .search-box i{position:absolute;top:10px;left:10px;font-family:"iconfont";}
+        .search .search-box em{position:absolute;top:10px;right:10px;font-family:"iconfont";}
+        .search .search-box em:hover{color:#f40;}
+    </style>
+</head>
+<body>
+    <div class="search">
+        <ul>
+            <li class="current">宝贝</li>
+            <li>天猫</li>
+            <li>店铺</li>
+        </ul>
+        <div class="search-box">
+            <div class="search-input">
+                  <input type="text" placeholder="电脑显示器">
+                  <i>&#xe627;</i>
+                  <em>&#x3434;</em>
+            </div>
+            <button>搜索</button>
+
+        </div>
+    </div>
+</body>
+</html>
