@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>08-数学运算符</title>
+    <script type="text/javascript">
+         console.log(2 + '4');    //24
+         console.log(26 - '2');   //24
+         console.log(3 * '8');    //24
+         console.log('3' * '8');  //24
+         console.log(48 / '2');   //24
+         console.log('24' % 55);  //24
+
+         console.log(3 * null);  //0 隐式转换的时候null将被转换为0
+         console.log(3 * false);  //0 隐式转换的时候false将被转换为0
+         console.log(3 * true);  //0 隐式转换的时候true将被转换为1
+         console.log(3 + true);  //0 隐式转换的时候true将被转换为1
+         console.log(3 + false);  //0 隐式转换的时候false将被转换为0
+
+         console.log(3 * '8天');      //NaN  数学中，不纯字符串没法隐式转换
+         console.log(3 * undefined);//NaN  数学中，undefined没法隐式转换
+         console.log(3 * undefined);//NaN  数学中，undefined没法隐式转换
+    </script>
+</head>
+<body>
+
+</body>
+</html>

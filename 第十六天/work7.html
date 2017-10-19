@@ -2,12 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>work2</title>
+    <title>work6</title>
     <script type="text/javascript">
-        var tax =parseInt(prompt("输入税前工资")) ;
-        console.log(typeof tax);
-        var house = tax * 0.1 *2;
-        document.write("住房公积金："+house);
+         var num = parseInt(prompt('请输入一个三位数'));
+         var num1 = parseInt(num/100);
+         var num2 = parseInt(num/10)-num1*10;
+         var num3 = num % 10;
+         var sum = num1 + num2 + num3;
+         console.log(sum);
+         document.write('三个数的和是'+sum);
     </script>
 </head>
 <body>

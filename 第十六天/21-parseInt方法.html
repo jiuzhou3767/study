@@ -4,7 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>21-parseInt方法</title>
     <script type="text/javascript">
-         console.log(parseInt('070',8));
+         console.log(parseInt('070',8));  //56  按8进制转换一次
+         console.log(parseInt(070,8));   //46  按8进制转换两次
+         console.log(0o36);
+         console.log(parseInt(0o36));
+         console.log(parseInt(0o36,8));
+         console.log(parseInt('0o36',8));
+
     </script>
 </head>
 <body>

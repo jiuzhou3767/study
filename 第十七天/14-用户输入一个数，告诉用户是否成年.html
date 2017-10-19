@@ -2,12 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>work2</title>
+    <title>14-用户输入一个数，告诉用户是否成年</title>
     <script type="text/javascript">
-        var tax =parseInt(prompt("输入税前工资")) ;
-        console.log(typeof tax);
-        var house = tax * 0.1 *2;
-        document.write("住房公积金："+house);
+         var age = parseInt(prompt('请输入年龄'));
+
+         var a = (age >= 18) && alert('已经成年！');
+         var b = (age <18) && alert('未成年！');
+         console.log(a);
+         console.log(b);
     </script>
 </head>
 <body>
