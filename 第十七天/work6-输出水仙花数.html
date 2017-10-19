@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work6-输出水仙花数</title>
+    <script type="text/javascript">
+         var num = new Array();
+         var y = 0;
+         for(var i = 100;i <= 999; i++){
+            var num1 = i%10;
+            var num2 = parseInt((i%100-num1)/10);
+            var num3 = parseInt(i/100);
+            if(i==Math.pow(num1,3)+Math.pow(num2,3)+Math.pow(num3,3)){
+                num[y] = i;
+                y++;
+            }
+         }
+         for(var i=0;i<num.length;i++){
+            console.log(num[i]);
+         }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
