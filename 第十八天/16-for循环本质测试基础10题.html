@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>16-for循环本质测试基础10题</title>
+    <script type="text/javascript">
+          //第一题：
+          for(var i = 3; i < 11; i += 4){
+            console.log(i);  // 3 , 7
+          }
+          console.log('--------分割线------');
+
+          //第2题：
+          for(var i = 4; i <= 16; i += 4){
+            console.log(i);  // 4 8 12 16
+          }
+          console.log('--------分割线------');
+
+          //第3题：
+          for(var i = 4; i != 10; i += 2){
+            console.log(i);  //  4 6 8
+          }
+          console.log('--------分割线------');
+
+          //第4题：
+          for(var i = 6; i <4 ; i++){
+            console.log(i);  //不循环
+          }
+          console.log('--------分割线------');
+
+          //第5题：
+          // for(var i = 1; i > 0; i++){
+          //   console.log(i);  //  死循环
+          // }
+          // console.log('--------分割线------');
+
+          //第6题：
+          for(var i = 2; i < 12; i += 3){
+            i+=4;
+            console.log(i);  //  6 13
+          }
+          console.log('--------分割线------');
+
+          //第7题：
+          for(var i = 1; i < 10; i++){
+
+          }
+           console.log(i); // 10
+          console.log('--------分割线------');
+
+          //第8题：
+          for(var i = 2; i < 30; i++){
+            if(i % 5 == 0){
+                console.log(i);  // 5 10 15 20 25
+            }
+
+          }
+          console.log('--------分割线------');
+
+          //第9题：
+          for(var i = 1; i <= 100; i++){
+            if(i % 5 ==0 || i % 6 == 0){
+                console.log(i);  //
+            }
+
+          }
+          console.log('--------分割线------');
+
+          //第10题：
+          for(var i = 2; i <= 26; i++){
+            if(i % 2 == 0){
+                i += 3;
+            }else{
+                i += 2;
+            }
+            console.log(i);  //  5 9 13 17 21 25 29
+          }
+          console.log('--------分割线------');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

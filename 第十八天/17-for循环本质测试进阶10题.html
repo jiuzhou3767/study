@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>17-for循环本质测试进阶10题</title>
+    <script type="text/javascript">
+        //第11题
+        for(var i = 15; i > 2; i -=3){
+            console.log(i); // 15 12 9 6 3
+        }
+        console.log('---------分隔符----------');
+
+        //第12题
+        // for(var i = 15; i < 20; i -=3){
+        //     console.log(i);  //死循环
+        // }
+        console.log('---------分隔符----------');
+
+        //第13题
+        var i = 8;
+        for(; i < 12; i++){
+            console.log(i); // 8 9 10 11
+        }
+        console.log('---------分隔符----------');
+
+        //第14题
+        for(var m = 1,n = 2; m+n < 12; m++){
+            n++;
+            console.log(m); // 1 2 3 4 5
+        }
+        console.log('---------分隔符----------');
+
+        //第15题
+        var i = 1;
+        for(alert('你好'); i < 5; i++){
+            console.log(i); // 1 2 3 4
+        }
+        console.log('---------分隔符----------');
+
+        //第16题
+
+        for(var i = 1; i < 5;alert('你好')){
+            i++;
+            console.log(i); // 2 3 4 5
+        }
+        console.log('---------分隔符----------');
+
+        // //第17题
+        // for(var i = 0;true;alert('第' + i + '次说爱你'){
+        //     i++
+        // }
+        // console.log('---------分隔符----------');
+
+        //第18题
+
+        for(var i = 1; i < 10; i++){
+            for(var j = 1; j < 10 ; j++ ){
+                console.log(i + '乘' + j + '等于' + (i*j));
+            }
+
+        }
+        console.log('---------分隔符----------');
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

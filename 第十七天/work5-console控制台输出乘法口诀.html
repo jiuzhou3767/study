@@ -4,16 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>work5-console控制台输出乘法口诀</title>
     <script type="text/javascript">
-        var i = 1;
-        var j = 1;
         var word ='';
-        var sum ='';
         for(var i = 1; i < 10; i++){
             // console.log(i);
             for(var j = 1; j <= i; j++){
                 // console.log(j);
-                sum = i * j;
-                word += i + 'X' + j +'='+ sum +'\t';
+                // sum = i * j;
+                word += i + 'X' + j +'='+i*j +'\t';
             }
             console.log(word);
             word = '';

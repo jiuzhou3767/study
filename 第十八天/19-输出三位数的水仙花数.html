@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>19-输出三位数的水仙花数</title>
+    <script type="text/javascript">
+         for(var i = 100; i <= 999; i++){
+           var ge = i % 10;
+           var shi = parseInt(i/10)%10;
+           var bai =parseInt(i/100);
+
+           if(i== (ge*ge*ge+shi*shi*shi+bai*bai*bai)){
+            console.log(i);
+           }
+         }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

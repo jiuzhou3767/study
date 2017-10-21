@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>12-三元运算符简化</title>
+    <script type="text/javascript">
+         var year = parseInt(prompt('请输入工作几年了，不满1年写0,2年写2'));
+         var salary = parseInt(prompt('请输入月薪'));
+         var xishu = 1;
+
+         if(year == 0){
+            xishu = salary > 8000 ? 1.2 : 1;
+         }else if(year == 1){
+            xishu = salary > 10000 ? 1.7 : 1.5;
+         }else{
+            xishu = salary > 12000 ? 3.2 : 3;
+         }
+         alert(salary * xishu);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
