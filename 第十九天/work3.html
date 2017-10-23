@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work3</title>
+    <script type="text/javascript">
+
+        var weishu = 0;
+        function daozhi(num){
+            weishu = weishu*10;
+            weishu += num % 10;
+            num = parseInt(num / 10);
+            if(num == 0){
+                return weishu;
+            }
+            return daozhi(num);
+        }
+        var num1 = parseInt(prompt('请输入一个数字，将其前后倒置'));
+        alert(daozhi(num1));
+        console.log(daozhi(num1));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

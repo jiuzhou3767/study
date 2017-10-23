@@ -2,16 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>work5</title>
+    <title>20-封装一个小函数-求和</title>
     <script type="text/javascript">
-         var n = prompt('请输入一个数字用来求1-N的安全数默认60'||60);
-
-         for(var i = 1; i <= n; i++ ){
-            if((i % 7 == 0) || (i % 10 == 7)){
-                continue;
+         function sum(m,n){
+            var s = 0;
+            for(var i = m; i <= n; i++){
+                s = s + i;
             }
-            console.log(i);
+            console.log(s);
          }
+
+         sum(1,100);
+         sum(10,13);
+         sum(10,10000);
+         sum(13,10);
+         sum(1,6);
     </script>
 </head>
 <body>

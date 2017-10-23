@@ -2,16 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>work5</title>
+    <title>08-作业10-苹果鸭子的故事</title>
     <script type="text/javascript">
-         var n = prompt('请输入一个数字用来求1-N的安全数默认60'||60);
-
-         for(var i = 1; i <= n; i++ ){
-            if((i % 7 == 0) || (i % 10 == 7)){
-                continue;
+    for(var x = 0; x <= 50;x++){
+        for(var y = 0; y <= 100 - x; y++){
+            var z = 100 -x -y;
+            if(3 * x + 2 * y + z == 200){
+                console.log(x,y,z);
             }
-            console.log(i);
-         }
+        }
+    }
     </script>
 </head>
 <body>

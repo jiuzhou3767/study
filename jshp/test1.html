@@ -2,16 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>work5</title>
+    <title>test1</title>
     <script type="text/javascript">
-         var n = prompt('请输入一个数字用来求1-N的安全数默认60'||60);
-
-         for(var i = 1; i <= n; i++ ){
-            if((i % 7 == 0) || (i % 10 == 7)){
-                continue;
+         var num = 0;
+         outermost:
+         for(var i = 0; i < 10;i++){
+            for(var j = 0; j < 10; j++ ){
+                if(i == 5&&j == 5){
+                    break outermost;
+                }
+                num++;
             }
-            console.log(i);
          }
+         alert(num); //55
     </script>
 </head>
 <body>

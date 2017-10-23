@@ -2,16 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>work5</title>
+    <title>15-随机数</title>
     <script type="text/javascript">
-         var n = prompt('请输入一个数字用来求1-N的安全数默认60'||60);
-
-         for(var i = 1; i <= n; i++ ){
-            if((i % 7 == 0) || (i % 10 == 7)){
-                continue;
-            }
-            console.log(i);
-         }
+         console.log(Math.random());
+         console.log(Math.random() * 100);
+         console.log(parseInt(Math.random() * 100));
+         console.log(parseInt(Math.random() * 8) + 3);
     </script>
 </head>
 <body>

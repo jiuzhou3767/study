@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>23-函数验证哥德巴赫猜想-用户输入偶数拆分成两个质数和</title>
+    <script type="text/javascript">
+         function yueshugeshu(a){
+            var count = 0;
+            for(var i = 1;i <= a;i++){
+                if(a % i == 0){
+                    count++;
+                }
+            }
+            return count;
+         }
+
+         function isZhiShu(m){
+            if(yueshugeshu(m) == 2){
+                return true;
+            }else{
+                return false;
+            }
+         }
+         var num = parseInt(prompt('请输入一个偶数'));
+
+         for(var i = 1; i < num;i++){
+            if(isZhiShu(i) && isZhiShu(num - i)){
+                console.log(num + '可以拆分为'+ i+'和'+(num-i));
+            }
+         }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
