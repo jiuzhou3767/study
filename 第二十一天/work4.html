@@ -2,11 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>work1</title>
+    <title>work4</title>
     <script type="text/javascript">
-         console.log(/^\d+\.?\d*$/.test('0.1244j634'));  //false
-         console.log(/^\d+\.?\d*$/.test('0.1244634'));  //true
-         console.log(/^\d+\.?\d*$/.test('1244634'));  //true
+         function trim(str){
+            var reg = /^\s+/;
+            str = str.replace(reg,"");
+            return str;
+         }
+         console.log("   lo ve");
+         console.log(trim("   lo ve"));
     </script>
 </head>
 <body>

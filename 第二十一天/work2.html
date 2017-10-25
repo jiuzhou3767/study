@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>work1</title>
+    <title>work2</title>
     <script type="text/javascript">
-         console.log(/^\d+\.?\d*$/.test('0.1244j634'));  //false
-         console.log(/^\d+\.?\d*$/.test('0.1244634'));  //true
-         console.log(/^\d+\.?\d*$/.test('1244634'));  //true
+         var reg = /\d{3,5}\-\d{8}/;
+         console.log(reg.test('0.1244j634'));
+         console.log(reg.test('020-12345678'));
+         console.log(reg.test('0418-12345678'));
     </script>
 </head>
 <body>

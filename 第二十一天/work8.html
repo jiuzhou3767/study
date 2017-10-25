@@ -2,11 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>work1</title>
+    <title>work8</title>
     <script type="text/javascript">
-         console.log(/^\d+\.?\d*$/.test('0.1244j634'));  //false
-         console.log(/^\d+\.?\d*$/.test('0.1244634'));  //true
-         console.log(/^\d+\.?\d*$/.test('1244634'));  //true
+        var str = prompt('请输入用户名，必须是2-4位汉字')
+         var reg = /^[\u4e00-\u9fa5A-z1-9_]{6,8}$/;
+         if(reg.test(str)){
+            alert('对');
+         }else{
+            alert('错');
+         }
     </script>
 </head>
 <body>
