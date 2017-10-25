@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work4-2</title>
+    <script type="text/javascript">
+         function maxr(char){
+            var time = 1;
+            var atime =[];
+            var str ='';
+            var astr =char.split('');
+
+            for(i = 1; i <= char.length; i++){
+                str = char.charAt(i);
+                if(char.charAt(i-1) != char.charAt(i)){
+                    atime[i-1] = time;
+                    time = 1;
+                }
+                if(char.charAt(i-1) == char.charAt(i)){
+                    time++;
+                }
+            }
+            // console.log(atime);
+            // console.log(astr);
+            // console.log(time);
+            var maxtime = 0;
+            for(i = 0; i < atime.length;i++){
+                if(atime[i] > maxtime){
+                    maxtime = atime[i];
+                }
+            }
+            var maxstr = astr[atime.indexOf(maxtime)];
+            console.log(maxstr);
+            char = '';
+            for(i = 0; i < maxtime; i++ ){
+                char = char + maxstr;
+            }
+            return char;
+         }
+         // console.log('mmmiijjjjkkkkkkssptr'.length);
+         console.log(maxr('mmmiijjjjkkkkkksspt'));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

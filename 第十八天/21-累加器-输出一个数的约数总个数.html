@@ -2,22 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>12-break简化判断质数</title>
+    <title>21-累加器-输出一个数的约数总个数</title>
     <script type="text/javascript">
-         var n = parseInt(prompt('请输入一个数'));
-         var sum = 0; //累加器
+         var num = parseInt(prompt('请输入一个正整数'));
 
-         for(var i = 2;i <= Math.sqrt(n); i++){
-            if(n % i == 0){
+         var sum = 0;
+         for(var i = 0;i <= num;i++){
+            if(num % i ==0){
                 sum++;
-                break;
             }
          }
-         if(sum == 0 && n != 1){
-            alert('是质数');
-         }else{
-            alert('不是质数');
-         }
+         console.log(num +'的约数个数是：'+sum);
     </script>
 </head>
 <body>

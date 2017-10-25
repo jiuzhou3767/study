@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>30-字符串属性和方法</title>
+    <script type="text/javascript">
+         var str = "我们都非常喜欢的JavaScript！希望能找到能带你****飞的工作。";
+         // console.log(str.length);
+         // console.log(str);
+         // console.log(str.charAt(5));
+
+         // console.log(str.indexOf('非常哈喜欢'));
+
+         // console.log(str.lastIndexOf('的'));
+         // var str2 = str.concat('哈哈');   //不会改变原字符串
+         // console.log(str);
+         // console.log(str2);
+
+         // var str2 = str.slice(3,9);   // 9不会截取
+         // console.log(str2);
+         // var str3 = str.slice(-9,-3); //前一个数字不取
+         // console.log(str3);
+         // var str4 = str.slice(3);
+         // console.log(str4);
+
+         var str2 = str.substring(4,9);
+         var str3 = str.substring(9,4);
+         var str4 = str.substring(-9,-4);
+         var str5 = str.substring(4);
+
+
+         console.log(str2);
+         console.log(str3);
+         console.log(str4);
+         console.log(str5);
+
+         var str2 = str.substr(4,9);   //后面的数字是长度
+        var str3 = str.substr(-9,4);
+        var str4 = str.substr(-9);
+        console.log(str2);
+        console.log(str3);
+        console.log(str4);
+
+
+        // var str2 = str.toUpperCase();
+        // console.log(str2);
+        // var str3 = str2.toLowerCase();
+        // console.log(str3);
+
+        var str = "alsjfoweofcsdnvfopsefpwaeifjkdsafocwaeofasdf";
+        var arr = str.split("f");
+        console.log(str);
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

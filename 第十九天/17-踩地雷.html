@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>17-踩地雷</title>
+    <script type="text/javascript">
+         var dilei = parseInt(Math.random() * 100) + 1;
+         var xiaxian = 1;
+         var shangxian =100;
+
+         while(true){
+
+            var a = parseInt(prompt('请输入一个'+xiaxian+'-'+shangxian+'的数字'));
+            if(a == dilei){
+                alert('恭喜您踩中地雷，boom');
+                break;
+            }else if(a > dilei){
+                shangxian = a;
+            }else if(a < dilei){
+                xiaxian = a;
+            }else{
+                alert('请输入一个在范围内的数');
+            }
+
+         }
+
+     //     var dilei = parseInt(Math.random() * 100) + 1;
+     //     var xiaxian = 1;
+     //     var shangxian =100;
+
+     //     while(true){
+
+     //        var a = parseInt(prompt('请输入一个'+xiaxian+'-'+shangxian+'的数字'));
+     //        if(a < shangxian && a > xiaxian){
+     //            if(a == dilei){
+     //            alert('恭喜您踩中地雷，boom');
+     //            break;
+     //        }else if(a < dilei){
+     //            xiaxian = a;
+     //        }else if(a > dilei){
+     //            shangxian = a;
+     //        }
+
+     //     }else{
+     //            alert('请输入一个在范围内的数');
+     //        }
+     // }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

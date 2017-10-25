@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work4</title>
+    <script type="text/javascript">
+        function maxr(char){
+            var s ='';   //最多的字符
+            var s1 ='';   //暂时字符
+            var time = 1;  //最多的次数
+            var time1 = 1; //暂时字符的次数
+            for(i = 1; i <= char.length; i++){
+               if(char.charAt(i-1) == char.charAt(i)){
+                    time1++;
+                    s1 = char.charAt(i);
+               }
+                if(char.charAt(i-1) != char.charAt(i)){
+                    if(time1 > time){
+                        time = time1;
+                        s = s1;
+                        time1 = 1;
+                    }
+               }
+            }
+            // console.log(time);
+            // console.log(s);
+            char ='';
+            for(var i = 0;i <= time; i++){
+                char = char + s;
+            }
+            return char;
+         }
+         // console.log('mmmiijjjjkkkkkkssptr'.length);
+         console.log(maxr('mmmiijjjjkkkkkksspt'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

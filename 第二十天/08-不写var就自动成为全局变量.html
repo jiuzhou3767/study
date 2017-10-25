@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>11-continue简化寻找质数</title>
+    <title>08-不写var就自动成为全局变量</title>
     <script type="text/javascript">
-         waiceng: for(var i = 2;i <= 100;i++){
-            for(var j = 2;j <= Math.sqrt(i);j++){
-                if(i % j == 0){
-                    continue waiceng;
-                }
-            }
-            console.log(i); //2的时候也会执行到这里
+         function fun(){
+            a = 1;
          }
+         fun();
+         console.log(a);
     </script>
 </head>
 <body>

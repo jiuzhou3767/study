@@ -2,16 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>11-continue简化寻找质数</title>
+    <title>work8</title>
     <script type="text/javascript">
-         waiceng: for(var i = 2;i <= 100;i++){
-            for(var j = 2;j <= Math.sqrt(i);j++){
-                if(i % j == 0){
-                    continue waiceng;
-                }
+         function repeat(char,n){
+            var str = '';
+            for(var i = 0; i < n; i++){
+                str = str +char;
             }
-            console.log(i); //2的时候也会执行到这里
+            console.log(str);
          }
+         repeat("★",6);
+
     </script>
 </head>
 <body>

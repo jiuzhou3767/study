@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>27-函数声明的提升-预解析</title>
+    <script type="text/javascript">
+         // // 先执行
+         // fun();
+
+         // //后定义
+         // function fun(){
+         //    console.log('我是函数，我执行了');
+         // }
+        //  fun2();
+        // var fun2 = function(){ //这是函数表达式，而不是function定义法
+        //     console.log("我是函数，我执行了");
+        // }
+         //
+         //
+          //现在这个aaa到底是函数，还是变量5？
+        //函数优先：遇见同名的标识符，预解析阶段一定把这个标识符给函数
+
+        aaa();   // 不报错，正常运行
+        console.log(aaa); //5
+        console.log(typeof aaa);
+        var aaa = 5;
+        // aaa();  //报错
+        function aaa(){
+            alert('我是aaa函数');
+        }
+
+        console.log(aaa); //5
+        console.log(typeof aaa);
+
+        foo();
+        var foo;
+        foo();
+        // function foo(){
+        //     console.log(1);
+        // }
+
+        foo = function(){
+            console.log(2);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

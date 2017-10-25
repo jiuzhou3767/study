@@ -2,16 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>11-continue简化寻找质数</title>
+    <title>20-随机点名</title>
     <script type="text/javascript">
-         waiceng: for(var i = 2;i <= 100;i++){
-            for(var j = 2;j <= Math.sqrt(i);j++){
-                if(i % j == 0){
-                    continue waiceng;
-                }
-            }
-            console.log(i); //2的时候也会执行到这里
-         }
+         var stuName =['xiaoming','chengdong','jianguo','aiye','qingjun']
+         var num = parseInt(Math.random() * stuName.length);
+         console.log(num);
+         document.write('<h1>'+stuName[num]+'</h1>');
     </script>
 </head>
 <body>

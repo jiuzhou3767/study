@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>05-全局变量</title>
+    <script type="text/javascript">
+    // function fun(){
+    //      var a = 100;
+    //      console.log('我是函数内部的语句，我认识a的值为'+a);
+    // }
+    // fun();
+    // console.log('我是函数外部的语句，我不认识a的值为：'+a);
+    //
+    //
+    var a = 100;//全局变量，在程序任何一个角落都有定义，都能使用
+         function fun(){
+            console.log("我是函数内部的语句，我认识a的值为："+a);
+         }
+         fun();
+         console.log("我是函数外部的语句，我不认识a的值为："+a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
