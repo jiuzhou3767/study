@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>18-量词</title>
+    <script type="text/javascript">
+           //{n}  硬性量词，内部写对应重复次数。
+        console.log(/ab{3}c/.test('abbbc')); //true
+        console.log(/ab{3}c/.test('abbbbc')); //false
+        console.log(/ab{3}c/.test('abbc')); //false
+
+        //{n,m} 软性量词，至少出现n次但不超过m次（中间不能有空格）。 x:m不可到达
+        console.log(/ab{3,5}c/.test('abbc')); //false
+        console.log(/ab{3,5}c/.test('abbbc')); //true
+        console.log(/ab{3,5}c/.test('abbbbc')); //true
+        console.log(/ab{3,5}c/.test('abbbbbbbc')); //true
+
+         //{n,} 软性量词，至少出现n次（+的升级版）。
+        //可以出现n次或更多次，上不封顶，但不能小于n次。
+        console.log(/ab{3,}c/.test('abbc')); //false
+        console.log(/ab{3,}c/.test('abbbc')); //true
+        console.log(/ab{3,}c/.test('abbbbc')); //true
+        console.log(/ab{3,}c/.test('abbbbbbbc')); //true
+
+        //? 软性量词，出现零次或一次，等价于{0,1}
+        //console.log(/ab?c/.test('ac')); //true
+        //console.log(/ab?c/.test('abc')); //true
+        //console.log(/ab?c/.test('abbc')); //false
+
+        //* 软性量词，出现零次或多次 等于{0,}
+        //console.log(/ab*c/.test('ac')); //true
+        //console.log(/ab*c/.test('abc')); //true
+        //console.log(/ab*c/.test('abbbbbbbbbbc')); //false
+
+        //+ 软性量词，出现一次或多次（至少一次），等价于{1,}
+        // console.log(/ab+c/.test('ac')); //false
+        // console.log(/ab+c/.test('abc')); //true
+        // console.log(/ab+c/.test('abbbbbbbbbbc')); //true
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>23-案例-让用户输入中文用户名</title>
+    <script type="text/javascript">
+          var str = prompt('请输入用户名，必须是4-6位汉字')
+         var reg = /^[\u4e00-\u9fa5]{4,6}$/;
+         if(reg.test(str)){
+            alert('对');
+         }else{
+            alert('错');
+         }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

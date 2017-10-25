@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>12-正则表达式方法</title>
+    <script type="text/javascript">
+     /*******exec()在字符串中去匹配正则表达式******/
+         var str = "dakdnakdabc ffdksl abc";
+         var reg = /abc/;
+         console.log(reg.exec(str));
+         console.log(reg.exec(str).index);
+         console.log(reg.exec(str).input);
+         console.log(reg.exec(str)[0]);
+
+         var str = "ooooo 0 0  oooooo";
+         var reg = /o\s+0\s+0/;   // /s空白字符匹配
+         console.log(reg.exec(str));
+
+ /*******test() 检索字符串中指定的值（匹配正则表达式）。返回 true 或 false。******/
+         var str = "aaddcccddddabcddefnfdfff";
+         var reg = /abc/;
+         console.log(reg.test(str)); //true
+         console.log(str.search(reg)); //下标为11
+
+         var str1 = 'a bc';
+         var str2 = 'abc';
+         var reg = /\s+/;
+         console.log(reg.test(str1));  //true
+         console.log(reg.test(str2));   //false
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

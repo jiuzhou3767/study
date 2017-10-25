@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>14-字符集-方括号</title>
+    <script type="text/javascript">
+         var str = "fhekfkfnsortnafandoztsocttkfndkfi";
+         console.log(str.match(/o[rzc]t/g));
+
+         var str = 'oo1234128434abcdfffABCDFAAEE';
+         console.log(str.match(/o[0-9]/g));
+         console.log(str.match(/a[a-z]c/g));
+         console.log(str.match(/B[A-Z]D/g));
+
+        var str = 'abcortdefgoztesdfloctwbtoeo1abctsdooto12t34128o4t34abcdfffABCDFAAEE';
+        console.log(str.match(/o[0-9a-z]t/g));
+        console.log(str.match(/o[5-9A-F]t/g));
+        console.log(str.match(/o[5-9abc]t/g));
+
+        var str = 'abcortdefgoztesdfloctwbtoeo1abctsdooto12t34128o4t34abcdfffABCDFAAEE';
+        console.log(str.match(/o[^a-z]t/g));
+        console.log(str.match(/o[^A-Z]t/g));
+        console.log(str.match(/o[^0-9]t/g));
+        console.log(str.match(/o[^0-9a-z]t/g));
+        console.log(str.match(/o[^0-9abc]t/g));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

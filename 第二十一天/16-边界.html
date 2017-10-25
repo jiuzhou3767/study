@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>16-边界</title>
+    <script type="text/javascript">
+         //^  ：开头，书写位置不能写在[的后面，如果写在后面是取反的意思。x:有取反的用途
+        console.log(/^hello/.test('hello javascript'));  //true
+        console.log(/^hello/.test('helo javascript'));  //false
+        console.log(/^hello/.test('hhello javascript')); //false
+        console.log(/^hh/.test('hhello javascript'));  //true
+
+        //$ ：结尾,匹配的是必须以$前面的字符为结尾（必须完全匹配）
+        console.log(/javascript$/.test('hhello javascript')); //true
+         console.log(/javascript$/.test('hhello javascript$')); //false
+         console.log(/javascript@$/.test('hhello javascript@')); //true
+
+        //^和$可以同时使用，必须以他们中间的内容当做开头和结尾，字符串只能有中间的内容。
+         console.log(/^[0-9]+$/.test('8888888888888')); //true
+         console.log(/^[0-9]+$/.test('8888888abc888888')); //false
+         console.log(/^[0-9abc]+$/.test('8888888abc888888')); //true
+         console.log(/^[a-zA-Z][0-9a-zA-z]+$/.test('a1234aaa')); //true
+         console.log(/^[a-zA-Z][0-9a-zA-z]*$/.test('a1234aaa')); //true
+         console.log(/^[a-zA-Z][0-9a-zA-z]+$/.test('a')); //false
+
+         //  \b 单词边界，用于查找位于单词的开头或结尾的匹配
+         console.log(/\ba/.test('apple')); //true
+         console.log(/\ba/.test('iapple')); //false
+         console.log(/\ba/.test('i apple')); //true
+         console.log(/e\b/.test('i apple')); //true
+         console.log(/ple\b/.test('i apple')); //true
+         console.log(/e\b/.test('i apples')); //false
+
+          var str = "i love JavaScript very much@pei";
+         console.log(str.match(/\b[a-z]+\b/gi));   //保留边界，取成数组
+         console.log(str.match(/\B[a-z]+\B/gi));  //把边界去掉了，取成数组
+
+         //借用：\w，表示查找单词字符，包含数字、大小写字母、下划线
+         console.log("we are family no".match(/\w+/g));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

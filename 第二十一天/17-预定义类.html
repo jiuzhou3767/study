@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>17-预定义类</title>
+    <script type="text/javascript">
+         // . [^\n\r]     除了换行和回车之外的任意字符
+         console.log(/^.+$/.test('dkajdnkjsd_+%$*哈 哈')); //true
+         console.log(/^.+$/.test(`dkajdnkjsd_+%$*
+         哈 哈`)); //false
+
+         // \d    [0-9]       只匹配数字字符，一个\d只能匹配一个数字
+        console.log(/^\d+$/.test('0123456789')) //true
+        console.log(/^\d+$/.test('01234567a89')); //false
+        console.log(/^\d+$/.test('01234567_89')); //false
+
+        // \D    [^0-9]  匹配非数字字符，只要不是数字都可以
+        console.log(/^\D+$/.test('0123456789')) //false
+        console.log(/^\D+$/.test('01234567aaaa89')); //false
+        console.log(/^\D+$/.test('fefdknfdks%&$*_-你好')); //true
+
+         // \s    [ \t\n\x0B\f\r] 匹配空白字符、空格、缩进、换行、换页
+        console.log(/\s+/.test(`nihao
+           `));//true
+        console.log(/\s+/.test('你好      ')); //true
+        console.log(/\s+/.test(' 你好      ')); //true
+        console.log(/^\s+$/.test(' 你好      ')); //false
+        console.log(/^\s+$/.test('  ')); //true
+
+        // \S    [ ^\t\n\x0B\f\r]    匹配非空白字符（除了空白符都可以）
+        console.log(/^\S+$/.test('      ')); //false
+        console.log(/^\S+$/.test('abc1234#%***%&*文字')); //true
+
+        // \w  [a-zA-Z_0-9]    单词字符(所有的大小写字母/数字/下划线)
+        console.log(/^\w+$/.test('abc123324ABC_ddd')); //true
+        console.log(/^\w+$/.test('abc123324ABC_ddd##')); //false
+        console.log(/^\w+$/.test('abc123324ABC_ddd文字')); //false
+        console.log(/^\w+$/.test('abc123324ABC_ddd  ')); //false
+
+        //\W   [^a-zA-Z_0-9]   匹配非单词字符(非所有的大小写字母/数字/下划线)
+        console.log(/^\W+$/.test('abc123324ABC_ddd  ')); //false
+        console.log(/^\W+$/.test('你好，#￥%…………哈嘍')); //true
+        console.log(/^\W+$/.test('   ')); //true
+    </script>
+</head>
+<body>
+
+</body>
+</html>

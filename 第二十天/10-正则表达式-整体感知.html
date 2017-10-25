@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>10-正则表达式-整体感知</title>
+    <script type="text/javascript">
+        var num = prompt('请输入电话号码');
+        var reg = /^\d{3}-\d{8}$/;
+        if(reg.test(num)){
+            alert('对');
+        }else{
+            alert('错');
+        }
+        console.log(typeof reg); //object
+    </script>
+</head>
+<body>
+
+</body>
+</html>

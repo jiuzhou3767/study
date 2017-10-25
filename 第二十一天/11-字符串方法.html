@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>11-字符串方法</title>
+    <script type="text/javascript">
+         var str = "aa bbb     c ddd eeeee  ffff";
+         console.log(str.split(' '));
+         console.log(str.split(/\s+/));
+
+         console.log('---------------------------');
+
+         var str = 'bbbaacaadddaeeeeeaaaaff';
+         var arr = str.split(/a+/);
+         console.log(arr);
+
+         console.log('---------------------------');
+
+         var str = 'aaaabbbaacaadddaebbeeeebbbbaaaafff';
+         console.log(str.match(/b+/));
+         console.log(str.match(/b+/).index);
+         console.log(str.match(/b+/g));
+
+         console.log('---------------------------');
+
+         var str = 'aaa o    o bbb o        o  aaaa';
+         console.log(str.match(/o\s+o/g));
+
+         console.log('---------------------------');
+
+         var str = 'abcdefgcd';
+         console.log(str.search('cd'));
+         console.log(str.search('cdf'));
+         console.log(str.search(/cd/g));   //无视全局定界符
+
+         console.log('---------------------------');
+
+         var str = "aaa o    o bbbb o    o  aaaaa";
+         console.log(str.search(/o\s+o/g));
+         console.log(str.search(/o\so/g));
+
+         console.log('---------------------------');
+
+          var str = "www.webqianduan.cn";
+          // console.log(str.replace('webqianduan','iqianduan'));
+          console.log(str.replace(/webqianduan/,'iqianduan'));
+          console.log(str);
+
+          arr = str.replace(/\.(\w+)\./,function(match,$1){
+            return '.iquanduan';
+          });
+          console.log(arr);
+          var str = 'aa   b c d e f';
+          console.log(str.replace(/\s+/g,''));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
