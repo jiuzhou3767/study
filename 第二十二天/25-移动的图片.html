@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>25-移动的图片</title>
+    <style type="text/css">
+        img{position:absolute;top:200px;left:200px;}
+    </style>
+    <script type="text/javascript">
+         window.onload = function(){
+            var oImg = document.getElementById('zImg');
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var oBtn3 = document.getElementById('btn3');
+            var oBtn4 = document.getElementById('btn4');
+            var oBtn5 = document.getElementById('btn5');
+            var oBtn6 = document.getElementById('btn6');
+            var oBtn7 = document.getElementById('btn7');
+            var oBtn8 = document.getElementById('btn8');
+
+            var top = 200;
+            var left = 200;
+            oBtn1.onclick = function(){
+                top -= 10;
+                left -= 10;
+                move();
+            }
+            oBtn2.onclick = function(){
+                top -= 10;
+                move();
+            }
+            oBtn3.onclick = function(){
+                top -= 10;
+                left += 10;
+                move();
+            }
+            oBtn4.onclick = function(){
+                left -= 10;
+                move();
+            }
+            oBtn5.onclick = function(){
+                left += 10;
+                move();
+            }
+            oBtn6.onclick = function(){
+                top += 10;
+                left -= 10;
+                move();
+            }
+            oBtn7.onclick = function(){
+                top += 10;
+                move();
+            }
+             oBtn8.onclick = function(){
+                top += 10;
+                left += 10;
+                move();
+            }
+
+            function move(){
+                oImg.style.top = top + 'px';
+                oImg.style.left = left + 'px';
+            }
+
+         }
+    </script>
+</head>
+<body>
+    <img src="img/2.jpg" width="200" id="zImg">
+    <table>
+        <tr>
+            <td><input type="button" value="↖" id="btn1" /></td>
+            <td><input type="button" value="↑" id="btn2" /></td>
+            <td><input type="button" value="↗" id="btn3" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="←" id="btn4"/></td>
+            <td></td>
+            <td><input type="button" value="→" id="btn5"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="↙" id="btn6"/></td>
+            <td><input type="button" value="↓"  id="btn7"/></td>
+            <td><input type="button" value="↘" id="btn8"/></td>
+        </tr>
+    </table>
+</body>
+</html>
