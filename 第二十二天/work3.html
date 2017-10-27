@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work3</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        .main{
+            width: 100%;
+            height:800px;
+            background: url('baidu/1.jpg')center top;
+
+        }
+        .div-ul{
+            width: 100%;
+            background: rgba(200, 200, 200, 0.5);
+             height: 200px;
+        }
+        ul{
+            width: 1050px;
+            position:absolute;
+            top:37px;
+            left:50%;
+            margin-left: -525px;
+        }
+        li{
+            width: 200px;
+            height: 150px;
+            float:left;
+            margin-left: 10px;
+        }
+        li img{
+            width: 200px;
+
+        }
+
+    </style>
+    <script type="text/javascript">
+
+        window.onload = function(){
+            var olist1 = document.getElementById('list1');
+             var olist2 = document.getElementById('list2');
+             var olist3 = document.getElementById('list3');
+             var olist4 = document.getElementById('list4');
+             var olist5 = document.getElementById('list5');
+             var oMain = document.getElementById('main');
+
+            olist1.onclick = function(){
+                oMain.style.background = "url('baidu/1.jpg')";
+             }
+             olist2.onclick = function(){
+                oMain.style.background = "url('baidu/2.jpg')";
+             }
+             olist3.onclick = function(){
+                oMain.style.background = "url('baidu/3.jpg')";
+             }
+             olist4.onclick = function(){
+                oMain.style.background = "url('baidu/4.jpg')";
+             }
+             olist5.onclick = function(){
+                oMain.style.background = "url('baidu/5.jpg')";
+             }
+        };
+
+
+    </script>
+</head>
+<body>
+    <div class="main" id="main">
+    <div class="div-ul">
+        <ul>
+            <li id="list1"><img src="baidu/1.jpg" alt=""></li>
+            <li id="list2"><img src="baidu/2.jpg" alt=""></li>
+            <li id="list3"><img src="baidu/3.jpg" alt=""></li>
+            <li id="list4"><img src="baidu/4.jpg" alt=""></li>
+            <li id="list5"><img src="baidu/5.jpg" alt=""></li>
+        </ul>
+        </div>
+    </div>
+</body>
+</html>

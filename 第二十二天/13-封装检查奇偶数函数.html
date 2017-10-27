@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>13-封装检查奇偶数函数</title>
+    <script type="text/javascript">
+         function check(){
+            switch(arguments.length){
+                case 1:
+                    return arguments[0] % 2 == 0 ? true : false;
+                    break;
+                case 2:
+                    return (arguments[0] + arguments[1]) % 2 == 0 ? true : false;
+                    break;
+                default:
+                    //console.log('输入错误，请检查。只支持1和2个参数');
+                    throw new Error('输入错误，请检查。只支持1和2个参数');
+
+            }
+         }
+         console.log(check(8))
+         console.log(check(8,7))
+         console.log(check(8,8,8));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

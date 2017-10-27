@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>12-无限参数的函数</title>
+    <script type="text/javascript">
+         function sum(){
+            var sum = 0;//累加器
+            for(var i = 0; i < arguments.length; i++){
+                sum +=arguments[i];
+            }
+            return sum;
+         }
+         console.log(sum(1,43,542,54,54));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

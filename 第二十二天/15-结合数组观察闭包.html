@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>15-结合数组观察闭包</title>
+    <script type="text/javascript">
+         // var arr = [];
+         // for(var i = 0; i <= 10;i++){
+         //    //函数定义时的作用域是全局的，全局中有一个变量i
+         //    //函数只是定义给每一项，并不会立即执行。
+         //    //函数这个闭包，记住了全局作用域，里面有个i，记住了自己内部的语句。
+         //    console.log(i);
+         //    arr[i] = function(){
+         //        console.log(i);
+         //    }
+         // }
+         // console.log(arr);
+         // console.log(i);
+         // console.log(arr[0]());
+         // console.log(arr[1]());
+         // console.log(arr[2]());
+         //
+         //
+         //
+         //
+            //通过动态的方法，遍历数组，给数组每一项添加一个函数。
+        var arr = [];//定义空数组接收
+        //通过数组变量，给定一个最大的下标
+        for(var i = 0;i <= 10;i++){
+           //函数定义时的作用域是全局的，全局中有一个变量i
+           //函数只是定义给每一项，并不会立即执行。
+           //函数这个闭包，记住了全局作用域，里面有个i，记住了自己内部的语句。
+           (function(a){
+                //每次i传进来时，IIFE立即执行
+                //执行时，每次a的值就是一个确定i
+                arr[a] = function(){
+                    console.log(a);
+                }
+           })(i);
+        }
+        console.log(arr);
+        console.log(arr[0]());
+        console.log(arr[1]());
+        console.log(arr[2]());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

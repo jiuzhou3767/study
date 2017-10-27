@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work4</title>
+    <style type="text/css">
+        .main{
+            width: 400px;
+            border:1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var oleftBtn = document.getElementById('leftBtn');
+            var orightBtn = document.getElementById('rightBtn');
+            var oTxt1 = document.getElementById('txt1');
+            var size = 16;
+
+            oleftBtn.onclick = function(){
+                size++;
+
+                oTxt1.style.fontSize = size + 'px';
+            }
+            orightBtn.onclick = function(){
+                size--;
+                oTxt1.style.fontSize = size + 'px';
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <button id="leftBtn">变大</button>
+        <button id="rightBtn">变小</button>
+        <div class="text1" id="txt1">
+            文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+        </div>
+    </div>
+</body>
+</html>

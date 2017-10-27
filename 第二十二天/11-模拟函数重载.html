@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>11-模拟函数重载</title>
+    <script type="text/javascript">
+         function sum(a,b){
+            // switch(arguments.length){
+            //     case 1:
+            //         return ++a;
+            //         break;
+            //     case 2:
+            //         return a + b;
+            //         break;
+            // }
+
+            if(arguments.length == 1){
+                return ++a;
+            }else if(arguments.length == 2){
+                return a + b;
+            }
+         }
+         console.log(sum(10));
+         console.log(sum(10,2));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

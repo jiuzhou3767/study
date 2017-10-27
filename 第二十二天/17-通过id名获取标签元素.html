@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>17-通过id名获取标签元素</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id='box'>1</div>
+    <div id='box'>2</div>
+    <input type="text" name="oInput" id="oInput" value="默认文本">
+    <script type="text/javascript">
+         document.title = "这是js改的标题";
+
+         var oBox = document.getElementById('box');
+         var oInput = document.getElementById('oInput');
+
+         oBox.style.backgroundColor = 'pink';
+         oInput.value = '这是input内容';
+
+         console.log(typeof oBox);
+    </script>
+
+</body>
+</html>

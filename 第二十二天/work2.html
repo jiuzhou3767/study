@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work2</title>
+    <style type="text/css">
+        .main{
+            width: 615px;
+            margin: 40px auto;
+            border:1px solid black;
+            position:relative;
+            text-align:center;
+        }
+        button{
+            position:absolute;
+            bottom:0;
+        }
+        .leftBtn{
+            left:0;
+        }
+        .rightBtn{
+            right:0;
+        }
+    </style>
+    <script type="text/javascript">
+         window.onload = function(){
+            var oLbtn = document.getElementById('leftBtn');
+            var oRbtn = document.getElementById('rightBtn');
+            var oImg1 = document.getElementById('img1');
+            var i = 1;
+            oRbtn.onclick = function(){
+                if(i<5){
+                    i++;
+                }else{
+                    i=1;
+                }
+                oImg1.src = 'lunbo/'+i+'.jpg';
+            }
+            oLbtn.onclick = function(){
+                if(i>1){
+                    i--;
+                }else{
+                    i=5;
+                }
+                oImg1.src = 'lunbo/'+i+'.jpg';
+            }
+         }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <button type="" class="leftBtn" id="leftBtn">上一张</button>
+        <img src="lunbo/1.jpg" alt="" width=500 id="img1">
+        <button type="" class="rightBtn" id="rightBtn">下一张</button>
+    </div>
+</body>
+</html>

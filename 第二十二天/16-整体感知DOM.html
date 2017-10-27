@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>16-整体感知DOM</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <img src="img/koala.png" id="koalaImg" width="300">
+
+    <script type="text/javascript">
+         var klimg = document.getElementById('koalaImg');
+         var box = document.getElementById('box');
+
+         klimg.onclick = function(){
+            klimg.src = 'img/timg.jpg';
+            box.style.backgroundColor = 'skyblue';
+         }
+    </script>
+</body>
+</html>

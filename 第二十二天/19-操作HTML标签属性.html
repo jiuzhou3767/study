@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>19-操作HTML标签属性</title>
+    <style type="text/css">
+        .xiao{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        .da{
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/2.jpg" alt="这是赵丽颖" title="44dsds" width="300" id="timg">
+
+    <div class="xiao" id="box"></div>
+    <script type="text/javascript">
+         var oImg = document.getElementById('timg');
+         var oBox = document.getElementById('box');
+
+         console.log(oImg.src);
+         console.log(oImg.alt);
+         console.log(oImg.title);
+         console.log(oImg.width);
+
+        oImg.src = "img/1.jpg";
+        oImg.alt = "赵丽颖很漂亮";
+        oImg.title = "女神就是女神";
+        oImg.width = "200";
+
+
+        oBox.className = "da";
+        console
+    </script>
+</body>
+</html>
