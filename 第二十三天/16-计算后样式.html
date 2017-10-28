@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>16-计算后样式</title>
+    <style type="text/css">
+        div{
+            width: 300px;
+            padding:10px 20px 30px 40px;
+            border:10px solid red;
+            background:pink url(sohu/aaa.jpg) no-repeat 10px 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+             var oBox = document.getElementById('box');
+         //console.log(oBox.style.width);  //这种方法只能获取到行内样式，内嵌和外链式要用其他方法
+         // console.log(window.getComputedStyle(oBox));
+         console.log(window.getComputedStyle(oBox).getPropertyValue("width"));
+         console.log(getComputedStyle(oBox)["padding-right"]);
+
+         alert(oBox.currentStyle.width);
+         alert(oBox.currentStyle.height); //如果不写高，获取的是auto
+         alert(oBox.currentStyle.backgroundColor); //要用驼峰命名法
+         alert(oBox.currentStyle.paddingLeft); //要用驼峰命名法
+         alert(oBox.currentStyle["paddingLeft"]); //要用驼峰命名法
+
+
+     }
+
+    </script>
+</head>
+<body>
+    <div id="box">文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容</div>
+</body>
+</html>

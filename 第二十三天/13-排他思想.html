@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>13-排他思想</title>
+    <style type="text/css">
+        div{
+            width: 600px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+        p{
+            float:left;
+            width: 60px;
+            height: 60px;
+            background-color: #ccc;
+            margin-right: 10px;
+            border-radius:50%;
+        }
+    </style>
+    <script type="text/javascript">
+         window.onload = function(){
+            var ops = document.getElementById('box1').getElementsByTagName('p');
+            var title = document.getElementById('biaoti');
+
+            for(var i = 0;i < ops.length;i++){
+                ops[i].index = i;
+                ops[i].onclick = function(){
+                    for(var j = 0;j < ops.length; j++){
+                        ops[j].style.backgroundColor = "#ccc";
+                    }
+                    this.style.backgroundColor = 'red';
+                    title.innerHTML = this.index;
+                }
+            }
+         }
+    </script>
+</head>
+<body>
+    <h1 id="biaoti">哈哈</h1>
+    <div id="box1">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</body>
+</html>

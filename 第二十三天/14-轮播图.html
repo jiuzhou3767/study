@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>14-轮播图</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        .carousel{
+            width: 672px;
+            height: 320px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel ul li{
+            display: none;
+        }
+        .carousel ul li.current{
+            display: block;
+        }
+        .carousel ul li p{
+            width: 100%;
+            height: 40px;
+            background: rgba(0, 0, 0,0.3);
+            position: absolute;
+            bottom:0;
+            left:0;
+            color:#fff;
+            line-height: 40px;
+            text-align:center;
+        }
+
+        .carousel .btns span{
+            width: 55px;
+            height: 55px;
+            position: absolute;
+            top:50%;
+            margin-top:-28px;
+            cursor: pointer;
+        }
+        .carousel .btns .leftBtn{
+            background: url(sohu/slide-btnL.png) no-repeat;
+            left:10px;
+        }
+        .carousel .btns .rightBtn{
+            background: url(sohu/slide-btnR.png) no-repeat;
+            right:10px;
+        }
+        .carousel ol{
+            position: absolute;
+            bottom:50px;
+            left:230px;
+        }
+        .carousel ol li{
+            width: 20px;
+            height: 20px;
+            background: yellow;
+            border-radius:50%;
+            float: left;
+            margin:0 10px;
+            cursor: pointer;
+        }
+        .carousel ol li.current{background-color: purple;}
+    </style>
+    <script type="text/javascript">
+         window.onload = function(){
+            var imgList = document.getElementById('imgList').getElementsByTagName('li');
+            var olList = document.getElementById('olList').getElementsByTagName('li');
+            var leftBtn = document.getElementById('leftBtn');
+            var rightBtn = document.getElementById('rightBtn');
+            var index = 0;
+            //右按钮点击事件
+            rightBtn.onclick = function(){
+                index++;
+                if(index > imgList.length - 1){
+                    index = 0;
+                }
+                change();
+            }
+            //左按钮点击事件
+            leftBtn.onclick = function(){
+                index--;
+                if(index < 1 ){
+                    index = imgList.length - 1;
+                }
+                change();
+            }
+
+            //圆点的事件绑定
+            for(var i = 0;i < olList.length;i++){
+                olList[i].index = i;
+                olList[i].onclick = function(){
+                    index = this.index;
+
+                    change();
+                }
+            }
+
+            function change(){
+                for(var i = 0;i < imgList.length;i++){
+                    imgList[i].className = '';
+                    olList[i].className = '';
+                }
+                imgList[index].className = 'current';
+
+                olList[index].className = 'current';
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="carousel">
+        <ul id="imgList">
+            <li class="current"><a href="###"><img src="sohu/aaa.jpg" alt=""></a><p>一周美图|谁的眼色撩人1</p></li>
+            <li><a href="###"><img src="sohu/bbb.jpg" alt=""></a><p>一周美图|谁的眼色撩人1</p></li>
+            <li><a href="###"><img src="sohu/ccc.jpg" alt=""></a><p>一周美图|谁的眼色撩人1</p></li>
+            <li><a href="###"><img src="sohu/ddd.jpg" alt=""></a><p>一周美图|谁的眼色撩人1</p></li>
+            <li><a href="###"><img src="sohu/eee.jpg" alt=""></a><p>一周美图|谁的眼色撩人1</p></li>
+        </ul>
+        <div class="btns">
+            <span class="leftBtn" id="leftBtn"></span>
+            <span class="rightBtn" id="rightBtn"></span>
+        </div>
+        <ol id="olList">
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>15-选项卡tab栏</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        ul{list-style:none;}
+        .tab{
+            width: 300px;
+            border-top:3px solid red;
+            margin:50px auto;
+        }
+        .tab ul{height: 30px;}
+        .tab ul li{float: left;width: 100px;line-height: 30px;text-align:center;}
+        .tab ul li a{text-decoration:none;color:#333;background: #eee;display: block;}
+        .tab ul li.current a{color:#fff;font-weight:bold;background: skyblue;}
+
+        .tab .tab-bd>div{
+            height: 150px;
+            background: skyblue;
+            display: none;
+        }
+        .tab .tab-bd>div.current{
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+         window.onload = function(){
+            var hdli = document.getElementById('tab-hd').getElementsByTagName('li');
+            var bddiv = document.getElementById('tab-bd').getElementsByTagName('div');
+
+            for(var i = 0;i < hdli.length;i++){
+                hdli[i].index = i;
+                hdli[i].onmouseover = function(){
+                    //清除样式
+                    for(var j = 0;j < hdli.length;j++){
+                        hdli[j].className = '';
+                        bddiv[j].className = '';
+                    }
+                    this.className = 'current';
+                    bddiv[this.index].className = 'current';
+                }
+            }
+
+
+         }
+    </script>
+</head>
+<body>
+    <div class="tab">
+        <ul id="tab-hd">
+            <li class="current"><a href="###">新闻</a></li>
+            <li><a href="###">图片</a></li>
+            <li><a href="###">军事</a></li>
+        </ul>
+        <div class="tab-bd" id="tab-bd">
+            <div class="current">新闻的内容内容内容</div>
+            <div>图片的内容内容内容</div>
+            <div>军事内容内容内容</div>
+        </div>
+    </div>
+</body>
+</html>
