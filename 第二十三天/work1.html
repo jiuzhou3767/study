@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work1</title>
+    <style type="text/css">
+        label{
+            display:block;
+            margin-top: 10px;
+        }
+
+    </style>
+    <script type="text/javascript">
+         window.onload = function(){
+            var oCheck = document.getElementsByTagName('input');
+            var oBtn = document.getElementsByTagName('button')[0];
+            var isOn = 0;
+
+                oBtn.onclick = function(){
+                    //alert(1);
+                    if(isOn == 0){
+                        for(var i = 0;i < oCheck.length;i++){
+
+                            oCheck[i].checked = 'checked';
+                       }
+                       isOn = 1;
+                   }else if(isOn == 1){
+                        for(var i = 0;i < oCheck.length;i++){
+
+                            oCheck[i].checked = '';
+                       }
+                       isOn = 0;
+                   }
+            }
+         }
+    </script>
+</head>
+<body>
+    <div>
+        <label><input type="checkbox" checked="checked" />吃饭</label>
+        <label><input type="checkbox" />吃饭</label>
+        <label><input type="checkbox" />吃饭</label>
+        <label><input type="checkbox" />吃饭</label>
+        <label><input type="checkbox" />吃饭</label>
+        <label><input type="checkbox" />吃饭</label>
+        <label><input type="checkbox" />吃饭</label>
+        <label><input type="checkbox" />吃饭</label>
+        <button type="">选择</button>
+    </div>
+</body>
+</html>

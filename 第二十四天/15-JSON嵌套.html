@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>15-JSON嵌套</title>
+    <script type="text/javascript">
+         var obj = {
+            "name":"黄晓明",
+            "age":50,
+            "sex":"男",
+            "height":178,
+            "peiou":{
+                "name":"杨颖",
+                "age":18,
+                "height":115
+            }
+         };
+         console.log(obj.peiou.age);
+         console.log(obj["peiou"]["age"]);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>19-关于opacity</title>
+    <style type="text/css">
+        div{
+            width: 300px;
+            padding:10px 20px 30px 40px;
+            border:10px solid red;
+            background: red;
+            opacity:0.3
+            filter:alpha(opacity=60);
+        }
+    </style>
+</head>
+<body>
+<div id="box">文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容</div>
+</body>
+</html>
+<script type="text/javascript">
+     var oBox = document.getElementById('box');
+
+     alert(oBox.currentStyle.opacity); //IE低版本认识
+
+</script>

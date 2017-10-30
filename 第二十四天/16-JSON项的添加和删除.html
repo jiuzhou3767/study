@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>16-JSON项的添加和删除</title>
+    <script type="text/javascript">
+         var obj = {
+            "name":"黄晓明",
+            "age":50,
+            "sex":"男",
+            "height":178,
+            "peiou":"杨颖"
+        };
+        obj.age++;
+        obj.sex = "刚刚变完性";
+        obj["height"] = 158;
+        console.log(obj.age);
+        console.log(obj.sex);
+        console.log(obj.height);
+
+        delete obj.peiou;
+        console.log(obj);
+
+        obj.cp = {
+            "name":"如花",
+            "age":50,
+            "weight":180
+        }
+
+        console.log(obj);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

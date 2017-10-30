@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>17-能力检测</title>
+    <title>18-封装能力检测函数-造轮子</title>
     <style type="text/css">
         div{
             width:300px;
@@ -16,10 +16,23 @@
 </body>
     <script type="text/javascript">
          var oBox = document.getElementById('box');
-         if(window.getComputedStyle){
-            alert(getComputedStyle(oBox)["padding-left"]);
-         }else{
-            alert(oBox.currentStyle.paddingLeft);
+
+         function getStyle(obj,property){
+                if(window.getComputedStyle){
+               property = property.replace(/([A-Z])/g,function(match,$1){
+                    return '-'+ $1.toLowerCase();
+               });
+               return window.getComputedStyle(obj)[property];
+             }else{
+                   property = property.replace(/\-(a-z)/g,function(match,$1){
+                        return $1.toUpperCase();
+                   });
+                   return obj.currentStyle[property];
+            }
+
          }
+         alert(getStyle(oBox,"paddingLeft"));
+
+
     </script>
 </html>

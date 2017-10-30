@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>17-JSON遍历</title>
+    <script type="text/javascript">
+          var obj = {
+            "name":"黄晓明",
+            "age":50,
+            "sex":"男",
+            "height":178,
+            "peiou":"杨颖"
+        };
+
+        for(var k in obj){
+            console.log(k+"的值是："+obj[k]);
+        }
+
+        var newJson = {};
+        for(var k in obj){
+            newJson[k] = obj[k];
+        }
+        console.log(newJson);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

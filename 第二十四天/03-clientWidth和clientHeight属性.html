@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>03-clientWidth和clientHeight属性</title>
+       <style type="text/css">
+        *{margin: 0;padding: 0;}
+        div{
+            width: 300px;
+            height: 200px;
+            border: 10px solid green;
+            padding:50px;
+            margin:50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+</body>
+</html>
+<script type="text/javascript">
+     var oDiv = document.getElementsByTagName('div')[0];
+     alert(oDiv.clientWidth);  //400，width+padding的值
+     alert(oDiv.clientHeight); //300，height+padding的值
+</script>

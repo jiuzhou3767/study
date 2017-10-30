@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>08-拉终停表</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            position: absolute;
+            top:100px;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+     <input type="button" value="开启" />
+     <input type="button" value="停止" />
+     <div></div>
+</body>
+</html>
+<script type="text/javascript">
+     var oDiv = document.getElementsByTagName('div')[0];
+     var start = document.getElementsByTagName('input')[0];
+     var stop = document.getElementsByTagName('input')[1];
+     var nowLeft  = 0;
+     var timer;
+
+     start.onclick = function(){
+            clearInterval(timer);
+            timer = setInterval(move,100);
+     }
+     stop.onclick = function(){
+        clearInterval(timer);
+     }
+
+     function move(){
+            nowLeft+=45;
+            if(nowLeft > 600){
+            clearInterval(timer);
+            nowLeft = 600;
+        }
+         oDiv.style.left = nowLeft+'px';
+     }
+</script>
