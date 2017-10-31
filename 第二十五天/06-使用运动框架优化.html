@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>06-使用运动框架优化</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top:100px;
+            left:100px;
+            opacity:0.5;
+            filter:alpha(opacity=50);
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="开始" />
+    <input type="button" value="停止" />
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/animate-2.0.2.js"></script>
+<script type="text/javascript">
+    var oDiv = document.getElementsByTagName('div')[0];
+    var start = document.getElementsByTagName('input')[0];
+    var stop = document.getElementsByTagName('input')[1];
+
+    start.onclick = function(){
+        if(oDiv.isAnimated){
+            return;
+        }
+        animate(oDiv,{"left":500},2000,function(){
+
+        });
+    }
+
+
+    /*animate(oDiv,{"width":"300","height":"300","top":"200","left":"500"},2000,function(){
+        alert('动画执行完了');
+    });*/
+
+</script>

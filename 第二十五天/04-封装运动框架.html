@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>04-封装运动框架</title>
+    <style type="text/css">
+         div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top:100px;
+            left:100px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/animate-1.0.0.js"></script>
+<script type="text/javascript">
+     var oDiv = document.getElementsByTagName('div')[0];
+
+     animate(oDiv,{"left":500},500,function(){
+        this.style.backgroundColor = "yellow";
+        animate(oDiv,{"top":500},500,function(){
+            this.style.backgroundColor = "blue";
+             animate(oDiv,{"left":100},500,function(){
+                this.style.backgroundColor = "black";
+                animate(oDiv,{"top":100},500,function(){
+                    this.style.backgroundColor = "gray";
+                });
+            });
+        });
+     });
+
+
+</script>

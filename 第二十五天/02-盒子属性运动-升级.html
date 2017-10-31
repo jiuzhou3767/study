@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>02-盒子属性运动-升级</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position:absolute;
+            left:0;
+            opacity:0.5;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="开始" />
+    <input type="button" value="结束" />
+    <div>
+
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    //获取元素
+     var oDiv = document.getElementsByTagName('div')[0];
+     var start = document.getElementsByTagName('input')[0];
+     var stop = document.getElementsByTagName('input')[1];
+
+     //获取属性
+     var nowWidth = parseInt(getStyle(oDiv,"width"));
+     var nowHeight = parseInt(getStyle(oDiv,"height"));
+
+     //设置结束位置
+     var endWidth = 500;
+     var endHeight = 500;
+
+
+     //总次数 = 总时间、 间隔时间
+     var time = 3000;
+     var interval = 20;
+     var zongcishu = time / interval;
+     var count = 0;
+
+     //计算步长
+     var stepWidth = (endWidth - nowWidth)/zongcishu;
+     var stepHeight = (endWidth - nowWidth)/zongcishu;
+     var timer;
+     start.onclick = function(){
+            clearInterval(timer);
+            timer = setInterval(function(){
+            nowWidth += stepWidth;
+            nowHeight += stepHeight;
+            if(count >= zongcishu){
+                nowWidth = endWidth;
+                nowHeight = endHeight;
+                clearInterval(time);
+            }
+            oDiv.style.width = nowWidth + 'px';
+            oDiv.style.height = nowHeight + 'px';
+         },interval);
+     }
+
+     stop.onclick = function(){
+        clearInterval(timer);
+     }
+
+
+
+     function getStyle(obj,property){
+        if(window.getComputedStyle){
+            property = property.replace(/([A-Z])/g,function(match,$1){
+                return "-" + $1.toLowerCase();
+            });
+            return window.getComputedStyle(obj)[property];
+        }else{
+            property = property.replace((/\-(a-z)/g),function(match,$1){
+                return $1.toUpperCase();
+            });
+
+            return obj.currentStyle[property];
+        }
+     }
+</script>
