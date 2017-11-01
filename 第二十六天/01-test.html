@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var arr = ["★★★","★★★★★","★★","★★★","★","★★★★★★★★","★★★","★★★★★"];
+        arr.sort(function(a,b){
+          if(a.length > b.length){
+              return -1;  //满足第一个条件，返回值是-1，a要排在b前面
+          }else if(a.length < b.length){
+              return 1;   //满足第二个条件，返回值是1，a要排在b后面
+          }else{
+              return 0;
+          }
+      });
+        console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
