@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>15-节点关系选择器</title>
+    <style type="text/css">
+         h3{
+            width: 200px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>第1个li</li>
+            <li>第2个li</li>
+            <li class="li03">第3个li</li>
+            <li>第4个li</li>
+            <li>第5个li</li>
+        </ul>
+        <h2>box的儿子h2</h2>
+    </div>
+
+    <h3>this点击</h3>
+    <h3>this点击</h3>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $('.box ul li').parent().css('border','1px solid #000');
+    $('.box ul li').parent().parent().css('border','1px solid #000');
+    $('.box').children('ul').css('border','1px solid red');
+    $('.li03').siblings().css('color','red');
+
+    $('h3').click(function(){
+        $(this).css('background','red');
+    });
+</script>

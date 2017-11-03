@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>04-jQuery操作CSS样式</title>
+     <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+     <button>变宽</button>
+    <button>变高</button>
+    <button>变色</button>
+    <button>三变</button>
+    <button>获取CSS属性值</button>
+    <button>在原基础上累加宽度</button>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('button').eq(0).click(function(){
+        $('div').css('width','500px');
+     });
+
+      $('button').eq(1).click(function(){
+        $('div').css('height','500px');
+     });
+
+       $('button').eq(2).click(function(){
+        $('div').css('background-color','red');
+     });
+
+        $('button').eq(3).click(function(){
+        console.log($('div').css(
+            {"width":"500px",
+            "height":"500px",
+            "background-color":"red"}));
+     });
+
+        $('button').eq(4).click(function(){
+            alert($('div').css('width'));
+     });
+
+        $('button').eq(5).click(function(){
+            $('div').css('width','+=30px');
+     });
+</script>

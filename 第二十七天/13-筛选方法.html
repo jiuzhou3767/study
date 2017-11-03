@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>13-筛选方法</title>
+    <style type="text/css">
+        p{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <p>第0个p标签</p>
+    <p>第1个p标签</p>
+    <p>第2个p标签</p>
+    <p>第3个p标签</p>
+    <p>第4个p标签</p>
+    <p>第5个p标签</p>
+    <p>第6个p标签</p>
+    <p>第7个p标签</p>
+    <p>第8个p标签</p>
+    <p>第9个p标签</p>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('p').first().css('background-color','blue');
+     $('p').last().css('background-color','blue');
+     $('p').eq(3).css('background-color','blue');
+</script>

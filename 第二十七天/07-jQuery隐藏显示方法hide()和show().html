@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>07-jQuery隐藏显示方法hide()和show()</title>
+</head>
+<body>
+    <button>隐藏</button>
+    <button>显示</button>
+    <button>显示和隐藏切换</button>
+    <br>
+    <img src="img/01.gif" >
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('button').eq(0).click(function(){
+        $('img').hide(2000);
+     });
+     $('button').eq(1).click(function(){
+        $('img').show(2000);
+     });
+     $('button').eq(2).click(function(){
+        $('img').toggle(2000);
+     });
+</script>

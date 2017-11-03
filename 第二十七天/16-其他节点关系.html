@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>16-其他节点关系</title>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>A</li>
+            <li>B
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </li>
+            <li>C</li>
+        </ul>
+    </div>
+
+    <div class="bigBox">
+        <div class="box0">0</div>
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     // $('.box').find('li').css('border','1px solid red');
+     // $('.box2').next().css('border','1px solid red');
+     // $('.box2').nextAll().css('border','1px solid red');
+     // $('.box2').prev().css('border','1px solid red');
+     $('.box2').prevAll().css('border','1px solid red');
+</script>

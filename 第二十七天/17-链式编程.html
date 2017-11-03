@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>17-链式编程</title>
+    <style type="text/css">
+        ul li{
+            list-style:none;
+            width: 30px;
+            height: 30px;
+            border-radius:50%;
+            background: #ccc;
+            text-align:center;
+            line-height: 30px;
+            float: left;
+            margin:10px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+         $(function(){
+            $('li').click(function(){
+                $(this).css('background-color','red').siblings().css('background','#ccc');
+            });
+         });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

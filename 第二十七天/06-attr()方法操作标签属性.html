@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>06-attr()方法操作标签属性</title>
+    <style type="text/css">
+        .bigImg{
+            border: 10px solid purple;
+        }
+    </style>
+</head>
+<body>
+     <button>点击换内容</button>
+    <img src="img/02.gif" alt="这是金三胖" title="朝鲜领导人" />
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('button').click(function(){
+        // alert($('img').attr('src'));
+        // $('img').attr('src','img/01.gif');
+         $('img').attr({
+                "src":"img/01.gif",
+                "tilte":"金三胖！！！！",
+                "class":"bigImg"
+            })
+
+     });
+</script>
