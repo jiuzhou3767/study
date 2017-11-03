@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work3</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        .box{
+            width: 600px;
+            padding:10px;
+            border:1px solid black;
+            overflow:hidden;
+            margin: 50px auto;
+        }
+        .box ul li{
+            float:left;
+            width: 193px;
+            text-align:center;
+            margin-top: 10px;
+        }
+        .box ul li a{
+            text-decoration:none;
+            color:black;
+        }
+        .box .downslide{
+            clear:both;
+            height: 24px;
+            width: 150px;
+            border:1px solid black;
+            line-height:24px;
+            text-align:center;
+            margin: 0 auto;
+            background:url(img/down.gif)no-repeat 15px 8px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var isOpen = true;
+            $('.downslide').click(function(){
+                // alert(1);
+                if(isOpen){
+                    // $('li').show();
+                    $('ul li:gt(5):not(:last)').slideUp(500);
+                    $('.downslide').html('显示内容');
+                    $('.downslide').css('background','url(img/down.gif)no-repeat 15px 8px');
+                    isOpen = false;
+                }else{
+                    $('ul li:gt(5):not(:last)').slideDown(500);
+                     $('.downslide').html('隐藏内容');
+                    $('.downslide').css('background','url(img/up.gif)no-repeat 15px 8px');
+                    isOpen = true;
+                }
+
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+              <li><a href="#">佳能</a></li>
+              <li><a href="#">索尼</a></li>
+              <li><a href="#">三星</a></li>
+              <li><a href="#">尼康</a></li>
+              <li><a href="#">松下</a></li>
+              <li><a href="#">卡西欧</a></li>
+              <li><a href="#">富士</a></li>
+              <li><a href="#">柯达</a></li>
+              <li><a href="#">宾得</a></li>
+              <li><a href="#">理光</a></li>
+              <li><a href="#">奥林巴斯</a></li>
+              <li><a href="#">明基</a></li>
+              <li><a href="#">其它品牌相机</a></li>
+          </ul>
+            <div class="downslide">
+                隐藏内容
+             </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work4</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        a{
+            color:white;
+            text-decoration:none;
+        }
+        .box{
+            width: 400px;
+            margin: 50px auto;
+        }
+        .outerul>li{
+            width: 100px;
+            height: 30px;
+            font:12px/30px "微软雅黑";
+            text-align:center;
+            background: #ccc;
+            float:left;
+        }
+        .innerul{
+            display:none;
+        }
+        .innerul li{
+            width: 100px;
+            height: 30px;
+            font:12px/30px "微软雅黑";
+            text-align:center;
+            background: #ccc;
+        }
+        .innerul li:hover{
+            background: pink;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+         $(function(){
+            // $('.outerul>li').mouseover(function(){
+            //     var num = $(this).index();
+            //     $(this).css('background-color','pink').siblings().css('background-color','#ccc');
+            //     $('.innerul').eq(num).slideDown(1000);
+            //     $(this).find('li').mouseover(function(){
+            //         $(this).css('background-color','pink').siblings().css('background-color','#ccc');
+            //     });
+            // });
+            // $('.outerul>li').mouseover(function(){
+            //      var num = $(this).index();
+            //      $('.innerul').eq(num).slideUp(1000);
+            // });
+            $('.outerul>li').hover(function(){
+                $(this).children('ul').stop().slideToggle();
+            });
+         });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul class="outerul">
+            <li>
+                <a href="###">网页设计</a>
+                <ul class="innerul">
+                    <li><a href="###">内容</a></li>
+                    <li><a href="###">内容</a></li>
+                    <li><a href="###">内容</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="###">平面设计</a>
+                <ul class="innerul">
+                    <li><a href="###">内容</a></li>
+                    <li><a href="###">内容</a></li>
+                    <li><a href="###">内容</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="###">电商设计</a>
+                <ul class="innerul">
+                    <li><a href="###">内容</a></li>
+                    <li><a href="###">内容</a></li>
+                    <li><a href="###">内容</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="###">UI设计</a>
+                <ul class="innerul">
+                    <li><a href="###">内容</a></li>
+                    <li><a href="###">内容</a></li>
+                    <li><a href="###">内容</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+</body>
+</html>

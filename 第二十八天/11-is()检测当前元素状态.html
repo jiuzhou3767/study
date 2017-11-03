@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>11-is()检测当前元素状态</title>
+    <style type="text/css">
+        p{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>0</p>
+        <p class="t">1</p>
+        <p class="t">2</p>
+        <p id="t">3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $('p').eq(3).animate({"width":1000},2500);
+    $('p').click(function(){
+        // alert($(this).is('.t'));
+        // alert($(this).is('#t'));
+        // alert($(this).is('#t'));
+        // alert($(this).is('p:odd'));
+        // alert($(this).is('p:lt(3)'));
+        // alert($(this).is('p:visible'));
+        alert($(this).is(':animated'));
+
+    });
+</script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>15-延迟显示文字</title>
+    <style type="text/css">
+        body{background: skyblue;}
+        p{text-align:center;font-size:20px;display: none;}
+    </style>
+</head>
+<body>
+    <div>
+        <p>一群嗜血的蚂蚁 被腐肉所吸引</p>
+        <p>我面无表情 看孤独的风景</p>
+        <p>失去你 爱恨开始分明</p>
+        <p>失去你 还有什么事好关心</p>
+        <p>当鸽子不再象征和平</p>
+        <p>我终于被提醒</p>
+        <p>广场上喂食的是秃鹰</p>
+        <p>我用漂亮的押韵</p>
+        <p>形容被掠夺一空的爱情</p>
+        <p>啊 乌云开始遮蔽 夜色不干净</p>
+        <p>公园里 葬礼的回音 在漫天飞行</p>
+        <p>送你的 白色玫瑰</p>
+        <p>在纯黑的环境凋零</p>
+        <p>乌鸦在树枝上诡异的很安静</p>
+        <p>静静听 我黑色的大衣</p>
+        <p>想温暖你 日渐冰冷的回忆</p>
+        <p>走过的 走过的 生命</p>
+        <p>啊 四周弥漫雾气</p>
+        <p>我在空旷的墓地</p>
+        <p>老去后还爱你</p>
+        <p>为你弹奏萧邦的夜曲</p>
+        <p>纪念我死去的爱情</p>
+        <p>跟夜风一样的声音</p>
+        <p>心碎的很好听</p>
+        <p>手在键盘敲很轻</p>
+        <p>我给的思念很小心</p>
+        <p>你埋葬的地方叫幽冥</p>
+        <p>为你弹奏萧邦的夜曲</p>
+        <p>纪念我死去的爱情</p>
+        <p>而我为你隐姓埋名</p>
+        <p>在月光下弹琴</p>
+        <p>对你心跳的感应</p>
+        <p>还是如此温热亲近</p>
+        <p>怀念你那鲜红的唇印</p>
+        <p>那些断翅的蜻蜓 散落在这森林</p>
+        <p>而我的眼睛 没有丝毫同情</p>
+        <p>失去你 泪水混浊不清</p>
+        <p>失去你 我连笑容都有阴影</p>
+        <p>风在长满青苔的屋顶</p>
+        <p>嘲笑我的伤心</p>
+        <p>像一口没有水的枯井</p>
+        <p>我用凄美的字型</p>
+        <p>描绘后悔莫及的那爱情</p>
+        <p>为你弹奏萧邦的夜曲</p>
+        <p>纪念我死去的爱情</p>
+        <p>跟夜风一样的声音</p>
+        <p>心碎的很好听</p>
+        <p>手在键盘敲很轻</p>
+        <p>我给的思念很小心</p>
+        <p>你埋葬的地方叫幽冥</p>
+        <p>为你弹奏萧邦的夜曲</p>
+        <p>纪念我死去的爱情</p>
+        <p>而我为你隐姓埋名 在月光下弹琴</p>
+        <p>对你心跳的感应 还是如此温热亲近</p>
+        <p>怀念你那鲜红的唇印</p>
+        <p>一群嗜血的蚂蚁 被腐肉所吸引</p>
+        <p>我面无表情 看孤独的风景</p>
+        <p>失去你 爱恨开始分明</p>
+        <p>失去你 还有什么事好关心</p>
+        <p>当鸽子不再象征和平</p>
+        <p>我终于被提醒</p>
+        <p>广场上喂食的是秃鹰</p>
+        <p>我用漂亮的押韵</p>
+        <p>形容被掠夺一空的爱情</p>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('p').each(function(index,ele){
+        $(this).delay(500*index).fadeIn();
+     });
+</script>

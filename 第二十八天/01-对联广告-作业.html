@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        div{
+            position: fixed;
+            top:100px;
+        }
+        .left{left:0;}
+        .right{right:0;}
+        div span{
+            position: absolute;
+            top:0;
+            right:0;
+            width: 20px;
+            height: 20px;
+            background: #ab0700;
+            color:#fff;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad">
+        <div class="left">
+            <img src="img/left.png" >
+            <span>X</span>
+        </div>
+        <div class="right">
+            <img src="img/right.png" >
+            <span>X</span>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(".ad span").click(function(){
+        $(this).parent().slideUp(); //点击span，让当前span的父亲向上滑动隐藏
+    });
+</script>

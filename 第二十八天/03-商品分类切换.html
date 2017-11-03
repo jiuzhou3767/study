@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        .con{
+            width: 600px;
+            border: 1px solid #000;
+            margin:100px auto;
+            padding:10px;
+        }
+        .con ul{
+            overflow: hidden;
+        }
+        .con ul li{
+            list-style:none;
+            float: left;
+            width: 200px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .con .btn{
+            width: 150px;
+            height: 22px;
+            display: block;
+            margin:10px auto;
+            text-align: center;
+            border: 1px solid #000;
+            color:#000;
+            line-height: 22px;
+            text-decoration:none;
+            background: url(img/down.gif) no-repeat 20px center;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <ul>
+            <li>佳能</li>
+            <li>索尼</li>
+            <li>三星</li>
+            <li>尼康</li>
+            <li>松下</li>
+            <li>卡西欧</li>
+            <li>富士</li>
+            <li>柯达</li>
+            <li>宾得</li>
+            <li>理光</li>
+            <li>奥林巴斯</li>
+            <li>明基</li>
+            <li>其它品牌相机</li>
+        </ul>
+        <a href="##" class="btn">显示内容</a>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    var myLi = $(".con ul li:not(:lt(3)):not(:last)");
+    myLi.hide();
+    var lock = true;
+    $('.btn').click(function(){
+        if(lock == true){
+            myLi.slideDown();
+            $(this).css("background-image","url(img/up.gif)").html("隐藏内容")
+            lock = false;
+        }else{
+            myLi.slideUp();
+            $(this).css("background-image","url(img/down.gif)").html("显示内容");
+            lock = true;
+        }
+    });
+</script>

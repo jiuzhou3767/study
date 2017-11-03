@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        .con{
+            width: 400px;
+            margin:100px auto;
+        }
+        .con ul{list-style:none;}
+        .con ul li{
+            float: left;
+            width: 100px;
+            height: 30px;
+            position: relative;
+        }
+        .con ul li a{
+            background: #ccc;
+            display: block;
+            width: 100px;
+            height: 30px;
+            color:#fff;
+            font-size:12px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration:none;
+        }
+        .con ul li a:hover{background: pink;}
+        .con ul ul{
+            position: absolute;
+            top:30px;
+            left:0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <ul>
+            <li>
+                <a href="##">项目内容1</a>
+                <ul>
+                    <li><a href="##">内容内容</a></li>
+                    <li><a href="##">内容内容</a></li>
+                    <li><a href="##">内容内容</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="##">项目内容2</a>
+                <ul>
+                    <li><a href="##">内容内容</a></li>
+                    <li><a href="##">内容内容</a></li>
+                    <li><a href="##">内容内容</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="##">项目内容3</a>
+                <ul>
+                    <li><a href="##">内容内容</a></li>
+                    <li><a href="##">内容内容</a></li>
+                    <li><a href="##">内容内容</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="##">项目内容4</a>
+                <ul>
+                    <li><a href="##">内容内容</a></li>
+                    <li><a href="##">内容内容</a></li>
+                    <li><a href="##">内容内容</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    /*$(".con>ul>li").mouseover(function(){
+        $(this).children('ul').slideDown();
+    });
+    $(".con>ul>li").mouseout(function(){
+        $(this).children('ul').slideUp();
+    });*/
+
+    /*$(".con>ul>li").mouseenter(function(){
+        $(this).children('ul').slideDown();
+    });
+    $(".con>ul>li").mouseleave(function(){
+        $(this).children('ul').slideUp();
+    });*/
+
+    /*$(".con>ul>li").mouseenter(function(){
+        $(this).children('ul').slideDown();
+    }).mouseleave(function(){
+        $(this).children('ul').slideUp();
+    });*/
+
+    /*$(".con>ul>li").hover(function(){
+        //鼠标移入，向下滑动显示
+        $(this).children('ul').slideDown();
+    },function(){
+        //鼠标移出，向上滑动隐藏
+        $(this).children('ul').slideUp();
+    });*/
+
+    $(".con>ul>li").hover(function(){
+        $(this).children('ul').stop().slideToggle();
+    });
+
+</script>

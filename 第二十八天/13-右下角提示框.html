@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>13-右下角提示框</title>
+    <style type="text/css">
+        .box{
+            width: 228px;
+            height: 405px;
+            background: url(img/box.png) no-repeat;
+            position: fixed;
+            bottom:0;
+            right:0;
+        }
+        .btn{
+            width: 40px;
+            height: 40px;
+            background: url(img/jian.png) no-repeat;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .cur{
+            background-image:url(img/jia.png);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <span class="btn"></span>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+ var isOpen = true;
+     $('.btn').click(function(){
+
+        if(isOpen){
+            $(this).parent().animate({"bottom":"-365px"},500).animate({"right":"-190px"},500,function(){
+                $(this).children('.btn').addClass('cur');
+            });
+            isOpen = false;
+        }else{
+            $(this).parent().animate({"right":"0"},500).animate({"bottom":"0"},500,function(){
+                $(this).children('.btn').removeClass('cur');
+            });
+            isOpen = true;
+        }
+     });
+</script>

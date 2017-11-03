@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work1</title>
+    <style type="text/css">
+        div{
+            position:fixed;
+            top:15%;
+            height: 460px;
+            width: 92px;
+        }
+        .leftAd{
+            left:0;
+            background-image:url(img/left.png);
+        }
+        .rightAd{
+            right:0;
+            background-image:url(img/right.png);
+        }
+        div span{
+            position:absolute;
+            top:0;
+            right:0;
+            width: 24px;
+            height: 24px;
+            opacity:0.5;
+            z-index:10;
+
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            // $('span').click(function(){
+            //     var num = $(this).index();
+            //     alert(num);
+            //     console.log($('span.close'));
+            //     $('div').eq(num).slideUp(1000);
+            //  });
+
+
+        //     $('span').eq(0).click(function(){
+        //         $('div').eq(0).slideUp(1000);
+        //     });
+        //     $('span').eq(1).click(function(){
+        //         $('div').eq(1).slideUp(1000);
+        //     });
+        // });
+
+        $('span').click(function(){
+            $(this).parent().slideUp(500);
+        });
+
+    });
+    </script>
+</head>
+<body>
+    <div class="leftAd"><span class="close"><img src="img/close.jpg" /></span></div>
+
+    <div class="rightAd"><span class="close"><img src="img/close.jpg" /></span></div>
+</body>
+</html>

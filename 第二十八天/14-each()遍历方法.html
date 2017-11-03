@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>14-each()遍历方法</title>
+        <style type="text/css">
+        div{
+            width: 550px;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+        div p{
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+            margin-right:10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>0</p>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <div>
+        <p>0</p>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <div>
+        <p>0</p>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     // $('div').eq(6).css('background-color','pink');
+     $('div').each(function(index,ele){
+        console.log(index,ele);
+        console.log($(this));
+        $(this).children().eq(1).css("background-color","pink");
+     })
+</script>

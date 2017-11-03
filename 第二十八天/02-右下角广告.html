@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Document</title>
+     <style type="text/css">
+     .ad{
+        position: absolute;
+        bottom:0;
+        right:0;
+     }
+     .ad .close{
+        position: absolute;
+        top:0;
+        right:0;
+     }
+    </style>
+</head>
+<body>
+ <!-- 右下角广告 -->
+    <div class="ad">
+        <img src="img/360.png" >
+        <img class="close" src="img/close.jpg" >
+    </div>
+    <!-- 右下角广告 -->
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('.ad .close').click(function(){
+        $(this).parent().slideUp();
+     });
+</script>

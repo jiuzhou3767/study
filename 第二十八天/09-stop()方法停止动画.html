@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>09-stop()方法停止动画</title>
+    <style type="text/css">
+          div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top:100px;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="stop()默认false、false" />
+    <input type="button" value="stop(true)" />
+    <input type="button" value="stop(true,true)" />
+    <input type="button" value="stop(false,true)" />
+    <input type="button" value="finish()" />
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('div').animate({"left":1000},1500);
+     $('div').animate({"top":500},1500);
+     $('div').animate({"left":0},1500);
+     $('div').animate({"top":100},1500);
+
+     $('input').eq(0).click(function(){
+        $('div').stop();
+     });
+
+     $('input').eq(1).click(function(){
+        $('div').stop(true);
+     });
+
+     $('input').eq(2).click(function(){
+        $('div').stop(true,true);
+     });
+
+     $('input').eq(3).click(function(){
+        $('div').stop(false,true);
+     });
+</script>

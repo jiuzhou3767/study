@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>19-手风琴</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        .con{
+            width: 800px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .con ul{
+            width: 2000px;
+            list-style:none;
+        }
+        .con ul li{
+            float: left;
+            width: 160px;
+            height: 300px;
+            position: relative;
+        }
+        .con ul li .mask{
+            width: 100%;
+            height: 300px;
+            background: #000;
+            opacity:0.6;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+ <div class="con">
+        <ul>
+            <li><span class="mask"></span><img src="img/0.jpg" /></li>
+            <li><span class="mask"></span><img src="img/1.jpg" /></li>
+            <li><span class="mask"></span><img src="img/2.jpg" /></li>
+            <li><span class="mask"></span><img src="img/3.jpg" /></li>
+            <li class="last"><span class="mask"></span><img src="img/4.jpg" alt="" /></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('.con ul li').mouseenter(function(){
+        $(this).stop(true).animate({"width":"560"},500).siblings().animate({"width":"60"},500);
+        $(this).children('.mask').stop(true).fadeOut(500);
+        $(this).siblings().children('.mask').fadeIn(500);
+     });
+
+     $('.con').mouseleave(function(){
+        $(this).find("li").stop(true).animate({"width":160},500);
+        $(this).find('.mask').stop(true).fadeIn(500);
+     });
+</script>
