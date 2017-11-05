@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>09-jQuery尺寸方法</title>
+    <style type="text/css">
+        body{
+            width: 2000px;
+            height: 1500px;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            padding:10px;
+            border: 10px solid orange;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <div style=""></div>
+    <p></p>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     console.log($('div').css('width')); //获取有px单位的宽度
+     console.log($('body').css('width')); //获取有px单位的宽度
+
+     // $('div').width(500);
+     // $('div').height(500);
+     console.log($('div').width());
+     console.log($('div').height());
+     console.log($('div').innerWidth());
+     console.log($('div').innerHeight());
+     console.log($('div').outerWidth());  //140
+     console.log($('div').outerHeight());  //140
+     console.log($('div').outerWidth(true));  //160
+     console.log($('div').outerHeight(true));  //160
+
+     console.log($(window).width()   ) //获取当前浏览器窗口的宽度
+     console.log($(window).height()  ) //获取当前浏览器窗口的高度
+     console.log($(document).width() ) //获取HTML文档（body）的宽度
+     console.log($(document).height()) //获取HTML文档（body）的高度
+</script>

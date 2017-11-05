@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>10-设置和获取内容方法</title>
+</head>
+<body>
+    <input type="text" value="默认内容">
+    <div><a href="###">点击我啊</a></div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('input').val('内容被修改了');
+     console.log($('input').val());
+
+    $('div').html('<a href="###">点击我啊！！！！</a>');
+     console.log($('div').html());
+
+    $('div').val('<a href="###">点击我啊！！！！</a>');
+     console.log($('div').text());
+</script>

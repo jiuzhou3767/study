@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>15-跑马灯轮播图-三位法</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        .carousel{
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        .carousel ul{
+            width: 4000px;
+            height: 300px;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .carousel ul li{
+            float: left;
+        }
+        .carousel .btn{
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            width: 30px;
+            height: 50px;
+            background: rgba(0,0,0,0.6);
+            font-size: 26px;
+            font-family: "微软雅黑";
+            line-height: 50px;
+            font-weight: normal;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+        }
+        .carousel a.leftBtn{
+            left:0;
+        }
+        .carousel a.rightBtn{
+            right:0;
+        }
+        .carousel .circle{
+            width: 150px;
+            height: 20px;
+            padding-top: 5px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -75px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 13px;
+        }
+        .carousel .circle li{
+            float: left;
+            width: 15px;
+            height: 15px;
+            margin: 0 5px;
+            background: #aaa;
+            border-radius: 50%;
+        }
+        .carousel .circle li.cur{
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel" id="carousel">
+        <ul class="m_unit" id="m_unit">
+           <li><a href="###"><img src="images/lunbo/01.jpg" ></a></li>
+           <li><a href="###"><img src="images/lunbo/02.jpg" ></a></li>
+           <li><a href="###"><img src="images/lunbo/03.jpg" ></a></li>
+           <li><a href="###"><img src="images/lunbo/04.jpg" ></a></li>
+           <li><a href="###"><img src="images/lunbo/05.jpg" ></a></li>
+           <li><a href="###"><img src="images/lunbo/06.jpg" ></a></li>
+        </ul>
+        <a href="###" class="btn leftBtn" id="leftBtn">&lt;</a>
+        <a href="###" class="btn rightBtn" id="rightBtn">&gt;</a>
+        <ol class="circle" id="circle">
+            <li class="cur"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $carousel = $('#carousel');
+     $m_unit = $('#m_unit');
+     $imgLis = $('#m_unit li');
+     $circleLis = $('#circle li');
+     $leftBtn = $('#leftBtn');
+     $rightBtn = $('#rightBtn');
+
+     var $imgLength = $imgLis.length;
+     console.log($imgLis.length);
+     $m_unit.append($imgLis.eq(0).clone());
+
+     var index = 0;
+     var speed = 500;
+     var width = 500;
+
+     $rightBtn.click(function(){
+        index++;
+        $m_unit.animate({"left":-width*index},speed,function(){
+             if(index == $imgLis.length){
+                $m_unit.css("left",0);
+                index = 0;
+            }
+            $circleLis.eq(index).addClass('cur').siblings().removeClass('cur');
+        });
+     });
+     $leftBtn.click(function(){
+        index--;
+         if(index < 0){
+                $m_unit.css("left",-$imgLis.length*width);
+                index = $imgLis.length -1;
+            }
+        $m_unit.animate({"left":-width*index},speed);
+        $circleLis.eq(index).addClass('cur').siblings().removeClass('cur');
+     });
+</script>

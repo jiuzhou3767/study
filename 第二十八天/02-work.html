@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>02-work</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        .box{
+            width: 600px;
+            margin:50px auto;
+            border:1px solid black;
+        }
+        .inner h3{
+            height: 40px;
+            width: 598px;
+            background: yellow;
+            line-height:40px;
+            border-bottom:1px solid black;
+        }
+        .inner .ans{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inner">
+            <h3>问题问题问题问题问题问题问题问题问</h3>
+            <div class="ans">
+                答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案
+            </div>
+        </div>
+        <div class="inner">
+            <h3>问题问题问题问题问题问题问题问题问</h3>
+            <div class="ans">
+                答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案
+            </div>
+        </div>
+        <div class="inner">
+            <h3>问题问题问题问题问题问题问题问题问</h3>
+            <div class="ans">
+                答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案
+            </div>
+        </div>
+        <div class="inner">
+            <h3>问题问题问题问题问题问题问题问题问</h3>
+            <div class="ans">
+                答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案
+            </div>
+        </div>
+        <div class="inner">
+            <h3>问题问题问题问题问题问题问题问题问</h3>
+            <div class="ans">
+                答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $('.box .inner h3').click(function(){
+        // $('h3').css("backgroundColor","yellow").next().slideUp('1000');
+        $(this).css("backgroundColor","red").next().slideDown('1000');
+        $(this).parent().siblings().children('h3').css("backgroundColor","yellow").next().slideUp('1000');
+    });
+     // $('ul').i = 100;
+     // console.log($('ul').i);
+     // console.log($('ul'));
+     // i = {};
+     // i.a = 100;
+     // console.log(i.a);
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>11-jQuery节点操作</title>
+</head>
+<body>
+    <p>你好啊！你喜欢吃什么水果</p>
+    <ul>
+        <li>葡萄</li>
+        <li>香蕉</li>
+        <li>榴莲</li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('ul').append('<li>苹果1</li>');
+     $('ul').append(function(){return '<li>苹果-函数</li>'});
+     $('<li>苹果2</li>').appendTo('ul');
+
+     $('ul').prepend('<li>梨子1</li>');
+     $('ul').prepend(function(){return '<li>梨子-函数</li>'});
+     $('<li>梨子2</li>').prependTo('ul');
+
+     $('ul').after('<div>以上水果都好吃1</div>');
+     $('<div>以上水果都好吃2</div>').insertAfter('ul');
+
+    $('ul').before('<div>以下水果你喜欢吃什么1</div>');  //在ul标签同级的前面添加div内容
+    $('<div>以下水果你喜欢吃什么2</div>').insertBefore('ul'); //将div内容添加到ul同级的前面
+</script>

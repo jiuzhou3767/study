@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>06-Javascript事件大全</title>
+    <style type="text/css">
+        body{
+            height:1500px;
+        }
+        div{
+            width:100px;
+            height:100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="内容">
+    <div></div>
+</body>
+</html>
+<script type="text/javascript">
+     var input = document.getElementsByTagName('input')[0];
+     var oDiv = document.getElementsByTagName('div')[0];
+     input.onchange = function(){
+        console.log('内容被改变了');
+     }
+     input.onkeydown = function(){
+        console.log('键盘按下了');
+     }
+     input.onkeyup = function(){
+        console.log('键盘松开了');
+     }
+     input.onmousedown = function(){
+        console.log('鼠标按下了');
+     }
+     input.onmouseup = function(){
+        console.log('鼠标松开了');
+     }
+
+     // oDiv.onmouseover = function(){
+     //    console.log('鼠标移入');
+     // }
+     //  oDiv.onmouseout = function(){
+     //    console.log('鼠标移出');
+     // }
+     oDiv.onmouseenter = function(){
+        console.log('鼠标移入');
+     }
+      oDiv.onmouseleave = function(){
+        console.log('鼠标移出');
+     }
+     oDiv.onmousemove = function(){
+        console.log('鼠标移动了');
+     }
+
+     // window.onresize = function(){
+     //    alert('窗口改变了大小');
+     // }
+
+     // document.body.onresize = function(){
+     //    alert("窗口改变了");
+     // }
+     document.body.onscroll = function(){
+        console.log(111);
+     }
+</script>

@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>13-腾讯影院-通栏banner</title>
+    <style type="text/css">
+       *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        img{
+            display: block;
+            outline: none;
+        }
+        .banner{
+            width: 100%;
+            height: 435px;
+            overflow: hidden;
+        }
+        .banner .carousel{
+            width: 100%;
+        }
+        .banner .carousel ul{
+            width: 100%;
+            position: relative;
+        }
+        .banner .carousel ul li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 435px;
+            display: none;
+        }
+        .banner .carousel ul li.first{display: block;}
+        .banner .carousel ul li img{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1680px;
+            height: 435px;
+            margin-left: -840px;
+        }
+        .banner .inner_c{
+            width: 1200px;
+            height: 435px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .banner .inner_c .carousel_ctl{
+            width: 867px;
+            height: 64px;
+            background:rgba(0,0,0,0.5);
+            position: absolute;
+            bottom: 17px;
+            left: 50%;
+            margin-left:-433px;
+        }
+        .banner .inner_c .carousel_ctl .btn{
+            position: absolute;
+            top: 7px;
+            width: 34px;
+            height: 50px;
+            background: url(images/filmqq/sprite_banner.png) no-repeat -34px 0;
+        }
+        .banner .inner_c .carousel_ctl a.leftbtn{
+            left: 100px;
+            display: none;
+        }
+
+        .banner .inner_c .carousel_ctl a.rightbtn{
+            right: 100px;
+            background-position: -72px 0;
+        }
+        .banner .inner_c .carousel_ctl .btn:hover{
+            background-color: rgba(0,0,0,0.6);
+        }
+        .banner .inner_c .carousel_ctl ol{
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            width: 320px;
+            height: 20px;
+            margin-left: -160px;
+        }
+        .banner .inner_c .carousel_ctl ol li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin-right: 30px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+        }
+        .banner .inner_c .carousel_ctl ol li.current{
+            background: gold;
+        }
+        .nomargin{
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner" id="banner">
+        <div class="carousel">
+            <ul id="m_unit">
+                <li class="first" data-color="#fefefe"><a href="###" ><img src="images/filmqq/0.jpg" /></a></li>
+                <li data-color="#be2124"><a href="###"><img src="images/filmqq/1.jpg" /></a></li>
+                <li data-color="#081521"><a href="###"><img src="images/filmqq/2.jpg" /></a></li>
+                <li data-color="#080908"><a href="###"><img src="images/filmqq/3.jpg" /></a></li>
+                <li data-color="#efeeec"><a href="###"><img src="images/filmqq/4.jpg" /></a></li>
+                <li data-color="#ffbd00"><a href="###"><img src="images/filmqq/5.jpg" /></a></li>
+                <li data-color="#0082c4"><a href="###"><img src="images/filmqq/6.jpg" /></a></li>
+            </ul>
+        </div>
+        <div class="inner_c">
+            <div class="carousel_ctl">
+                <a href="###" class="btn leftbtn" id="leftbtn"></a>
+                <a href="###" class="btn rightbtn" id="rightbtn"></a>
+                <ol class="circle" id="circle">
+                    <li class="current"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li class="nomargin"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    var $banner = $('#banner');
+     var $imgLis = $('#m_unit li');
+     var $leftbtn = $('#leftbtn');
+     var $rightbtn = $('#rightbtn');
+     var $circle = $('#circle li');
+
+     var index = 0;
+     var speed = 500;
+     $rightbtn.click(rightFn);
+
+     function rightFn(){
+        //函数节流
+        if($imgLis.eq(index).is(':animated')) return;
+
+        $imgLis.eq(index).stop(true).fadeOut(speed, function() {
+
+            $imgLis.eq(index).css('background-color',$imgLis.eq(index).attr("data-color")).stop(true).fadeIn(speed);
+
+        });
+        index++;
+         $circle.eq(index).addClass('current').siblings().removeClass('current');
+            console.log($imgLis.length);
+            if(index > 0){
+                $leftbtn.show();
+            }
+            if(index == $imgLis.length - 1){
+                $rightbtn.hide();
+            }
+     }
+
+    function circleFn(i){
+        $imgLis.eq(index).stop(true).fadeOut(speed,function(){
+            //淡出隐藏动画完毕后，让下一张图片显示，并给li瞬间添加一个纯色背景
+            $imgLis.eq(index).css('background-color',$imgLis.eq(index).attr("data-color")).stop(true).fadeIn(speed).siblings().fadeOut();
+        });
+        index = i;
+        //小圆点对应编号变化
+        $circle.eq(index).addClass('current').siblings().removeClass('current');
+        //左右按钮显示隐藏
+        if(index <= 0){
+            $leftbtn.hide();
+        }else{
+            $leftbtn.show();
+        }
+
+        if(index >= $imgLis.length - 1){
+            $rightbtn.hide();
+        }else{
+            $rightbtn.show();
+        }
+    }
+     $leftbtn.click(function(){
+            $imgLis.eq(index).stop(true).fadeOut(speed, function() {
+
+                $imgLis.eq(index).css('background-color',$imgLis.eq(index).attr("data-color")).stop(true).fadeIn(speed);
+
+            });
+            index--;
+             $circle.eq(index).addClass('current').siblings().removeClass('current');
+                console.log($imgLis.length)
+                if(index < $imgLis.length - 1){
+                    $rightbtn.show();
+                }
+                if(index == 0){
+                    $leftbtn.hide();
+                }
+         });
+     var sum = 0;
+     var timer_sum;
+     $circle.mouseenter(function(){
+        var index = $(this).index();
+        sum = 0;
+        clearInterval(timer_sum);
+        timer_sum = setInterval(function(){
+            sum++;
+            if(sum >= 200){
+                clearInterval(timer_sum);
+                circleFn(index);
+            }
+        },1);
+     });
+
+    var timer = setInterval(rightFn,2000);
+    $banner.hover(function(){
+        clearInterval(timer);
+    },function(){
+        timer = setInterval(rightFn,2000);
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     // var index1;
+     // $circle.mouseenter(function(){
+     //    $imgLis.eq(index).delay(1000).fadeOut(speed);
+     //    $imgLis.eq(index).siblings().delay(1000).fadeOut(speed);
+     //     index1 = index;
+     //     index = $(this).index();
+     //     $imgLis.eq(index).delay(1000).fadeIn(speed);
+     //      $(this).addClass('current').siblings().removeClass('current');
+     // });
+     // $circle.mouseout(function(){
+     //    $imgLis.eq(index1).stop(true);
+     //    $imgLis.eq(index).stop(true);
+     //    $imgLis.eq(index).stop(true);
+     //    index = index1;
+     //    // $circle.eq(index1).addClass('current').siblings().removeClass('current');
+     // });
+</script>
