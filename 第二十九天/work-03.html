@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work-03</title>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 25px;
+            padding: 5px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            font-size: 14px;
+            color: #333;
+            line-height: 30px;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        .carousel{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-left: 5px;
+            width: 495px;
+        }
+        .carousel p{
+            overflow: hidden;
+            width: 100%;
+        }
+        .carousel p a{
+            color: #333;
+            text-decoration: none;
+            float: left;
+        }
+        .carousel p span{
+            float: right;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+        <div id="carousel" class="carousel">
+            <p><a href="#">A股下周走势如何？次新股11月或现翻倍行情</a><span>2016/10/30</span></p>
+            <p><a href="#">10月擒获多只牛股 下周6股有望接力爆发</a><span>2016/10/30</span></p>
+            <p><a href="#">周末消息面偏向利空 明天大盘有下跌空间</a><span>2016/10/30</span></p>
+            <p><a href="#">牛人专注短技术形态牛股 涨停收益15% </a><span>2016/10/30</span></p>
+            <p><a href="#">如何辨识黑马股？这四大特征你必须知道</a><span>2016/10/30</span></p>
+            <p><a href="#">如何持有连续上涨个股？关注短线技术</a><span>2016/10/30</span></p>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    var index = 0;
+    var length = $('p').length - 1;
+    var step = 30;
+    function move(){
+        index++;
+        if(index > length){
+            $('#carousel').css({"top":0});
+            index =0;
+        }
+        $('#carousel').animate({"top":-index*step},500);
+    }
+    var timer = setInterval(move,2000);
+</script>

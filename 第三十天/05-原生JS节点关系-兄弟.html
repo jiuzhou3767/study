@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>05-原生JS节点关系-兄弟</title>
+</head>
+<body>
+    <div id="box">
+        <p>0</p>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <!--注释-->
+        <!--注释-->
+        <p id="pp">屁屁</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+     var box = document.getElementById('box');
+     var pp = document.getElementById('pp');
+      console.log(pp.previousSibling);  //Chrome是空文本节点；
+     console.log(pp.nextSibling);      //Chrome是空文本节点；
+
+
+     function prevSiblings(obj){
+        var prev = obj;
+        while(prev = prev.previousSibling){
+            if(prev.nodeType == 1){
+                return prev;
+            }
+        }
+        return null;
+     }
+
+
+     function nextSiblings(obj){
+        var next = obj;
+        while(next = next.nextSibling){
+            if(next.nodeType == 1){
+                return next;
+            }
+        }
+        return null;
+     }
+
+     function prevAll(obj){
+        var prev = obj;
+        var arr = [];
+        while(prev = prev.previousSibling){
+            if(prev.nodeType == 1){
+                arr.push(prev);
+            }
+        }
+        return arr;
+     }
+
+    prevSiblings(pp).style.backgroundColor = "red";
+    nextSiblings(pp).style.backgroundColor = "green";
+     prevAll(pp)[1].style.backgroundColor = "blue";
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>03-原生JS节点关系-儿子</title>
+</head>
+<body>
+    <div id="box">
+        <p class="p1">1</p>
+        文本內容！！！
+        <!--注释内容-->
+        <!--注释内容-->
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+     var oDiv = document.getElementById('box');
+     // console.log(oDiv.childNodes)
+     // console.log(oDiv.childNodes.length);
+     // console.log(oDiv.childNodes[9].nodeType);
+     // console.log(oDiv.childNodes[2].nodeName);
+     // console.log(oDiv.childNodes[2].nodeValue);
+     //
+     function children(obj,num){
+        var arr = [];
+        for(var i = 0;i < obj.childNodes.length;i++){
+            if(obj.childNodes[i].nodeType == 1){
+                arr.push(obj.childNodes[i]);
+            }
+        }
+        return num ? arr[num] : arr;
+     }
+     children(oDiv)[2].style.backgroundColor = 'red';
+     children(oDiv,3).style.backgroundColor = "green";
+
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>12-评分特效</title>
+        <style type="text/css">
+    *{ padding:0; margin:0; }
+    ul,ol{list-style:none;}
+    .pingfen{ width:150px; height:60px; margin:100px auto; }
+    .pingfen ul li{ float:left; width:27px; height:28px; background:url(images/star.gif) no-repeat 0 0; cursor:pointer;}
+    .pingfen ul li.current{ background-position:0 bottom;}
+    </style>
+</head>
+<body>
+    <div class="pingfen">
+        <ul>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <p>
+            您的评分为：
+            <span></span>
+        </p>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('.pingfen ul li').mouseenter(function(){
+        $(this).addClass('current').prevAll().addClass('current');
+        $(this).nextAll().removeClass('current');
+     });
+     $('.pingfen ul li').click(function(){
+        $('p span').html($(this).index()+1);
+     });
+</script>

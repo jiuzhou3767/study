@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>04-原生JS节点关系-父亲</title>
+</head>
+<body>
+    <div>
+        <p>
+            <input type="checkbox" /> 足球
+        </p>
+        <p>
+            <input type="checkbox" /> 篮球
+        </p>
+        <p>
+            <input type="checkbox" /> 排球
+        </p>
+        <p>
+            <input type="checkbox" /> 羽毛球
+        </p>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+     var input = document.getElementsByTagName('input');
+     for(var i = 0;i < input.length;i++){
+        input[i].onclick = function(){
+            if(this.checked){
+                this.parentNode.style.backgroundColor = 'green';
+            }else{
+                this.parentNode.style.backgroundColor = 'blue';
+            }
+        }
+     }
+</script>

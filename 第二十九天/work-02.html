@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work-02</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        .wsc{
+            width:1200px;
+            height: 100px;
+            margin:100px auto;
+            border: 1px solid #000;
+            overflow:hidden;
+        }
+        .wsc ul{
+           position: relative;
+            width:99999px;
+        }
+        .wsc ul li{
+            float: left;
+
+        }
+        .wsc ul li .hd{
+            float: left;
+            width:285px;
+            margin-right: 20px;
+        }
+        .wsc ul li .bd{
+            float: left;
+            width: 0px;
+            height: 100px;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="wsc">
+        <ul>
+            <li>
+                <div class="hd"><img src="images/dw/0.jpg "  /></div>
+                <div class="bd"><img src="images/dw/b0.jpg" /></div>
+            </li>
+            <li>
+                <div class="hd"><img src="images/dw/1.jpg " alt="" /></div>
+                <div class="bd"><img src="images/dw/b1.jpg" alt="" /></div>
+            </li>
+            <li>
+                <div class="hd"><img src="images/dw/2.jpg " alt="" /></div>
+                <div class="bd"><img src="images/dw/b2.jpg" alt="" /></div>
+            </li>
+            <li>
+                <div class="hd"><img src="images/dw/3.jpg " alt="" /></div>
+                <div class="bd"><img src="images/dw/b3.jpg" alt="" /></div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+        var index;
+        var width = 305;
+     $('.wsc ul li').mouseenter(function(){
+        console.log($(this).index());
+        index = $(this).index()
+        $(this).children('.bd').animate({"width":"895px"},500);
+        $(this).parent().animate({"left":-width*index},500)
+     });
+     $('.wsc ul li').mouseleave(function(){
+        console.log($(this).index());
+        index = $(this).index()
+        $(this).children('.bd').animate({"width":"0"},500);
+        $(this).parent().animate({"left":0},500)
+     });
+</script>

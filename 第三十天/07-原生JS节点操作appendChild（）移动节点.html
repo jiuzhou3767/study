@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>07-原生JS节点操作appendChild（）移动节点</title>
+</head>
+<body>
+    <div id="box1">
+        <p id="honghong">我是红红</p>
+    </div>
+    <div id="box2">
+
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+     var box2 = document.getElementById('box2');
+     var honghong = document.getElementById('honghong');
+
+     box2.appendChild(honghong);
+</script>

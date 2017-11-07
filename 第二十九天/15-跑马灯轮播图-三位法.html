@@ -18,10 +18,10 @@
             border: 1px solid #000;
             margin: 100px auto;
             position: relative;
-            /* overflow: hidden; */
+            overflow: hidden;
         }
         .carousel ul{
-            width: 4000px;
+            width: 500px;
             height: 300px;
             position: absolute;
             top:0;
@@ -29,6 +29,12 @@
         }
         .carousel ul li{
             float: left;
+            position: absolute;
+            top:0;
+            left:500px;
+        }
+        .carousel ul li.first{
+            left:0;
         }
         .carousel .btn{
             position: absolute;
@@ -78,7 +84,7 @@
 <body>
     <div class="carousel" id="carousel">
         <ul class="m_unit" id="m_unit">
-           <li><a href="###"><img src="images/lunbo/01.jpg" ></a></li>
+           <li class="first"><a href="###"><img src="images/lunbo/01.jpg" ></a></li>
            <li><a href="###"><img src="images/lunbo/02.jpg" ></a></li>
            <li><a href="###"><img src="images/lunbo/03.jpg" ></a></li>
            <li><a href="###"><img src="images/lunbo/04.jpg" ></a></li>
@@ -109,29 +115,36 @@
 
      var $imgLength = $imgLis.length;
      console.log($imgLis.length);
-     $m_unit.append($imgLis.eq(0).clone());
 
      var index = 0;
      var speed = 500;
      var width = 500;
 
-     $rightBtn.click(function(){
+     $rightBtn.click(rightFn);
+
+     function rightFn(){
+        $imgLis.eq(index).animate({"left":"-500px"});
         index++;
-        $m_unit.animate({"left":-width*index},speed,function(){
-             if(index == $imgLis.length){
-                $m_unit.css("left",0);
-                index = 0;
-            }
-            $circleLis.eq(index).addClass('cur').siblings().removeClass('cur');
-        });
-     });
+        if(index > $imgLis.length - 1){
+            index = 0;
+        }
+        $imgLis.eq(index).css({"left":"500px"}).animate({"left":"0"});
+        $circleLis.eq(index).addClass('cur').siblings().removeClass('cur');
+     }
      $leftBtn.click(function(){
+        $imgLis.eq(index).animate({"left":"500px"});
         index--;
-         if(index < 0){
-                $m_unit.css("left",-$imgLis.length*width);
-                index = $imgLis.length -1;
-            }
-        $m_unit.animate({"left":-width*index},speed);
+        if(index < 0){
+            index = $imgLis.length - 1;
+        }
+        $imgLis.eq(index).css({"left":"-500px"}).animate({"left":"0"});
         $circleLis.eq(index).addClass('cur').siblings().removeClass('cur');
      });
+     var timer = setInterval(rightFn,1000);
+     $carousel.hover(function(){
+        clearInterval(timer);
+     },function(){
+        timer = setInterval(rightFn,1000);
+     });
+
 </script>

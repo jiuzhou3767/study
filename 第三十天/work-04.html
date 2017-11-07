@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>work-04</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 258px;
+            height: 78px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        .carousel{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+        }
+        .carousel p{
+            float: left;
+            width: 78px;
+            height: 78px;
+            margin-right: 12px;
+        }
+        img{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <div id="carousel" class="carousel">
+            <p><a href="#"><img src="images/stars/0.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/1.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/2.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/3.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/4.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/5.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/6.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/7.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/8.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/9.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/10.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/11.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/12.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/13.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/14.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/15.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/16.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/17.jpg" alt="" /></a></p>
+            <p><a href="#"><img src="images/stars/18.jpg" alt="" /></a></p>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+
+    var $1 = $('#carousel p').eq(0).clone();
+    console.log($1);
+    var $2 = $('#carousel p').eq(1).clone();
+    var $3 = $('#carousel p').eq(2).clone();
+
+     $('#carousel').append('<div></div>');
+     $('#carousel div').css({"width":"300px","clear":"both"});
+     $('#carousel div').prepend($1);
+     $('#carousel div').prepend($2);
+     $('#carousel div').prepend($3);
+</script>
