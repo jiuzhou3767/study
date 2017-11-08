@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>04-test</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+     function rgb2hex(sRGB) {
+        var reg = /(\d+),\s*(\d+),\s*(\d+),\s*/g;
+        sRGB.replace(reg,function(match,$1,$2,$3){
+            if($1 > 255|| $2 > 255||$3 > 255){
+                return sRGB;
+            }
+            return ''+$1+$2+$3;
+        });
+
+    }
+    console.log(rgb2hex('rgb(255, 255, 255)'));
+</script>

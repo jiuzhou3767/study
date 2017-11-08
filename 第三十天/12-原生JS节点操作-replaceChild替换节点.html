@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>12-原生JS节点操作-replaceChild替换节点</title>
+</head>
+<body>
+    <div>
+        <p>赵丽颖</p>
+        <p id="lh">鹿晗</p>
+        <p>迪丽热巴</p>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+     var oDiv = document.getElementsByTagName('div')[0];
+     var lh = document.getElementById('lh');
+
+     var op = document.createElement('p');
+     op.innerHTML = '朱老师';
+     oDiv.replaceChild(op,lh);
+</script>

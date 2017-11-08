@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>10-原生JS节点操作-innsertBefore</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <input type="button" id="btn" value="添加">
+    <ul>
+        <li>AAAA</li>
+        <li>BBBB</li>
+        <li>CCCC</li>
+        <li>DDDD</li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript">
+    var ul = document.getElementsByTagName('ul')[0];
+    var lis = document.getElementsByTagName('li');
+    var btn = document.getElementById('btn');
+    var txt = document.getElementById('txt');
+
+    btn.onclick = function(){
+        var oLi = document.createElement('li');
+        oLi.innerHTML = txt.value;
+        ul.insertBefore(oLi,lis[0]);
+    }
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>03-test</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+    function strLength(s, bUnicode255For1) {
+        console.log(s.length);
+}
+
+strLength('hello world, 牛客');
+function strLength(s, bUnicode255For1) {
+//如果bUnicode255For1为false，返回s的长度加正则匹配\u0256-\uffff的长度
+return s.length+(bUnicode255For1?0:(s.match(/[\u0256-\uffff]/g)||[]).length)
+}
+</script>

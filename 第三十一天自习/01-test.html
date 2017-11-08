@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>01-test</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+
+    function getUrlParam(sUrl, sKey) {
+    var arr = [];
+    var arr1 = [];
+    var reg = /([A-z0-9]+)=(\d)+/g;
+    sUrl.replace(reg,function(match,$1,$2){
+
+        if($1 == sKey){
+            arr1.push($1);
+            arr.push($2);
+        }
+    });
+    // if(arr.length == 1){
+    //     return arr[0];
+    // }else if(!arguments[1]){
+    //     return '';
+    // }
+    // else if(arr.length == 0){
+    //     return '';
+    // }else{
+    //     return(arr);
+    // }
+    //
+    return arr[sKey];
+
+}
+var result = getUrlParam('http://www.nowcoder.com?key=1&key=2&key=3&test=4#hehe','test');
+console.log(result);
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>24-事件委托-轮播图小圆点案例</title>
+    <style type="text/css">
+        ol{
+            width: 1000px;
+            height: 100px;
+            border: 1px solid #000;
+            margin:100px auto;
+        }
+        ol li{
+            list-style:none;
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            border-radius:50%;
+            margin:10px;
+            float: left;
+            cursor: pointer;
+        }
+         ol li.cur{
+            background:orange;
+         }
+    </style>
+</head>
+<body>
+    <ol id="ol">
+        <li class="cur"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('ol').mouseover(function(event){
+        var event = event || window.event;
+
+        var target = event.target || event.srcElement;
+        $(event.target).addClass('cur').siblings().removeClass('cur');
+     });
+</script>

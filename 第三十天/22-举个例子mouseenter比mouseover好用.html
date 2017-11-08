@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>22-举个例子mouseenter比mouseover好用</title>
+    <style type="text/css">
+        #box{
+            width: 300px;
+            height: 500px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        #mask{
+            width: 300px;
+            height: 100px;
+            background: #ccc;
+            position: absolute;
+            bottom:0;
+            left:0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="mask">
+
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+     $('#box').mouseenter(function(){
+        $(this).children('#mask').slideDown();
+     });
+     $('#box').mouseleave(function(){
+        $(this).children('#mask').slideUp();
+     })
+</script>
