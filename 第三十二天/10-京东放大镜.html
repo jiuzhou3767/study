@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>10-京东放大镜</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        #picBox{
+            width: 350px;
+            height: 350px;
+            border:1px solid black;
+            position:relative;
+            float:left;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+            #picBox #zoom{
+            width: 175px;
+            height: 175px;
+            background-color:orange;
+            opacity:0.5;
+            filter:alpha(opacity=50);
+            position:absolute;
+            top:0;
+            left:0;
+            cursor:move;
+        }
+        #dapicBox{
+            width: 400px;
+            height: 400px;
+            float:left;
+            overflow:hidden;
+            margin-top: 50px;
+            margin-left: 50px;
+            position:relative;
+        }
+
+        #dapicBox img{
+            position:absolute;
+            top: 0;
+            left:0;
+            width: 800px;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="picBox">
+        <img src="images/xiao.jpg" alt="">
+        <p id="zoom"></p>
+    </div>
+    <div id="dapicBox">
+        <img src="images/da.jpg" alt="" id="datu"/>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/getAlloffset.js"></script>
+<script type="text/javascript">
+     var picBox = document.getElementById('picBox');
+     var zoom = document.getElementById('zoom');
+     var datu = document.getElementById('datu');
+
+     var picBoxJingLeft = getAlloffset(picBox).left;
+     var picBoxJingTop = getAlloffset(picBox).top;
+
+     picBox.onmousemove = function(event){
+        var event = event || window.event;
+
+        //得到卷动值
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+
+        var x = event.clientX + scrollLeft - picBoxJingLeft;
+        var y = event.clientY + scrollTop - picBoxJingTop;
+
+        var zoomLeft = x - 175 /2;
+        var zoomTop = y - 175 /2;
+
+        if(zoomLeft < 0){
+            zoomLeft = 0;
+        }else if(zoomLeft > 175){
+            zoomLeft = 175;
+        }
+        if(zoomTop < 0){
+            zoomTop = 0;
+        }else if(zoomTop > 175){
+            zoomTop = 175;
+        }
+
+        zoom.style.left = zoomLeft + 'px';
+        zoom.style.top = zoomTop + 'px';
+
+        datu.style.left = -zoomLeft *(400/175) + 'px';
+        datu.style.top = -zoomTop *(400/175) + 'px';
+
+
+     }
+
+</script>

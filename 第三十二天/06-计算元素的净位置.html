@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>06-计算元素的净位置</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        #box1{
+            width: 400px;
+            height: 400px;
+            background: red;
+            padding:30px;
+            border: 10px solid purple;
+            margin-top:100px;
+        }
+        #box2{
+            width: 300px;
+            height: 300px;
+            background: green;
+            padding:30px;
+            border: 10px solid purple;
+            position: relative;
+        }
+        #box3{
+            background: blue;
+            padding:30px;
+            border: 10px solid purple;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            border: 10px solid purple;
+
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="box1">
+        <div id="box2">
+            <div id="box3">
+                <p id="mingming"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+     var xiaoming = document.getElementById('mingming');
+
+     function getAlloffset(o){
+        var isIE8 = window.navigator.userAgent.indexOf('MSIE 8.0') != -1;
+        var result = {
+            "top":o.offsetTop,
+            "left":o.offsetLeft
+        }
+        while(o = o.offsetParent){
+            if(window.getComputedStyle){
+                var borderTop = parseInt(getComputedStyle(o)['border-top-width']);
+                var borderLeft = parseInt(getComputedStyle(o)['border-left-width']);
+            }else{
+                var borderTop = parseInt(o.currentStyle['borderTopWidth']);
+                var borderLeft = parseInt(o.currentStyl['borderLeftWidth']);
+            }
+            if(isNaN(borderTop)){
+                borderTop = 0;
+            }
+            if(isNaN(borderLeft)){
+                borderLeft = 0;
+            }
+
+            !isIE8 && (result.top += borderTop);
+            !isIE8 && (result.left += borderLeft);
+            result.top +=o.offsetTop;
+            result.left += o.offsetLeft;
+        }
+        return result;
+     }
+     alert(getAlloffset(xiaoming).top);
+     alert(getAlloffset(xiaoming).left);
+</script>

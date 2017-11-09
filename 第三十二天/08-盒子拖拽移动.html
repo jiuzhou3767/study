@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>08-盒子拖拽移动</title>
+    <style type="text/css">
+        img{
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/baby.png" id="baby">
+</body>
+</html>
+<script type="text/javascript">
+     var img = document.getElementById('baby');
+
+     img.onmousedown = function(event){
+        var event = event || window.event;
+        var dx = event.offsetX;
+        var dy = event.offsetY;
+
+        document.onmousemove = function(event){
+             var event = event || window.event;
+
+             var X = event.clientX - dx;
+             var Y = event.clientY - dy;
+
+            img.style.left = X +"px";
+            img.style.top = Y +"px";
+
+            return false;
+        }
+     }
+     document.onmouseup = function(){
+        document.onmousemove = null;
+     }
+</script>

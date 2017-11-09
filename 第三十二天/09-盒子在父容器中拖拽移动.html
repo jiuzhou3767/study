@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>09-盒子在父容器中拖拽移动</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        #box{
+            width: 558px;
+            height: 558px;
+            border: 1px solid #000;
+            margin:100px;
+            position: relative;
+        }
+        img{
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="images/baby.png" id="baby">
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/getAlloffset.js"></script>
+<script type="text/javascript">
+    var img = document.getElementById('baby');
+    var box = document.getElementById('box');
+    var boxJingLeft = getAlloffset(box).left;
+    var boxJingTop = getAlloffset(box).top;
+
+    img.onmousedown = function(event){
+        var event =event || window.event;
+        var dx = event.offsetX;
+        var dy = event.offsetY;
+
+        document.onmousemove = function(event){
+            var event =event || window.event;
+
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+
+            var x = event.clientX + scrollLeft - boxJingLeft -dx;
+            var y = event.clientY + scrollTop - boxJingTop -dy;
+
+            if(x > 300){
+                x = 300;
+            }else if(x < 0){
+                x = 0;
+            }
+            if(y > 300){
+                y = 300;
+            }else if(y < 0){
+                y = 0;
+            }
+            img.style.left = x + "px";
+            img.style.top = y + "px";
+            return false;
+
+        }
+        return false;
+    }
+    document.onmouseup = function(){
+        document.onmousemove = null;
+    }
+
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>03-阻止事件继续传播-小案例</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .accordion{
+            width: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        .accordion .item h3{
+            padding: 4px;
+            background:yellow;
+            border-bottom: 1px solid #000;
+            cursor: pointer;
+        }
+        .accordion .item h3 span{
+            font-size: 12px;
+            text-decoration: underline;
+            color:blue;
+            padding: 4px;
+            background: pink;
+            border-radius: 4px;
+        }
+        .accordion .item h3 span:hover{
+            background-color: white;
+        }
+        .accordion .item .content{
+            padding: 6px;
+            line-height: 150%;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordion">
+        <div class="item">
+            <h3>项目标题 <span>只看这项</span></h3>
+            <div class="content">项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容</div>
+        </div>
+        <div class="item">
+            <h3>项目标题 <span>只看这项</span></h3>
+            <div class="content">项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容</div>
+        </div>
+        <div class="item">
+            <h3>项目标题 <span>只看这项</span></h3>
+            <div class="content">项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容</div>
+        </div>
+        <div class="item">
+            <h3>项目标题 <span>只看这项</span></h3>
+            <div class="content">项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容</div>
+        </div>
+        <div class="item">
+            <h3>项目标题 <span>只看这项</span></h3>
+            <div class="content">项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容项目内容</div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     $('.item h3').click(function(){
+        $(this).next('.content').slideToggle();
+     });
+     $('.item h3 span').click(function(event){
+        event.stopPropagation();
+        $(this).next('.centent').slideDown();
+        $(this).parent().parent().siblings().children('.content').slideUp();
+     })
+</script>

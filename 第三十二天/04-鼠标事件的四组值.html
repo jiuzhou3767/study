@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>04-鼠标事件的四组值</title>
+    <style type="text/css">
+        body{
+            height: 3000px;
+        }
+        *{margin: 0;padding: 0;}
+        #box{
+            width: 300px;
+            height: 300px;
+            background: #ccc;
+            margin:100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
+<script type="text/javascript">
+     var box = document.getElementById('box');
+
+     box.onmousemove = function(event){
+        box.innerHTML = "pageX和pageY" + event.pageX +","+event.pageY + "<br/>";
+        box.innerHTML += "screenX和screenY：" + event.screenX +","+event.screenY + "<br/>";
+        box.innerHTML += "clientX和clientY：" + event.clientX +","+event.clientY + "<br/>";
+        box.innerHTML += "offsetX和offsetY：" + event.offsetX +","+event.offsetY + "<br/>";
+     }
+</script>
