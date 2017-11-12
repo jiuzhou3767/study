@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>08-拼图轮播-JS遍历计算图片和定位</title>
+    <style type="text/css">
+        div{
+            width: 140px;
+            height: 150px;
+            border:1px solid #ccc;
+            float: left;
+            position: absolute;
+            top:400px;
+            background:url(images/lunbo/3.jpg) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box0">0</div>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+    <div class="box6">6</div>
+    <div class="box7">7</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     $('div').each(function(i){
+        var x = -i % 4 * 140;
+        var y = -parseInt(i / 4)* 150;
+        $(this).css({
+            'left':500,
+            'top':500,
+            'background-position':x+"px "+y+"px"
+        }).delay(i * 400).animate({'left':i % 4 * 140,'top':parseInt(i / 4) * 150},500);
+     })
+</script>

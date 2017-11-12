@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>03-HTML5新布局标签</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        .main_header{
+            width: 1000px;
+            height: 100px;
+            margin:0 auto;
+            background-color:pink;
+        }
+        .main_header .logo{
+            float: left;
+            width: 200px;
+            height: 60px;
+            background-color:orange;
+            position: relative;
+            top:10px;
+            left:10px;
+        }
+        .main_header .right_part{
+            float: left;
+            width: 700px;
+            height: 60px;
+            margin-left: 30px;
+            position: relative;
+            top:10px;
+            left:10px;
+        }
+        .main_header .right_part .select{
+            float: right;
+            width: 200px;
+            height: 30px;
+            background-color:yellowgreen;
+        }
+        .main_nav{
+            width: 200px;
+            height: 30px;
+            background-color:yellowgreen;
+        }
+        .content{
+            width: 1000px;
+            height: 400px;
+            margin:20px auto;
+            background-color:pink;
+        }
+        .content aside{
+            float: left;
+            width: 200px;
+            height: 400px;
+            background-color:#333;
+        }
+        .content main{
+            float: left;
+            width: 800px;
+            height: 400px;
+            background-color:#eee;
+        }
+         .content main article{
+            padding:20px;
+         }
+        .content main article header h1{
+            text-align: center;
+
+        }
+         .content main article section{
+            line-height: 150%;
+        }
+        .main_footer{
+             width: 1000px;
+            height: 200px;
+            margin:20px auto;
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="main_header">
+        <div class="logo"></div>
+        <section class="right_part">
+            <div class="select"></div>
+            <nav class="main_nav">
+                <ul>
+                    <li><a href="#"></a></li><!--
+                 --><li><a href="#"></a></li><!--
+                 --><li><a href="#"></a></li><!--
+                 --><li><a href="#"></a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <section class="content">
+    <aside></aside>
+    <main>
+        <article>
+            <header id="header" class=""><h1>文章名字</h1></header>
+            <section class="art_content">文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</section>
+        </article>
+
+        <article>
+            <header id="header" class=""><h1>文章名字</h1></header>
+            <section class="art_content">文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</section>
+        </article>
+
+        <article>
+            <header id="header" class=""><h1>文章名字</h1></header>
+            <section class="art_content">文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</section>
+        </article>
+    </main>
+    </section>
+    <footer class="main_footer">
+
+    </footer>
+</body>
+</html>

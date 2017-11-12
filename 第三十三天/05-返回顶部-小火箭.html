@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>05-返回顶部-小火箭</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        body{
+            height: 3000px;
+            background: linear-gradient(orange,pink,purple,skyblue);
+        }
+        .backTop{
+            width: 125px;
+            height: 200px;
+            background: url(images/rocket.png) no-repeat;
+            cursor: pointer;
+            position: fixed;
+            bottom:50px;
+            right:100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="backTop"></div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+    $(window).scroll(function(){
+        var scrollTop = $(window).scrollTop();
+        if(scrollTop >200){
+            $('.backTop').stop(true).fadeIn(500);
+        }else{
+            $('.backTop').stop(true).fadeOut(500);
+        }
+    });
+
+    $('.backTop').click(function(){
+        var index = 0;
+        $('html,body').animate({'scrollTop':0},1000);
+        var timer = setInterval(function(){
+            index++;
+            $('.backTop').css('background-position',index * -125 +'px 0px');
+            if(index > 3){
+                clearInterval(timer);
+                $('.backTop').css('background-position','0 0');
+            }
+            console.log(index);
+        },250);
+    })
+</script>

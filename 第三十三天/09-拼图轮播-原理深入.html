@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>09-拼图轮播-原理深入</title>
+    <style type="text/css">
+        div{
+            width: 56px;
+            height: 30px;
+            border:1px solid #ccc;
+            float: left;
+            position: absolute;
+            top:400px;
+            background:url(images/lunbo/4.jpg) no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     for(var row = 0;row < 10;row++ ){
+        for(var col = 0;col < 10;col++){
+            var $div = $('<div></div>');
+            $div.css({
+                'left':0,
+                'top':400,
+                'background-position':-56 * col+'px '+ -30 * row+'px'
+            });
+            $('body').append($div);
+        }
+     }
+
+     $('div').each(function(i){
+        $(this).delay(Math.random()*1000+i*10).animate({
+            'left':i % 10 * 56,
+            'top':parseInt(i / 10) * 30
+        },500);
+     });
+</script>

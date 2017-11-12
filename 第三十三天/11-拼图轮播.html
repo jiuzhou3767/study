@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>11-拼图轮播</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        ol,ul{list-style:none;}
+        .carousel{
+            width: 900px;
+            height: 540px;
+            border: 1px solid #000;
+            position: relative;
+            margin:50px auto;
+        }
+        .carousel ul li{display: none;}
+        .carousel ul li.current{display: block;}
+        .carousel .btns span{
+            position: absolute;
+            top:50%;
+            width: 60px;
+            height: 60px;
+            background:orange;
+            border-radius:50%;
+            cursor: pointer;
+            z-index:10;
+        }
+        .carousel .btns .leftBtn{left:0;}
+        .carousel .btns .rightBtn{right:0;}
+        .carousel ol{position: absolute;bottom:20px;left:50%;margin-left:-105px;z-index:10;}
+        .carousel ol li{float: left;width: 20px;height: 20px;background: yellow;border-radius:50%;margin:5px;cursor: pointer;}
+        .carousel ol li.current{background: blue;}
+        #magicbox{
+            position:absolute;
+            top:0;
+            left:0;
+            width: 900px;
+            height: 540px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <ul>
+            <li class="current"><a href="###"><img src="images/aoyun/0.jpg" ></a></li>
+            <li><a href="###"><img src="images/aoyun/1.jpg" ></a></li>
+            <li><a href="###"><img src="images/aoyun/2.jpg" ></a></li>
+            <li><a href="###"><img src="images/aoyun/3.jpg" ></a></li>
+            <li><a href="###"><img src="images/aoyun/4.jpg" ></a></li>
+            <li><a href="###"><img src="images/aoyun/5.jpg" ></a></li>
+            <li><a href="###"><img src="images/aoyun/6.jpg" ></a></li>
+        </ul>
+        <div class="btns">
+            <span class="leftBtn"></span>
+            <span class="rightBtn"></span>
+        </div>
+        <ol>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <div id="magicbox">
+
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     for(var i = 0;i < 100;i++){
+         $('<p>'+i+'</p>').css({
+            'position':'absolute',
+            'width':90,
+            'height':54,
+            'left':i % 10 * 90,
+            'top':parseInt(i / 10) * 54,
+            'background':'url(images/aoyun/0.jpg)',
+            'background-position':-i % 10 * 90 +'px '+ -parseInt(i / 10) * 54 + 'px',
+            'display':'none'
+        }).appendTo('#magicbox');
+     }
+
+     var index = 0;
+     var lock = true;
+
+     $('.rightBtn').click(function(){
+        if(!lock)return;
+        index++;
+        if(index > $('.carousel ol li').length - 1){
+            index = 0;
+        }
+
+        $('.carousel ol li').eq(index).addClass('current').siblings().removeClass('current');
+        var imgSrc = $('.carousel ul li img').eq(index).attr('src');
+        $('#magicbox p').css('background-image','url('+imgSrc+')');
+        $('#magicbox p').each(function(i){
+            $(this).delay(Math.random() * 800).fadeIn();
+        });
+        setTimeout(function(){
+             $('#magicbox p').hide();
+            //并且切换下一张图片
+            $('.carousel ul li').eq(index).addClass('current').siblings().removeClass('current');
+             lock = true;//节流
+        },1000);
+     });
+
+     $('.leftBtn').click(function(){
+        if(!lock)return;
+        index--;
+        if(index < 0){
+            index = $('.carousel ol li').length - 1;
+        }
+
+        $('.carousel ol li').eq(index).addClass('current').siblings().removeClass('current');
+        var imgSrc = $('.carousel ul li img').eq(index).attr('src');
+        $('#magicbox p').css('background-image','url('+imgSrc+')');
+        $('#magicbox p').each(function(i){
+            $(this).delay(Math.random() * 800).fadeIn();
+        });
+        setTimeout(function(){
+             $('#magicbox p').hide();
+            //并且切换下一张图片
+            $('.carousel ul li').eq(index).addClass('current').siblings().removeClass('current');
+            lock = true;//节流
+        },1000);
+     });
+</script>

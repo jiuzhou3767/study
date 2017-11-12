@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>19-本地存储使用JSON</title>
+</head>
+<body>
+    <button>存储数据</button>
+    <button>读取数据</button>
+</body>
+</html>
+<script type="text/javascript">
+     var btn = document.getElementsByTagName('button');
+
+     var data = {'a':1,'b':2,'c':[1,2,3,4]};
+
+     var dataStr = JSON.stringify(data);
+
+     localStorage.setItem('iqianduan.cn_json',dataStr);
+
+     var str = localStorage.getItem('iqianduan.cn_json');
+
+     var dataObj = JSON.parse(str);url()
+
+     console.log(dataObj.c);//完成存取，localstorage只能保存字符串，只有通过这种方式；
+     var str = localStorage.getItem('iqianduan.cn_json');
+     var dataObj = JSON.parse(str);
+     dataObj.d = 5;
+
+     var dataStr = JSON.stringify(dataObj);
+     localStorage.setItem('iqianduan.cn_json',dataStr);
+</script>

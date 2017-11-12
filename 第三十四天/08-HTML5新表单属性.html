@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>08-HTML5新表单属性</title>
+</head>
+<body>
+    <form action="http://www.baidu.com" id="forms">
+        <p>自动获取焦点：<input type="text" autofocus></p>
+        <p>必填项：<input type="text" required></p>
+        <p>提示文本：<input type="text" placeholder="请输入内容" autocomplete="off"></p>
+        <p>选择照片：<input type="file" multiple/></p>
+        <p>输入手机号：<input type="text" pattern="^[\d]{11}$"/></p>
+        <p>数字间隔：<input type="number" step="3" /></p>
+        <input type="submit">
+    </form>
+    <input type="text" required form="forms">
+</body>
+</html>

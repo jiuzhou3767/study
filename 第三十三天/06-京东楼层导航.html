@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>06-京东楼层导航</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        ul{list-style:none;}
+        .navLeft{
+            position: fixed;
+            top:100px;
+            left:50px;
+            display: none;
+        }
+        .navLeft ul li{
+            width: 40px;
+            height: 40px;
+            background: #918888;
+            text-align:center;
+            line-height:40px;
+            border-bottom:1px solid #ccc;
+            cursor: pointer;
+        }
+        .navLeft ul li:hover,.navLeft ul li.cur{background: #d70b1c;color:#fff;}
+        .header,.footer{
+            width: 1000px;
+            height: 500px;
+            background: orange;
+            margin:10px auto;
+        }
+        .floor{
+            width: 1000px;
+            height: 500px;
+            margin:10px auto;
+        }
+        .floor0{background: pink;}
+        .floor1{background: skyblue;}
+        .floor2{background: yellowgreen;}
+        .floor3{background: lightblue;}
+        .floor4{background: purple;}
+        .floor5{background: green;}
+    </style>
+</head>
+<body>
+    <div class="navLeft">
+        <ul>
+            <li>运动</li>
+            <li>男装</li>
+            <li>女装</li>
+            <li>儿童</li>
+            <li>数码</li>
+            <li>图书</li>
+        </ul>
+    </div>
+    <div class="header">我是头部，占位置</div>
+    <div class="floor floor0"><h2>运动</h2></div>
+    <div class="floor floor1"><h2>男装</h2></div>
+    <div class="floor floor2"><h2>女装</h2></div>
+    <div class="floor floor3"><h2>儿童</h2></div>
+    <div class="floor floor4"><h2>数码</h2></div>
+    <div class="floor floor5"><h2>图书</h2></div>
+    <div class="footer">我是底部，占位置</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+    $(window).scroll(function(){
+    var scrollTop = $(window).scrollTop();
+     if(scrollTop > $('.floor').eq(0).offset().top - 100){
+        $('.navLeft').fadeIn(300);
+     }else{
+        $('.navLeft').fadeOut(300);
+     }
+
+     $('.floor').each(function(i){
+        if(scrollTop >= $(this).offset().top - 30){
+            $('.navLeft ul li').eq(i).addClass('cur').siblings().removeClass('cur');
+        }
+     });
+    });
+    $('.navLeft ul li').click(function(){
+        var fTop = $('.floor').eq($(this).index()).offset().top;
+        $('html,body').animate({scrollTop:fTop},500)
+     });
+
+
+
+</script>

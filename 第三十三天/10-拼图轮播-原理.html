@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>10-拼图轮播-原理</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        div{
+            width: 900px;
+            height: 540px;
+            border:1px solid #000;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+      <!--   <img src="images/aoyun/0.jpg" > -->
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     var $box = $('#box');
+     for(var i =0;i < 100;i++){
+        $('<p>'+i+'</p>').css({
+            'position':'absolute',
+            'width':90,
+            'height':54,
+            'left':i % 10 * 90,
+            'top':parseInt(i / 10) * 54,
+            'background':'url(images/aoyun/0.jpg)',
+            'background-position':-i % 10 * 90 +'px '+ -parseInt(i / 10) * 54 + 'px',
+            'display':'none'
+        }).appendTo($box);
+     }
+
+     $('p').each(function(){
+        $(this).delay(Math.random() * 1000).fadeIn(500);
+     });
+</script>

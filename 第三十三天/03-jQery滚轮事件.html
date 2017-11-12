@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>03-jQery滚轮事件</title>
+    <style type="text/css">
+        body{
+            height: 3000px;
+        }
+        div{
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+            overflow:auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>文字内容0</p>
+        <p>文字内容1</p>
+        <p>文字内容2</p>
+        <p>文字内容3</p>
+        <p>文字内容4</p>
+        <p>文字内容5</p>
+        <p>文字内容6</p>
+        <p>文字内容7</p>
+        <p>文字内容8</p>
+        <p>文字内容9</p>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript">
+     $('div').mousewheel(function(event,direction){
+        console.log(direction);
+     });
+</script>

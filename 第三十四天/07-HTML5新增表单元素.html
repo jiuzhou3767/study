@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>07-HTML5新增表单元素</title>
+</head>
+<body>
+    输入内容: <input type="url" list="url_list" />
+    <datalist id="url_list">
+        <option label="W3School" value="http://www.W3School.com.cn" />
+        <option label="Google" value="http://www.google.com" />
+        <option label="Microsoft" value="http://www.microsoft.com" />
+    </datalist>
+
+        输入内容: <input type="text" list="cur" />
+    <datalist id="cur">
+        <option value="奥迪汽车">奥迪</option>
+        <option value="奥利奥饼干">奥利奥</option>
+        <option value="迪奥汽车">迪奥</option>
+        <option value="宝马汽车">宝马</option>
+        <option value="悍马汽车">悍马</option>
+        <option value="宝宝汽车">宝宝</option>
+        <option value="众泰汽车">众泰</option>
+        <option value="大众汽车">大众</option>
+    </datalist>
+
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+        <input type="range" id="a" value="50">100
+        +<input type="number" id="b" value="50">
+        =<output name="x" for="a b"></output>
+    </form>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>16-视频API调用</title>
+    <style type="text/css">
+        div{
+            position: relative;
+            width: 635px;
+            height: 264px;
+        }
+        button{width: 50px;height: 30px;background: #0587F7;border: 1px solid #096BE4;border-radius:5px;cursor:pointer;color:#fff;}
+        p{
+            width: 200px;
+            height: 100px;
+            background: green;
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-left:-100px;
+            margin-top:-50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <div>
+        <video id="video" src="video/movie.mp4" controls loop></video>
+        <p id="ad">我是广告</p>
+    </div>
+    <button>播放</button>
+    <button>暂停</button>
+    <button>快进</button>
+    <button>快退</button>
+    <button>音量+</button>
+    <button>音量-</button>
+    <button>静音</button>
+    <button>加速</button>
+    <button>减速</button>
+    <button>正常</button>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     var video = document.getElementById('video');
+     var ad = document.getElementById('ad');
+
+     video.onpause = function(){
+        ad.style.display = 'block';
+     }
+     video.onplay = function(){
+        ad.style.display = 'none';
+     }
+
+     $('button').eq(0).click(function(){
+        video.play();
+     });
+    $('button').eq(1).click(function(){
+        video.pause();
+     });
+    $('button').eq(2).click(function(){
+        video.currentTime += 5;
+     });
+     $('button').eq(3).click(function(){
+        video.currentTime -= 5;
+     });
+     $('button').eq(4).click(function(){
+        video.volume += 0.1;
+     });
+     $('button').eq(5).click(function(){
+        video.volume -= 0.1;
+     });
+
+     $('button').eq(6).click(function(){
+        if(video.muted == true){
+            video.muted = false;
+        }else{
+            video.muted = true;
+        }
+     });
+
+     $('button').eq(7).click(function(){
+        video.playbackRate = 5;
+     });
+     $('button').eq(8).click(function(){
+        video.playbackRate = 0.5;
+     });
+     $('button').eq(9).click(function(){
+        video.playbackRate = 1;
+     });
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>15-播放暂停音乐</title>
+    <style type="text/css">
+        div{
+            width: 56px;
+            height: 50px;
+            background: url(img/01.gif) no-repeat bottom;
+        }
+    </style>
+</head>
+<body>
+    <audio src="music/yinyue.mp3" controls></audio>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript">
+     var btn = document.getElementsByTagName('div')[0];
+     var audio = document.getElementsByTagName('audio')[0];
+
+     btn.onclick = function(){
+        if(audio.paused == true){
+            audio.play();
+            this.style.backgroundPosition = "top";
+        }else{
+            audio.pause();
+            this.style.backgroundPosition = "bottom";
+        }
+     }
+</script>

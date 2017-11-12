@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>18-本地存储基础</title>
+</head>
+<body>
+    <button>存储数据</button>
+    <button>读取数据</button>
+    <button>删除指定数据</button>
+    <button>清空所有数据</button>
+</body>
+</html>
+<script type="text/javascript">
+     var btn = document.getElementsByTagName('button');
+
+     btn[0].onclick = function(){
+        localStorage.setItem('xingming1','王大锤');
+        localStorage.setItem('xingming2','李狗蛋');
+        localStorage.setItem('xingming3','小丸子');
+     }
+
+     btn[1].onclick = function(){
+        alert(localStorage.getItem('xingming2'));
+     }
+
+    btn[2].onclick = function(){
+        localStorage.removeItem('xingming2');
+     }
+
+     btn[3].onclick = function(){
+        localStorage.clear();
+     }
+
+</script>

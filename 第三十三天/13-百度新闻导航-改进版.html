@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>13-百度新闻导航-改进版</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        ul,ol{list-style:none;}
+        .nav{
+            width: 1000px;
+            height: 40px;
+            background: #01204f;
+            position: relative;
+            margin:100px auto;
+        }
+        .nav .navUl{
+            position: relative;
+        }
+        .nav .navUl li{float: left;}
+        .nav .navUl li a{
+            display: block;
+            height: 40px;
+            line-height:40px;
+            padding:0 20px;
+            text-align:center;
+            color:#fff;
+            text-decoration:none;
+            font-size:14px;
+            font-weight:bold;
+        }
+        .slider{
+            width: 70px;
+            height: 40px;
+            background:red;
+            position: absolute;
+            top:0;
+            left:0;
+            display: none;
+            overflow: hidden;
+        }
+        .slider .navUl2{
+            width:9999px;
+            height: 40px;
+            position: relative;
+            z-index:11;
+        }
+        .slider .navUl2 li{
+            float: left;
+        }
+        .slider .navUl2 li a{
+            display: block;
+            height: 40px;
+            line-height:40px;
+            padding:0 20px;
+            text-align:center;
+            color:#fff;
+            text-decoration:none;
+            font-size:14px;
+            font-weight:bold;
+            color:orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="slider">
+             <ul class="navUl2">
+                <li class="cur"><a href="###">首页</a></li>
+                <li><a href="###">百家好</a></li>
+                <li><a href="###">国内</a></li>
+                <li><a href="###">国际</a></li>
+                <li><a href="###">军事</a></li>
+                <li><a href="###">娱乐</a></li>
+                <li><a href="###">体育</a></li>
+                <li><a href="###">汽车</a></li>
+                <li><a href="###">房产</a></li>
+                <li><a href="###">个性推荐</a></li>
+            </ul>
+        </div>
+        <ul class="navUl">
+            <li class="cur"><a href="###">首页</a></li>
+            <li><a href="###">百家好</a></li>
+            <li><a href="###">国内</a></li>
+            <li><a href="###">国际</a></li>
+            <li><a href="###">军事</a></li>
+            <li><a href="###">娱乐</a></li>
+            <li><a href="###">体育</a></li>
+            <li><a href="###">汽车</a></li>
+            <li><a href="###">房产</a></li>
+            <li><a href="###">个性推荐</a></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+    var sum = 0;
+    var time = 500;
+        function goTo(){
+        $('.nav ul li.cur').prevAll().each(function(){
+            sum += $(this).innerWidth();
+        });
+
+        $('.slider').show().stop(true).animate({
+                'left':sum,
+                'width':$('.nav ul li.cur').innerWidth()
+        },time);
+        $('.navUl2').stop(true).animate({'left':-sum},time);
+
+        $('.nav ul li').mouseenter(function(){
+            var sum = 0;
+            $(this).prevAll().each(function(){
+                sum += $(this).innerWidth();
+            });
+            $('.slider').stop(true).animate({
+                'left':sum,
+                'width':$(this).innerWidth()
+            },time);
+         $('.navUl2').stop(true).animate({'left':-sum},time);
+        });
+    }
+    goTo();
+    $('.nav').mouseleave(goTo);
+</script>

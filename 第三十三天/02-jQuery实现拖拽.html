@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>02-jQuery实现拖拽</title>
+    <style type="text/css">
+        div{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin:100px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <div class="box">
+        <img src="images/baby.png"  />
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+     $('img').draggable({
+        "containment":".box",
+        // "axis":"y",
+        "grid":[50,50],
+        "drag":function(event,ui){
+            var x = ui.position.left;
+            var y = ui.position.top;
+            $('h1').html('当前位置：'+x+','+y);
+        }
+     });
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>10-JS实现点击弹出调色盘</title>
+    <style type="text/css">
+        #btn{
+            width: 50px;
+            height: 30px;
+            background: skyblue;
+            border:none;
+            border-radius:5px;
+            cursor: pointer;
+            outline:none;
+        }
+        #color{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="color" id="color">
+    <button id="btn">调色</button>
+</body>
+</html>
+<script type="text/javascript">
+     var btn = document.getElementById('btn');
+     var color = document.getElementById('color');
+     btn.onclick = function(){
+        //click() 方法用于在表单上模拟一次鼠标单击。
+        color.click();
+     }
+</script>

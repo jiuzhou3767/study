@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>11-JS实现滑动条调色</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    红：<input type="range" value="0" min="0" max="255" id="r"/><span id="rspan"></span><br />
+    绿：<input type="range" value="0" min="0" max="255" id="g"/><span id="gspan"></span><br />
+    蓝：<input type="range" value="0" min="0" max="255" id="b"/><span id="bspan"></span><br />
+</body>
+</html>
+<script type="text/javascript">
+     var box = document.getElementById('box');
+     var r = document.getElementById('r');
+     var g = document.getElementById('g');
+     var b = document.getElementById('b');
+     var rspan = document.getElementById('rspan');
+     var gspan = document.getElementById('gspan');
+     var bspan = document.getElementById('bspan');
+
+     var rVal = 0;
+     var gVal = 0;
+     var bVal = 0;
+
+     r.onchange = function(){
+        rVal = this.value;
+        rspan.innerHTML = rVal;
+        box.style.backgroundColor = "rgb("+rVal+","+gVal+","+bVal+")";
+     }
+
+
+     g.onchange = function(){
+        gVal = this.value;
+        gspan.innerHTML = gVal;
+        box.style.backgroundColor = "rgb("+rVal+","+gVal+","+bVal+")";
+     }
+
+
+     b.onchange = function(){
+        bVal = this.value;
+        bspan.innerHTML = bVal;
+        box.style.backgroundColor = "rgb("+rVal+","+gVal+","+bVal+")";
+     }
+</script>

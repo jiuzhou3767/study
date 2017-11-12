@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>12-JS实现滑动条调色-优化代码</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    红：<input type="range" value="0" min="0" max="255" id="r"/><span id="rspan"></span><br />
+    绿：<input type="range" value="0" min="0" max="255" id="g"/><span id="gspan"></span><br />
+    蓝：<input type="range" value="0" min="0" max="255" id="b"/><span id="bspan"></span><br />
+</body>
+</html>
+<script type="text/javascript">
+     function $(id){
+        return document.getElementById(id);
+     }
+     var rVal = 0,gVal = 0,bVal = 0;
+
+     function color(obj){
+        $(obj).onchange = function(){
+            if(obj == 'r'){
+                rVal = this.value;
+            }else if(obj == 'g'){
+                gVal = this.value;
+            }else if(obj == 'b'){
+                bVal = this.value;
+            }
+
+            box.style.backgroundColor = "rgb("+rVal+","+gVal+","+bVal+")";
+        }
+     }
+     color('r');
+     color('g');
+     color('b');
+
+
+
+</script>

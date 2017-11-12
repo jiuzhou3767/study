@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>04-jQuery实现页面自动卷动</title>
+    <style type="text/css">
+        body{
+            height: 4000px;
+            background: linear-gradient(red,green,blue);
+        }
+    </style>
+</head>
+<body>
+    <button>走你到3000</button>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     // $('button').click(function(){
+     //    $('html,body').animate({"scrollTop":3000},1000);
+     // });
+     //
+     var btn = document.getElementsByTagName('button')[0];
+
+     btn.onclick = function(){
+        document.documentElement.scrollTop = document.body.scrollTop = 2000;
+     }
+</script>

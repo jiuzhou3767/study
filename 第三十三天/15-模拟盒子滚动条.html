@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>15-模拟盒子滚动条</title>
+    <style type="text/css">
+        .news{
+            width: 600px;
+            height: 240px;
+            border: 1px solid #333;
+            margin: 50px auto;
+            position: relative;
+            padding-right: 30px;
+            overflow: hidden;
+
+        }
+        .content{
+            position: relative;
+            padding: 20px;
+        }
+        .bar{
+            width: 20px;
+            height: 240px;
+            background-color: #eee;
+            position: absolute;
+            right: 10px;
+            top: 0;
+        }
+        .barb{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 104px;
+            background: orange;
+            background: -webkit-linear-gradient(top,orange,gold);
+            border-radius: 6px;
+            box-shadow: 1px 1px 1px black;
+            animation:faguang 0.3s ease 0s infinite alternate;
+        }
+        @-webkit-keyframes faguang{
+            0%{
+                box-shadow: 0px 0px 0px red;
+            }
+
+            100%{
+                box-shadow: 0px 0px 20px red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="news">
+        <div class="bar">
+            <b class="barb"></b>
+        </div>
+        <div class="content">
+            <p>今天上午，全国人大常委会办公厅在人民大会堂举行新闻发布会。</p>
+
+        　　<p>有问题想请问李飞主任，我们关注到香港目前有一些说法，这也是每次全国人大常委会进行释法时都会有的说法。全国人大常委会只有在香港终审法院提出请求时才能进行释法，目前我们也看到香港特区的一些政府官员包括一些立法会议员也出现了这种说法，请问您怎样看待这样的质疑和说法？谢谢。</p>
+
+        　　<p>全国人大常委会副秘书长、香港基本法委员会主任李飞：</p>
+
+        　　<p>这种说法确实像你所说，它不是现在才出现的，对人大释法的效力过去在香港也出现过类似这样的说法。我们说司法独立的核心要义就是严格依法办事，也就是法官不受任何干预地正确适用法律，目的是通过法院的审判保证法律得到正确的贯彻执行。人大常委会通过释法对基本法有关规定的含义加以明确，目的同样是确保法律得到正确的贯彻实施。按照“一国两制”方针，香港法院独立行使审判权和终审权，人大常委会对此从来都是支持的，但是香港特区行使的独立司法权和终审权，都是全国人大通过制定基本法赋予的，不可能存在违反基本法、超越基本法的司法独立。当香港社会各方面对基本法的规定发生争议影响到基本法和“一国两制”方针的正确贯彻落实时，全国人大常委会有责任及时对基本法作出解释，为香港的司法、行政等部门提供法律依据，为市民提供法律指引。</p>
+        <p>有问题想请问李飞主任，我们关注到香港目前有一些说法，这也是每次全国人大常委会进行释法时都会有的说法。全国人大常委会只有在香港终审法院提出请求时才能进行释法，目前我们也看到香港特区的一些政府官员包括一些立法会议员也出现了这种说法，请问您怎样看待这样的质疑和说法？谢谢。</p>
+
+        　　<p>全国人大常委会副秘书长、香港基本法委员会主任李飞：</p>
+
+        　　<p>这种说法确实像你所说，它不是现在才出现的，对人大释法的效力过去在香港也出现过类似这样的说法。我们说司法独立的核心要义就是严格依法办事，也就是法官不受任何干预地正确适用法律，目的是通过法院的审判保证法律得到正确的贯彻执行。人大常委会通过释法对基本法有关规定的含义加以明确，目的同样是确保法律得到正确的贯彻实施。按照“一国两制”方针，香港法院独立行使审判权和终审权，人大常委会对此从来都是支持的，但是香港特区行使的独立司法权和终审权，都是全国人大通过制定基本法赋予的，不可能存在违反基本法、超越基本法的司法独立。当香港社会各方面对基本法的规定发生争议影响到基本法和“一国两制”方针的正确贯彻落实时，全国人大常委会有责任及时对基本法作出解释，为香港的司法、行政等部门提供法律依据，为市民提供法律指引。</p>
+
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript">
+     var rate = 240 / $('.content').innerHeight();
+     if(rate > 1){
+        $('.barb').hide();
+     }
+     var barbHeight = 240 * rate;
+     $('.barb').css('height',barbHeight);
+
+     var contentTop = 0;
+     var barbTop = 0;
+
+     $('.barb').draggable({
+        'containment':'parent',
+        'axis':'y',
+        'drag':function(event,ui){
+            var y = ui.position.top;
+            barbTop = y;
+            contentTop = -barbTop / rate;
+            $('.content').css('top',contentTop);
+        }
+     });
+
+     $('.news').mousewheel(function(event,direction){
+        event.preventDefault();
+
+        contentTop += direction * 10;
+
+        if(contentTop > 0){
+            contentTop = 0;
+        }else if(contentTop < 240 - $('.content').innerHeight()){
+            contentTop = 240 - $('.content').innerHeight();
+        }
+        barbTop = -contentTop * rate;
+
+        $('.content').css('top',contentTop);
+        $('.barb').css('top',barbTop);
+
+     });
+
+
+
+
+
+</script>
