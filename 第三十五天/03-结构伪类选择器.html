@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>03-结构伪类选择器</title>
+    <style type="text/css">
+        p{width: 50px;height: 50px;background: red;}
+/*         p:first-child{background:green;}
+        p:last-child{background:green;} */
+
+/*         p:first-of-type{background:green;}
+        p:last-of-type{background:green;} */
+
+        /* p:only-child{background:green;} */
+        /* p:only-of-type{background:green;} */
+
+
+/*         p:nth-child(2){background:blue;}
+        p:nth-last-child(2){background:orange;} */
+
+        p:nth-of-type(2){background:blue;}
+        p:nth-last-of-type(2){background:orange;}
+        p:not(.abc){background:yellow;}
+    </style>
+</head>
+<body>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p class="abc">3</p>
+        <p class="abc">4</p>
+        <p class="abc">5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+    </div>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+    </div>
+    <div>
+        <h3>h3</h3>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <div>
+            <p>div中的p1</p>
+            <p>div中的p2</p>
+            <p>div中的p3</p>
+            <p>div中的p4</p>
+            <p>div中的p5</p>
+            <p>div中的p6</p>
+        </div>
+    </div>
+    <div>
+        <p>唯一的儿子p</p>
+    </div>
+    <div>
+        <h3>h3</h3>
+        <p>唯一的儿子p</p>
+    </div>
+    <div>
+        <h3>h3</h3>
+        <p>不是唯一的儿子p</p>
+        <p>不是唯一的儿子p</p>
+    </div>
+</body>
+</html>

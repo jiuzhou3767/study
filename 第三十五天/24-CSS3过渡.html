@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>24-CSS3过渡</title>
+    <style type="text/css">
+        div{
+            width: 800px;
+            height: 1000px;
+            border:1px solid #000;
+            margin: 0 auto;
+        }
+        div p{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            position:relative;
+            left:0;
+            top:0;
+        }
+        div p:nth-of-type(1){transition:all 2s linear 1s;}
+        div p:nth-of-type(1):hover{left:500px;top:-50px;}
+
+        div p:nth-of-type(2){transition:all 1s;}
+        div p:nth-of-type(2):hover{background: blue;}
+
+        div p:nth-of-type(3){transition:all 1s;}
+        div p:nth-of-type(3):hover{width: 500px;height: 150px;}
+
+        div p:nth-of-type(4){transition:all 1s;}
+        div p:nth-of-type(4):hover{border-radius:50%;}
+
+        div p:nth-of-type(5){transition:all 1s;}
+        div p:nth-of-type(5):hover{font-size:50px;}
+
+        div p:nth-of-type(6){transition:all 5s cubic-bezier(0,1.51,.87,.33);transition-delay:2s;}
+        div p:nth-of-type(6):hover{left:1000px;}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+    </div>
+</body>
+</html>

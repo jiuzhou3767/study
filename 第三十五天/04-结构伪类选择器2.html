@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>04-结构伪类选择器2</title>
+    <style type="text/css">
+        p{width: 50px;height: 50px;background: red;}
+/*         p:nth-of-type(5){background: green;}
+        p:nth-child(5){background: orange;} */
+
+/*         p:nth-of-type(3n){background: pink;}
+        p:nth-of-type(3n+1){background: pink;} */
+        /* p:nth-of-type(2n+1){background: pink;} */
+        /* p:nth-of-type(-3n+5){background: pink;} */
+        p:nth-of-type(odd){background: pink;}
+       p:nth-of-type(even){background: purple;}
+    </style>
+</head>
+<body>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
+        <p>10</p>
+        <p>11</p>
+        <p>12</p>
+    </div>
+    <div>
+        <h3>h3</h3>
+        <h3>h3</h3>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>17-线性渐变</title>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 150px;
+            border:1px solid #000;
+            margin: 10px auto;
+        }
+        div:nth-of-type(1){background: linear-gradient(red,green,blue);}
+        div:nth-of-type(2){background: linear-gradient(red 0%,green 50%,blue 100%);}
+        div:nth-of-type(3){background: linear-gradient(to left,red 0%,green 50%,blue 100%);}
+        div:nth-of-type(4){background: linear-gradient(to top,red 0%,green 50%,blue 100%);}
+        div:nth-of-type(5){background: linear-gradient(90deg,red 0%,green 50%,blue 100%);}
+        div:nth-of-type(6){background: -webkit-linear-gradient(90deg,red 0%,green 50%,blue 100%);}
+        div:nth-of-type(7){background: -webkit-linear-gradient(bottom,red 0%,green 50%,blue 100%);}
+        div:nth-of-type(8){
+            background:-webkit-linear-gradient(red 0%,green 50%,blue 100%);
+            background:-moz-linear-gradient(red 0%,green 50%,blue 100%);
+            background:-ms-linear-gradient(red 0%,green 50%,blue 100%);
+            background:-o-linear-gradient(red 0%,green 50%,blue 100%);
+            background:linear-gradient(red 0%,green 50%,blue 100%);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
