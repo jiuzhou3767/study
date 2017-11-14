@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>03-work</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .mobiles{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+        .mobiles ul{
+            list-style: none;
+        }
+        .mobiles ul li{
+            float: left;
+            width: 14.2857%;
+            position: relative;
+            top: 0;
+        }
+        .mobiles ul li img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobiles">
+        <ul>
+            <li><img src="images/homework3/1.png" alt="" /></li>
+            <li><img src="images/homework3/2.png" alt="" /></li>
+            <li><img src="images/homework3/3.png" alt="" /></li>
+            <li><img src="images/homework3/4.png" alt="" /></li>
+            <li><img src="images/homework3/5.png" alt="" /></li>
+            <li><img src="images/homework3/6.png" alt="" /></li>
+            <li><img src="images/homework3/7.png" alt="" /></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     var arr = [120,50,66,20,200,300,120];
+     $('ul li').each(function(i){
+        $('ul li').eq(i).css({'top':arr[i]});
+     });
+
+    $('.mobiles').mousemove(function(event){
+        $('ul li').each(function(){
+            $(this).css("top" , Math.abs($(this).offset().left + $(this).width() / 2 - event.clientX) / 3);
+        });
+    });
+
+            $(".mobiles").mouseleave(function(){
+            $(".mobiles ul li").each(function(i){
+                $(this).stop(true).animate({"top" : arr[i]});
+            });
+        })
+</script>

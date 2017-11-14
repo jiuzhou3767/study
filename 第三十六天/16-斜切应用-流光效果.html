@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>16-斜切应用-流光效果</title>
+    <style type="text/css">
+        body{background: #000;}
+        div{
+            width: 210px;
+            height: 475px;
+            border:3px solid orange;
+            margin: 20px auto;
+            position:relative;
+            overflow:hidden;
+        }
+        div:before{
+            content:'';
+            width: 80px;
+            height: 500px;
+            background: linear-gradient(90deg,rgba(255, 255, 255, 0.0),rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 0.0));
+            position:absolute;
+            top:0;
+            left:-210px;
+            transform:skew(-25deg);
+            transition:all 1s;
+        }
+        div:hover:before{
+            left:310px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/01.jpg"/>
+    </div>
+</body>
+</html>

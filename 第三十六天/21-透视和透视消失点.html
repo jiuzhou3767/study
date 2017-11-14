@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>21-透视和透视消失点</title>
+    <style type="text/css">
+        div{
+            width: 600px;
+            height: 330px;
+            border:1px solid #000;
+            margin:100px auto;
+            perspective:100px;
+            /* perspective-origin:left top; */
+            /* perspective-origin:100px 50px; */
+            perspective-origin:right top;
+        }
+        img{
+            transition:all 1s;
+            transform-origin:bottom;
+        }
+        div:hover img{
+            transform:rotateX(60deg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/am.jpg" alt="" />
+    </div>
+</body>
+</html>

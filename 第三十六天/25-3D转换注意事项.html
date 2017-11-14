@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>25-3D转换注意事项</title>
+    <style type="text/css">
+        div{
+            width: 258px;
+            height: 258px;
+            border:1px solid #000;
+            margin:100px;
+            float:left;
+            perspective:500px;
+        }
+        img{transition:all 1s;}
+        div:nth-of-type(1):hover img{transform:rotateX(30deg) rotateY(40deg);}
+        div:nth-of-type(2):hover img{transform:rotateY(40deg) rotateX(30deg);}
+    </style>
+</head>
+<body>
+    <button>点我发射</button>
+    <div>
+        <img src="img/baby.png" >
+    </div>
+    <div>
+        <img src="img/baby.png" >
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     $('button').click(function(){
+        $('div img').css('transform','rotateY(40deg) rotateX(30deg) translateZ(1000px)')
+     });
+</script>

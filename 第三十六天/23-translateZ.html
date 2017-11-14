@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>23-translateZ</title>
+    <style type="text/css">
+        div{
+            width: 332px;
+            height:341px;
+            border:2px solid #000;
+            margin: 100px auto;
+            perspective:500px;
+        }
+        img{transition:all 1s;transform:rotateY(80deg);}
+        div:hover img{
+            transform:rotateY(80deg) translateZ(170px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/am.jpg" alt="" />
+    </div>
+</body>
+</html>

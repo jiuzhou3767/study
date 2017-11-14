@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>13-缩放应用-图片中心放大</title>
+    <style type="text/css">
+        div{
+            width: 330px;
+            height: 340px;
+            border:1px solid #000;
+            margin:100px auto;
+            overflow:hidden;
+        }
+        div img{
+            transition:all 1s;
+        }
+        div img:hover{
+            transform:scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/am.jpg"/>
+    </div>
+</body>
+</html>

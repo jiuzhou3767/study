@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>03-work</title>
+    <style type="text/css"></style>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 200px;
+            position:relative;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius:50%;
+            position:absolute;
+            top:0;
+            left:0;
+            transition: all 1s;
+        }
+        .box1 img:nth-of-type(2){
+            transform-origin:top;
+        }
+        .box1:hover img:nth-of-type(2){
+            transform:rotateX(180deg);
+        }
+        .box2 img:nth-of-type(2){
+            transform-origin:bottom;
+        }
+        .box2:hover img:nth-of-type(2){
+            transform:rotateX(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <img src="img/xm.jpg" alt="">
+        <img src="img/baby.jpg" alt="">
+    </div>
+     <div class="box2">
+        <img src="img/xm.jpg" alt="">
+        <img src="img/baby.jpg" alt="">
+    </div>
+</body>
+</html>
