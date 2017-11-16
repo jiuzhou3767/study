@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>17-旋转应用-心形</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 150px;
+            margin:100px auto;
+            position:relative;
+        }
+        div:before,div:after{
+            content:'';
+            width: 100px;
+            height: 150px;
+            position:absolute;
+            top:0;
+
+            background: red;
+            border-radius:100px 100px 0 0;
+            transform:rotate(-45deg);
+        }
+        div:before{
+            left:-17px;
+        }
+        div:after{
+            transform:rotate(45deg);
+            left:17px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

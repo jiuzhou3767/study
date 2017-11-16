@@ -11,16 +11,27 @@
             margin: 100px auto;
             position:relative;
             transform-style:preserve-3d;
-            perspective:1px;
+            perspective:200px;
         }
         div img{
             position:absolute;
             top:0;
             left:0;
         }
-        div img:nth-of-type(2){
-
+        div img:nth-of-type(1){
+            transition:all 1s ;
+            opacity:1;
         }
+        div:hover img:nth-of-type(1){
+            opacity:0;
+            transform:translateZ(-10000px);
+        }
+        div img:nth-of-type(2){
+            transform:translateZ(-10000px);
+            transition:all 1.5s ;
+        }
+         div:hover img:nth-of-type(2){
+            transform:translateZ(0px);
     </style>
 
 </head>
