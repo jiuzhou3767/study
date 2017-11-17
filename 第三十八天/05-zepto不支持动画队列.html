@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>05-zepto不支持动画队列</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            position: relative;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <input type="button" value="按我">
+</body>
+</html>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+     // $('div').animate({'left':1000},500);
+     //  $('div').animate({'top':500},500);
+
+     // $('div').animate({'left':1000},500,function(){
+     //    $(this).animate({'top':500},500,function(){
+     //        $(this).animate({'left':0},500,function(){
+     //            $(this).animate({'top':0},500);
+     //        });
+     //    });
+     // });
+     //
+     //
+     // $('div').animate({'left':1000},{'duration':1000,'delay':1000});
+      $('<div></div>').appendTo('body').animate({'transform':'rotate(360deg)'},1000);
+
+      $('input').eq(0).click(function(){
+        $('div').css({'transition':'none','left':1000});
+      });
+</script>

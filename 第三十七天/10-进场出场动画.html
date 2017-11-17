@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>10-进场出场动画</title>
+    <style type="text/css">
+        h1{
+            text-align:center;
+            width: 600px;
+            height: 30px;
+            perspective:300px;
+        }
+        h1 span{float:left;perspective:300px;}
+        h1 span b{display:block;transform:translateZ(301px);transition:all 1s;}
+    </style>
+</head>
+<body>
+    <input type="button" value="进场" />
+    <input type="button" value="出场" />
+    <h1>
+        <span><b>你</b></span>
+        <span><b>是</b></span>
+        <span><b>班</b></span>
+        <span><b>里</b></span>
+        <span><b>最</b></span>
+        <span><b>帅</b></span>
+        <span><b>的</b></span>
+        <span><b>班</b></span>
+        <span><b>花</b></span>
+        <span><b>！</b></span>
+    </h1>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     $('input').eq(0).click(function(){
+        $('span b').each(function(i){
+            $(this).css({'transition-delay':i*0.2+'s','transform':'none'})
+        })
+     });
+
+    $('input').eq(1).click(function(){
+        $('span b').each(function(i){
+            $(this).css({'transition-delay':i*0.2+'s','transform':'translateZ(301px)'})
+        })
+     });
+</script>

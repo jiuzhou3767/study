@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>03-zepto动画</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            margin-top:10px;
+            position: relative;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+     $('div').eq(0).animate({'background-color':'red','transform':'rotateX(-60deg) rotateY(30deg) translateZ(300px)'},1600);
+     $('div').eq(1).animate({'left':1000},1000,'cubic-bezier(0.15,0.33,1,1)',function(){
+        $(this).css('background-color','blue');
+     });
+     $('div').eq(2).animate({'left':1000},{'duration':2000,'easing':'linear','complete':function(){
+        alert(1);
+     }});
+</script>

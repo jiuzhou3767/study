@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        ul,ol{list-style:none;}
+        .carousel{
+            width: 480px;
+            height: 300px;
+            border: 1px solid #000;
+            margin:100px auto;
+            position: relative;
+        }
+        .carousel ul li{
+            display: none;
+        }
+        .carousel ul li.cur{
+            display: block;
+        }
+        .carousel ul li img{
+            width: 480px;
+            height: 300px;
+        }
+        .carousel .btns a{
+            width: 40px;
+            height: 40px;
+            background: orange;
+            border-radius:50%;
+            position: absolute;
+            top:50%;
+            margin-top:-20px;
+            z-index:10;
+        }
+        .carousel .btns a:nth-of-type(1){left:10px;}
+        .carousel .btns a:nth-of-type(2){right:10px;}
+
+        .carousel ol{
+            position: absolute;
+            bottom:20px;
+            left:50%;
+            margin-left:-90px;
+            z-index:10;
+        }
+        .carousel ol li{
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius:50%;
+            float: left;
+            margin:5px;
+        }
+        .carousel ol li.cur{background: orange;}
+
+        .carousel .cover .c1,.carousel .cover .c2{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel .cover{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            perspective: 500000px;
+            transform-style: preserve-3d;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <ul>
+            <li class="cur"><a href="##"><img src="images/yz/0.jpg" ></a></li>
+            <li><a href="##"><img src="images/yz/1.jpg" ></a></li>
+            <li><a href="##"><img src="images/yz/2.jpg" ></a></li>
+            <li><a href="##"><img src="images/yz/3.jpg" ></a></li>
+            <li><a href="##"><img src="images/yz/4.jpg" ></a></li>
+            <li><a href="##"><img src="images/yz/5.jpg" ></a></li>
+        </ul>
+        <div class="btns">
+            <a href="##"></a>
+            <a href="##"></a>
+        </div>
+        <ol>
+            <li class="cur"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+
+        <!-- 猫腻替身 -->
+        <div class="cover">
+            <div class="c1"></div>
+            <div class="c2"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+     //得到所有节点
+     var $carousel = $('.carousel');
+     var $imgList = $('.carousel ul li');
+     var $imgList = $('.carousel ul li');
+     var $img = $('.carousel ul li img');
+     var $btn1 = $('.carousel .btns a:nth-of-type(1)');
+     var $btn2 = $('.carousel .btns a:nth-of-type(2)');
+     var $circle = $('.carousel ol li');
+     var $cover = $('.carousel .cover');
+     var $c1 = $('.carousel .cover .c1');
+     var $c2 = $('.carousel .cover .c2');
+
+     var idx = 0;//信号量
+     var lock = true; //函数节流
+     //从当前图片到number那张图片的函数
+     function goIdx(number){
+        if(!lock) return;
+        lock = false;
+        //获取当前的图片
+        $c1.css({'background-image':'url('+$img.eq(idx).attr('src')+')','background-size':'480px 300px'});
+        //获取下一张图片，number索引值
+        $c2.css({'background-image':'url('+$img.eq(number).attr('src')+')','background-size':'480px 300px'});
+
+        //随机的效果：0横顺、1横逆、2纵顺、3纵逆
+        var direction = parseInt(Math.random() * 4)
+        if(direction == 0){
+            $c2.css('transform','rotateX(90deg) translateZ(150px)');
+            $c1.css('transform','translateZ(150px)');
+            var des = 'rotateX(-90deg)';
+        }else if(direction == 1){
+            $c2.css('transform','rotateX(-90deg) translateZ(150px)');
+            $c1.css('transform','translateZ(150px)');
+            var des = 'rotateX(90deg)';
+        }else if(direction == 2){
+            $c2.css('transform','rotateY(90deg) translateZ(240px)');
+            $c1.css('transform','translateZ(240px)');
+            var des = 'rotateY(-90deg)';
+        }else if(direction == 3){
+            $c2.css('transform','rotateY(-90deg) translateZ(240px)');
+            $c1.css('transform','translateZ(240px)');
+            var des = 'rotateY(90deg)';
+        }
+        $cover.css({'transform':'rotateY(0deg)'});
+        $cover.show().css('transform-origin','50% 50%');
+        setTimeout(function(){
+            $cover.animate({'transform':des},500,function(){
+                $cover.hide(); //动画完毕后，隐藏猫腻盒子
+                //再现身真正的图片，改变cur的状态
+                $imgList.eq(number).addClass('cur').siblings().removeClass('cur');
+                $circle.eq(number).addClass('cur').siblings().removeClass('cur');
+                idx = number; //纠正信号量
+                lock = true;
+            });
+        },1)
+    }
+
+    $btn2.click(function(){
+        var number = idx + 1;
+        if(number > $imgList.length -1){
+            number = 0;
+        }
+        goIdx(number);
+    });
+
+    $btn1.click(function(){
+        var number = idx - 1;
+        if(number < 0){
+            number = $imgList.length -1;
+        }
+        goIdx(number);
+    });
+
+    //小圆点事件
+    $circle.click(function(){
+        goIdx($(this).index());
+    });
+</script>

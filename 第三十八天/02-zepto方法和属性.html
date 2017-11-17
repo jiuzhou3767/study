@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>02-zepto方法和属性</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: green;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+    </div>
+
+    <section>
+        <h1>
+            <p>p标签</p>
+        </h1>
+        <h2>
+
+        </h2>
+    </section>
+</body>
+</html>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+     $('div:first-of-type').html('1111');
+     $('p:first-child').parent('h1').siblings().html('222');
+     console.log($('div:nth-of-type(4)').offset().top);
+     $('div').addClass('cur');
+     $('div').eq(0).removeClass('cur');
+     $('<span></span>').appendTo('div');
+</script>

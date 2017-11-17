@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>12-css3多组动画</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top:0;
+            left:0;
+            animation:move 3s ease-in-out 1s 3 alternate forwards;
+        }
+        @keyframes move{
+            0%{
+                top:0;
+                left:0;
+                transform:rotate(0deg);
+            }
+            25%{
+                top:0;
+                left:600px;
+                background: green;
+            }
+            50%{
+                top:500px;
+                left:600px;
+                background: blue;
+            }
+            75%{
+                top:500px;
+                left:0;
+                border-radius:50%;
+                background: pink;
+                transform:rotate(360deg) skew(20deg,20deg);
+            }
+            100%{
+                top:20px;
+                left:20px;
+                background: orange;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

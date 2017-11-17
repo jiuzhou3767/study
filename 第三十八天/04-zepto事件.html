@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>04-zepto事件</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            margin-top:10px;
+            position: relative;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+     $('div').eq(0).click(function(){
+        alert(1);
+     });
+
+
+     $('div').eq(1).on('click',function(){
+        $(this).css('backgroud','red')
+     });
+
+     $('div').eq(2).on('touchstart',function(){
+        $(this).css('background','green');
+     });
+
+     $('div').eq(3).on('touchend',function(){
+        $(this).css('background','blue');
+     });
+
+</script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>11-css3动画基础</title>
+    <style type="text/css">
+        div{
+            width:100px;
+            height: 100px;
+            background: red;
+            position:absolute;
+            top:0;
+            left:0;
+            animation:move 2s;
+            -webkit-animation:move 2s;
+            -moz-animation:move 2s;
+            -ms-animation:move 2s;
+            -o-animation:move 2s;
+        }
+/*         @keyframes move{
+            from{
+                top:0;
+                left:0;
+            }
+            to{
+                top:300px;
+                left:600px;
+            }
+        } */
+
+        @keyframes move{
+            0%{
+                top:0;
+                left:0;
+            }
+            100%{
+                top:300px;
+                left:600px;
+            }
+        }
+        @-webkit-keyframes move{
+            0%{
+                top:0;
+                left:0;
+            }
+            100%{
+                top:300px;
+                left:600px;
+            }
+        }
+        @-moz-keyframes move{
+            0%{
+                top:0;
+                left:0;
+            }
+            100%{
+                top:300px;
+                left:600px;
+            }
+        }
+        @-ms-keyframes move{
+            0%{
+                top:0;
+                left:0;
+            }
+            100%{
+                top:300px;
+                left:600px;
+            }
+        }
+        @-o-keyframes move{
+            0%{
+                top:0;
+                left:0;
+            }
+            100%{
+                top:300px;
+                left:600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

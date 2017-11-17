@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>01-zepto体验</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height:100px;
+            background: green;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+     $('div:first-of-type').css('background-color','blue');
+     $('div:nth-of-type(odd)').css('background-color','blue');
+</script>
