@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>04-velocity内置特效</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            margin:150px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/velocity.min.js"></script>
+<script type="text/javascript" src="js/velocity.ui.js"></script>
+<script type="text/javascript">
+     $('div').velocity('transition.bounceUpIn',{duration:650});
+</script>

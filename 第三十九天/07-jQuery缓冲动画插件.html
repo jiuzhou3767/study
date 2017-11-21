@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>07-jQuery缓冲动画插件</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            margin:10px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript">
+     $('div').eq(0).slideUp({
+        duration:2000,
+        easing:'easeInBounce',
+        complete:function(){
+            $(this).slideDown({duration:1000,easing:'easeOutBounce'});
+        }
+     });
+     $('div').eq(1).animate({'left':1000},1500,'easeOutBounce');
+     $('div').eq(2).animate({'width':1000},1500,'easeOutBounce');
+
+
+
+
+
+
+
+
+
+
+
+</script>

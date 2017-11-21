@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>09-CSS媒体查询多条件</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+        @media (min-width: 1000px){
+            body{background: blue;}
+        }
+
+        @media (min-width: 750px) and (max-width: 999px){
+            body{background: green;}
+        }
+        @media (min-width: 320px) and (max-width: 749px){
+            body{background: red;}
+            div,img{display:none;}
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <img src="images/01.png" alt="">
+</body>
+</html>

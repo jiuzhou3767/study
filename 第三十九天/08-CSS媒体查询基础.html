@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>08-CSS媒体查询基础</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+        @media (max-width: 1000px){
+            div{
+                width: 200px;
+                height: 200px;
+                background: green;
+            }
+            img{
+                display:none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <img src="images/01.png" alt="">
+</body>
+</html>

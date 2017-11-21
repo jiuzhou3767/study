@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>01-velocity体验</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            margin:20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        0文字
+    </div>
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/velocity.min.js"></script>
+<script type="text/javascript">
+
+    // Velocity(document.getElementsByTagName('div')[0],{left:1000,backgroundColor:'#000'});
+
+    // $('div').velocity({
+    //     top: 50,                // 等同于 "50px"
+    //     left: "50%",
+    //     width: "+=5px",        // 每次在当前值上叠加 5px
+    //     height: "*=2",           // 每次在当前值上叠乘 2
+    //     color: ["#888", "#000"] // 每次动画执行前，color 的初始值都为"#000"（从"#000"过渡成"#888"）
+    // },1000);
+
+    $('div').eq(0)
+    /* 先执行宽度变为75px的动画 */
+    .velocity({ width:500 })
+    /* 等前面的宽度动画结束后，再执行高度变为0的动画 */
+    .velocity({ height: 0 });
+
+    $('div').eq(1).velocity({'left':100},{duration:1000,loop:true})
+    $('div').eq(2).velocity({'left':1000},{duration:1000,easing:'easeInOutExpo'}); // Easing 缓动效果
+    $('div').eq(3).velocity({'width':[ "300px", [ 250, 15 ]]},{duration:1000});//缓动可应用于单个属性
+
+    $('div').eq(4).velocity({ left: "200px" }, { duration: 3000 });
+    setTimeout(function() {
+        /* 1.5秒后 开始并行执行top变为"120px"的新动画 */
+        $('div').eq(4).velocity({ top: "120px" }, { duration: 1500, queue: false });
+    }, 1500);
+
+        $('div').eq(5)
+    .velocity("slideUp", { duration: 1500 })
+    .velocity("slideDown", { delay: 500, duration: 1500 });
+
+
+
+
+
+
+
+
+</script>

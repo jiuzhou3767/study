@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>09-时钟动画</title>
+    <style type="text/css">
+        body{background: #000;}
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        .time{
+            width: 400px;
+            height: 400px;
+            border-radius:50%;
+            background: lightblue;
+            margin: 100px auto;
+            position:relative;
+        }
+        .time span{
+            color:#fff;
+            position:absolute;
+            font-size:36px;
+        }
+        .time span:nth-of-type(1){
+            right:20px;
+            top:50%;
+            transform:translateY(-50%);
+        }
+        .time span:nth-of-type(2){
+            bottom:20px;
+            left:50%;
+            transform:translateX(-50%);
+        }
+        .time span:nth-of-type(3){
+            left:20px;
+            top:50%;
+            transform:translateY(-50%);
+        }
+        .time span:nth-of-type(4){
+            top:20px;
+            left:50%;
+            transform:translateX(-50%);
+        }
+         .time span:nth-of-type(4){
+            left:50%;
+            top:10px;
+            transform:translateX(-50%);
+        }
+        .time p{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-100%);
+            transform-origin:bottom;
+        }
+        .time .shi{
+            width: 10px;
+            height: 100px;
+            background: blue;
+            border-radius:10px;
+        }
+        .time .fen{
+            width: 6px;
+            height: 110px;
+            background: green;
+            border-radius:6px;
+        }
+        .time .miao{
+            width: 2px;
+            height: 120px;
+            background: red;
+            animation:rotate 1s infinite linear;
+            border-radius:2px;
+        }
+        .time i{
+            width: 16px;
+            height: 16px;
+            background: red;
+            border-radius:50%;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="time">
+        <span>3</span>
+        <span>6</span>
+        <span>9</span>
+        <span>12</span>
+        <p class="shi"></p>
+        <p class="fen"></p>
+        <p class="miao"></p>
+        <i></i>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+     function time(){
+        var date = new Date();
+        var H = date.getHours();
+        var M = date.getMinutes();
+        var S = date.getSeconds();
+
+        $('.time .shi').css('transform','translate(-50%,-100%) rotate('+ H*30 +'deg)');
+        $('.time .fen').css('transform','translate(-50%,-100%) rotate('+ M * 6+'deg)');
+        $('.time .miao').css('transform','translate(-50%,-100%) rotate('+S * 6+'deg)');
+     }
+     time();
+     setInterval(time,1000);
+</script>

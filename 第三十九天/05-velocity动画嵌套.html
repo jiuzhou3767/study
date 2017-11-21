@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>05-velocity动画嵌套</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            margin:20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/velocity.min.js"></script>
+<script type="text/javascript" src="js/velocity.ui.js"></script>
+<script type="text/javascript">
+    // $('div').eq(0).velocity({ translateX: 100 }, 1000, function() {
+    //     $('div').eq(1).velocity({ translateY: 200 }, 1000, function() {
+    //         $('div').eq(2).velocity({ translateY: 200,width: 300 }, 1000);
+    //     });
+    // });
+    //
+    //如何解决上面的问题？我们直接用$.Velocity.RunSequence()对上面代码进行重写：
+    //e：element - 表示元素
+    //p：properties - 属性集
+    //o：options - 配置选项
+    // 将嵌套动画序列储存到一个数组里，很清晰的显示了它们的执行顺序
+    var mySequence = [
+        { e: $('div').eq(0), p: { translateX: 100 }, o: { duration: 1000 } },
+        { e: $('div').eq(1), p: { translateY: 200 }, o: { duration: 1000 } },
+        { e: $('div').eq(2), p: { translateY: 300,width: 300 }, o: { duration: 1000 } }
+    ];
+    // 调用这个自定义的序列名称 还可以在其他地方复用
+    $.Velocity.RunSequence(mySequence);
+
+
+
+
+
+
+
+
+
+
+
+</script>

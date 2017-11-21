@@ -116,7 +116,12 @@
      var $c2 = $('.carousel .cover .c2');
 
      var idx = 0;
+     var lock = true;
      function goIdx(number){
+        if(!lock){
+            return;
+        }
+        lock = false;
         $c1.css({'background-image':'url('+$img.eq(idx).attr('src')+')','background-size':'480px 300px'});
         $c2.css({'background-image':'url('+$img.eq(number).attr('src')+')','background-size':'480px 300px'});
 
@@ -124,13 +129,33 @@
         $c2.css({'transform':'rotateY(-90deg) translateZ(240px)'});
         $c1.css({'transform':'translateZ(240px)'});
 
+        var direction = parseInt(Math.random()*4);
+        if(direction == 0){
+            $c2.css('transform','rotateX(90deg) translateZ(150px)');
+            $c1.css('transform','translateZ(150px)');
+            var des = 'rotateX(-90deg)';
+        }else if(direction == 1){
+            $c2.css('transform','rotateX(-90deg) translateZ(150px)');
+            $c1.css('transform','translateZ(150px)');
+            var des = 'rotateX(90deg)';
+        }else if(direction == 2){
+            $c2.css('transform','rotateY(90deg) translateZ(240px)');
+            $c1.css('transform','translateZ(240px)');
+            var des = 'rotateY(-90deg)';
+        }else if(direction == 3){
+            $c2.css('transform','rotateY(-90deg) translateZ(240px)');
+            $c1.css('transform','translateZ(240px)');
+            var des = 'rotateY(90deg)';
+        }
+
         $cover.show().css('transform','rotate(0deg)');
         setTimeout(function(){
-            $cover.animate({'transform':'rotateY(90deg)'},500,function(){
+            $cover.animate({'transform':des},500,function(){
                 $cover.hide();
                 $imgList.eq(number).addClass('cur').siblings().removeClass('cur');
                 $circle.eq(number).addClass('cur').siblings().removeClass('cur');
                 idx = number;
+                lock = true;
             });
         },1);
      }

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>14-滚滚屏幕项目</title>
+ <style type="text/css">
+        *{margin: 0;padding: 0;}
+        ul,ol{list-style:none;}
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        .pages{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0%;
+            padding-top:50px;
+        }
+        .page{
+            width: 100%;
+            height: 100%;
+            text-align:center;
+
+            color:#fff;
+        }
+        .page1{background-color: #0f98c4;}
+        .page2{background-color: #29a65b;}
+        .page3{background-color: #cb7f12;}
+        .page4{background-color: #18ab91;}
+        .page5{background-color: #1099c5;}
+        .nav{
+            width: 100%;
+            height: 50px;
+            background: #000;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index:999;
+        }
+        .nav ul{
+            width: 1000px;
+            margin:0 auto;
+        }
+        .nav ul li{
+            float: left;
+        }
+        .nav ul li.cur{background: orange;}
+        .nav ul li a{
+            width: 200px;
+            height: 50px;
+            color:#fff;
+            text-decoration:none;
+            display: block;
+            text-align:center;
+            line-height: 50px;
+        }
+
+        .rightNav{
+            position: absolute;
+            top:50%;
+            right:30px;
+            z-index:999;
+            transform:translateY(-50%);
+        }
+        .rightNav ol li{
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius:50%;
+            margin:20px 0;
+            cursor: pointer;
+        }
+        .rightNav ol li.cur{background: orange;box-shadow:0 0 5px 5px #ccc;}
+
+        /*第一屏的动画*/
+        .page1 .inner{text-align: center;position: absolute;top: 50%;width: 200%;margin-top: 20px;left:50%;transform:translateX(-50%);}
+        .page1 .inner p{background: url(images/p1.png) no-repeat; margin:0 40px; display: inline-block;}
+        .page1 .inner p:nth-child(1){background-position: -7px -208px;width: 63px;height: 83px;}
+        .page1 .inner p:nth-child(2){background-position: -76px -205px;width: 91px;height: 90px;}
+        .page1 .inner p:nth-child(3){background-position: -181px -209px;width: 82px;height: 85px;}
+        .page1 .inner p:nth-child(4){background-position: -277px -204px;width: 90px;height: 91px;}
+        .page1 .inner p:nth-child(5){background-position: -376px -205px;width: 92px;height: 90px;}
+        .page1 .inner p:nth-child(6){background-position: -481px -209px;width: 82px;height: 85px;}
+        .page1 .inner p:nth-child(7){background-position: -576px -205px;width: 92px;height: 90px;}
+        .page1 .inner p:nth-child(8){background-position: -677px -204px;width: 91px;height: 91px;}
+        .page1 .animatp1 p{opacity: 1;margin: 0 7px;transition: all 1s ease-out;transition-delay: 0.3s;}
+
+
+        /*第二屏的动画*/
+        .page2 .inner{
+            width: 1000px;
+            margin:0 auto;
+        }
+        .page2 .inner p{width: 200px;height: 100px;background: orange;margin:10px;float: left;opacity:0;}
+
+
+        .page3 .inner{
+            perspective:500px;
+            transform-style:preserve-3d;
+        }
+        .page3 .inner img{
+            transform:rotateX(30deg) rotateY(30deg) translateZ(1000px);
+            transition:all 2s;
+        }
+     </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li class="cur"><a href="###">首屏</a></li>
+            <li><a href="###">作品</a></li>
+            <li><a href="###">技能</a></li>
+            <li><a href="###">关于</a></li>
+            <li><a href="###">联系方式</a></li>
+        </ul>
+    </nav>
+    <div class="rightNav">
+        <ol>
+            <li class="cur"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <section class="pages">
+        <div class="page page1">
+            <div class="inner">
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+        <div class="page page2">
+            <div class="inner">
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+        <div class="page page3">
+            <div class="inner">
+                <img src="images/yy.png" >
+            </div>
+        </div>
+        <div class="page page4"><h1>4</h1></div>
+        <div class="page page5"><h1>5</h1></div>
+    </section>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/velocity.min.js"></script>
+<script type="text/javascript">
+     var $page = $('.pages .page');
+     var $nav = $('.nav ul li');
+     var $rightNav = $('.rightNav ol li');
+
+     var idx = 0;
+
+     $(document).mousewheel(function(event,delta){
+        if($('.pages').is(':animated')){return}
+        var oldidx = idx;
+        idx -= delta;
+         //验收
+        if(idx > 4){
+            idx = 4;
+        }else if(idx < 0){
+            idx = 0;
+        }
+        changePage(oldidx);
+
+     });
+
+     $nav.click(function(){
+        var oldidx = idx;
+        idx = $(this).index();
+        changePage(oldidx);
+     });
+
+     $rightNav.click(function(){
+        var oldidx = idx;
+        idx = $(this).index();
+        changePage(oldidx);
+     });
+
+     changePage();
+     function changePage(oldidx){
+        $('.pages').stop(true).animate({'top':idx * -100+'%'},800,'easeOutBounce');
+        $('.nav ul li').eq(idx).addClass('cur').siblings().removeClass('cur');
+
+        $('.rightNav ol li').eq(idx).addClass('cur').siblings().removeClass('cur');
+
+     //进场动画
+        if(idx == 0){
+            console.log('0的进场');
+            $('.page1 .inner').addClass('animatp1');
+        }else if(idx == 1){
+            console.log('1的进场')
+            $('.page2 .inner p').velocity({'translateY':600});
+            $('.page2 .inner p').each(function(i){
+                $(this).delay(i * 200).velocity({'translateY':0,'rotateZ':'360deg',opacity:1});
+            });
+        }else if(idx == 2){
+            console.log('2的进场')
+            $('.page3 .inner img').css('transform','rotateX(0deg) rotateY(0deg) translateZ(0px)');
+        }else if(idx == 3){
+            console.log('3的进场')
+        }else if(idx == 4){
+            console.log('4的进场')
+        }
+
+        //出场动画
+        if(oldidx == 0){
+            console.log('0的出场')
+            $('.page1').removeClass('animatp1');
+        }else if(oldidx == 1){
+            console.log('1的出场');
+            $('.page2 .inner p').css({'transform':'none','opacity':0});
+        }else if(oldidx == 2){
+            console.log('2的出场')
+            $('.page3 .inner img').css('transform','rotateX(30deg) rotateY(30deg) translateZ(1000px)');
+        }else if(oldidx == 3){
+            console.log('3的出场')
+        }else if(oldidx == 4){
+            console.log('4的出场')
+        }
+
+
+
+
+
+     }
+
+
+
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>03-velocity反向执行</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/velocity.min.js"></script>
+<script type="text/javascript">
+    // $('div')
+    // .velocity({ width: 200,left:1000 }, { duration: 500 })
+    // .velocity("reverse", { duration: 2000 });
+    //
+    // $('div').velocity({
+    //     opacity: function() { return Math.random() }
+    // });
+
+    $('div').velocity({
+        /* translate */
+        translateX: 20,     // 等同于"20px"
+        translateY: "1.5em",
+        translateZ: "20px", // IE10+
+
+        /* scale */
+        scale: 0.5,
+        scaleX: 0.5,
+        scaleY: 0.5,
+
+        /* rotate */
+        //rotate: 45,       // 等同于"45deg"
+        rotateX: "45deg", // IE10+
+        rotateY: "45deg", // IE10+
+        rotateZ: "45deg",
+
+        /* skew */
+        skewX: "30deg",
+        skewY: "30deg",
+    },1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
