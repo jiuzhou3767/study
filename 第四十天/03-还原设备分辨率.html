@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name='viewport' content="width=device-width,user-scalable=no, initial-scale=1.0">
+    <title>03-还原设备分辨率</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        div{
+            width: 750px;
+            height: 300px;
+            margin:0 auto;
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h2></h2>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+     var dpr = 1 / window.devicePixelRatio;
+     document.write('<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale='+dpr+'">');
+     document.getElementsByTagName('h2')[0].innerHTML = '我的宽度是'+document.documentElement.clientWidth;
+</script>

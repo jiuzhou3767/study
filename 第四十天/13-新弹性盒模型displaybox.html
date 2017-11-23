@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>13-新弹性盒模型displaybox</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        div{
+            width: 80%;
+            height: 100px;
+            margin: 10px auto;
+            background: orange;
+            border:1px solid #000;
+            display:-webkit-box;
+        }
+        div p{
+            height: 100px;
+            border:10px solid #000;
+            margin:0 10px;
+            background: lightblue;
+        }
+        div p:nth-of-type(1){-webkit-box-flex:1;}
+        div p:nth-of-type(2){background: blue;-webkit-box-flex:2;}
+        div p:nth-of-type(3){background: green;-webkit-box-flex:6;}
+        div p:nth-of-type(4){background: yellow;-webkit-box-flex:3;}
+    </style>
+</head>
+<body>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+</body>
+</html>

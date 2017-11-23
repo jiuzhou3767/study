@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>21-插入图自由等比例缩放-升级</title>
+        <style type="text/css">
+        *{margin: 0;padding: 0;}
+        div{
+            width: 80%;
+            overflow: hidden;
+            border: 1px solid #000;
+            margin:10px auto;
+        }
+        div p:nth-of-type(1){
+            width: 66.666%;
+            border-right:5px solid #000;
+        }
+        div p:nth-of-type(2){
+            border-bottom:5px solid #000;
+        }
+        div p{
+            float: left;
+            width: 33.3333%;
+            box-sizing:border-box;
+        }
+        div p img{
+            width: 100%;
+            height:auto;
+            vertical-align:top;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p><img src="images/liyifeng.png" ></p>
+        <p><img src="images/xiaoming.png" ></p>
+        <p><img src="images/yangyang.png" ></p>
+    </div>
+</body>
+</html>

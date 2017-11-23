@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>15-新弹性盒模型displayflex父级属性</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;}
+        div{
+            width: 80%;
+            height: 400px;
+            margin: 10px auto;
+            background: orange;
+            border:1px solid #000;
+            display:flex;
+            /* flex-direction:row-reverse; */
+            /* flex-wrap:wrap; */
+            /* flex-flow:row-reverse wrap; */
+            /* justify-content:space-between; */
+            /* align-items:center; */
+            /* align-content:space-between; */
+        }
+        div p{
+            width: 150px;
+            height:100px;
+            background: red;
+            border: 1px solid #000;
+        }
+        div p:nth-of-type(1){background: lightblue;}
+        div p:nth-of-type(2){background: blue;/* align-self:flex-start; */}
+        div p:nth-of-type(3){background: green;}
+        div p:nth-of-type(4){background: yellow;}
+    </style>
+</head>
+<body>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+</body>
+</html>
