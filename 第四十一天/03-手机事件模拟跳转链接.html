@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>03-手机事件模拟跳转链接</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <style type="text/css">
+        div,a{
+            display:block;
+            width: 100%;
+            height: 50px;
+            background: lightblue;
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div data-href="http://www.163.com/">网易1</div>
+    <div data-href="http://www.126.com/">网易2</div>
+    <a data-href="http://www.baidu.com/">百度</a>
+    <a data-href="http://www.taobao.com/">淘宝</a>
+    <a data-href="http://www.jd.com/">京东</a>
+</body>
+</html>
+<script type="text/javascript">
+     var a = document.getElementsByTagName('a');
+
+     // a[0].addEventListener('click',function(){
+     //    this.style.backgroundColor = 'red';
+     // },true);
+
+     var hrefBox = document.querySelectorAll('[data-href]');
+     for(var i = 0;i < hrefBox.length;i++){
+        hrefBox[i].addEventListener('click',function(){
+            window.location = this.getAttribute('data-href');
+        },true);
+     }
+</script>

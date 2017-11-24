@@ -1,0 +1,100 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,a,img,input,textarea,select{margin:0;padding:0;}
+body {
+    min-width:320px;
+    font:normal 14px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+    color:#000;
+    background:#fff;
+    overflow-x:hidden;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-text-size-adjust:none;
+    -moz-user-select:none
+}
+img {
+    border:none
+}
+a {
+    color:#000;
+    text-decoration:none
+}
+h2 a:link,h2 a:visited,h3 a:link,h3 a:visited {
+    color:#fff
+}
+li {
+    list-style:none;
+}
+
+body {
+    max-width:540px;
+    margin:0 auto;
+    background:#f2f2f2
+}
+nav{
+    padding:4px;
+    font-size:15px;
+}
+nav .row{
+    background: orange;
+    width: 100%;
+    height: 6em;
+    display:box;
+    display:-webkit-box;
+    display:flex;
+    display:-ms-flex;
+    display:-webkit-flex;
+    margin-bottom: 4px;
+    border-radius:5px;
+    overflow:hidden;
+}
+nav .row .col{
+    flex:1;
+    -webkit-flex:1;
+    text-align:center;
+    line-height: 3em;
+    height:3em;
+}
+nav .row .col a{
+    text-shadow:1px 1px 1px #ccc;
+    color:#fff;
+    display:block;
+    box-sizing:border-box;
+    border-left:1px solid #fff;
+}
+nav .row .col a+a{
+    border-top:1px solid #fff;
+}
+nav .row .col:nth-of-type(1) a{
+    height: 6em;
+}
+nav .row:nth-of-type(4) .col:nth-of-type(1) a{
+    height: 3em;
+}
+nav .row:nth-of-type(1) a{
+    background: #ff697a;
+}
+nav .row:nth-of-type(2) a{
+    background: #3d98ff;
+}
+nav .row:nth-of-type(3) a{
+    background: #44c522;
+}
+nav .row:nth-of-type(4) a{
+    background: #fc9720;
+}
+
+nav .row:nth-of-type(1) .col:nth-of-type(1) a:after,nav .row:nth-of-type(2) .col:nth-of-type(1) a:after,nav .row:nth-of-type(3) .col:nth-of-type(1) a:after{
+    content:'';
+    width: 42px;
+    height: 42px;
+    display:inline-block;
+    background: url(../images/icon.png)no-repeat;
+    background-size: 108px auto;
+}
+nav .row:nth-of-type(1) .col:nth-of-type(1) a:after{
+    background-position:0 -130px;
+}
+nav .row:nth-of-type(2) .col:nth-of-type(1) a:after{
+    background-position:-4px -302px;
+}
+nav .row:nth-of-type(3) .col:nth-of-type(1) a:after{
+    background-position:1px -192px;
+}
