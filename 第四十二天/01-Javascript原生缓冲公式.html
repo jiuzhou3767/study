@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>01-Javascript原生缓冲公式</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            position: relative;
+            left:100px;
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/tween.js"></script>
+<script type="text/javascript">
+     var oDiv = document.getElementsByTagName('div');
+     var f = 0;
+     var timer = setInterval(function(){
+        f++;
+        if(f >= 100){
+            clearInterval(timer);
+        }
+        oDiv[0].style.left = linear(f,100,700,100) + "px";
+        oDiv[1].style.left = ease_2(f,100,700,100) + "px";
+        oDiv[2].style.left = ease_3(f,100,700,100) + "px";
+        oDiv[3].style.left = ease_sin(f,100,700,100) + "px";
+        oDiv[4].style.left = ease_sin2(f,100,700,100) + "px";
+     },20);
+    function linear(t,b,c,d){
+        return b+ t * c / d; //匀速公式
+     }
+     function ease_2(t,b,c,d){
+        return b + t * t * c / (d*d) ;
+     }
+     function ease_3(t,b,c,d){
+       return b + t * t * t * c / (d*d*d) ;
+     }
+     function ease_sin(t,b,c,d){
+       return b+ Math.sin(t / 40) * c / Math.sin(d / 40);
+     }
+     function ease_sin2(t,b,c,d){
+       return b+ Math.sin(t / 40)*Math.sin(t / 40) * c / (Math.sin(d / 40) * Math.sin(d / 40));
+     }
+</script>

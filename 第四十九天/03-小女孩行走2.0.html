@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>03-小女孩行走2.0</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position:absolute;
+            width: 79px;
+            height: 108px;
+            background: url('star/aisidier.png')0px -216px;
+        }
+        hr{
+            width: 2px;
+            height: 600px;
+            background-color: red;
+            position:relative;
+            left:600px;
+        }
+    </style>
+</head>
+<body>
+    <hr/>
+</body>
+</html>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript">
+     function Girl(){
+        this.dom = null;
+        this.x = 0;
+        this.y = _.random(0,document.documentElement.clientHeight-108);
+        this.speed = _.random(2,20);
+        this.singal =0 ;
+        this.init();
+        this.update();
+        this.isMove = true;
+        this.bindEvent();
+        girlArr.push(this);
+     }
+     Girl.prototype.init = function(){
+        this.dom = document.createElement('div');
+        document.body.appendChild(this.dom);
+     }
+     Girl.prototype.update = function(){
+        if(this.x>530){this.goDied();}
+        if(!this.isMove)return;
+        this.x += this.speed;
+        this.singal++;
+        this.singal = this.singal>7?0:this.singal;
+        this.dom.style.backgroundPosition = -79*this.singal+'px -216px';
+        this.dom.style.left = this.x+'px';
+        this.dom.style.top = this.y+'px';
+     }
+     Girl.prototype.bindEvent = function(){
+        var self = this;
+        this.dom.onclick = function(){
+            self.isMove = !self.isMove;
+            console.log(self.isMove)
+        }
+     }
+     Girl.prototype.goDied = function(){
+        document.body.removeChild(this.dom);
+        for(var i = 0;i < girlArr.length;i++){
+            if(girlArr[i]==this){
+                girlArr.splice(i,1);
+            }
+        }
+     }
+     var girlArr = [];
+     var frame = 0;
+     setInterval(function(){
+        // console.log(girlArr);
+        frame++;
+        frame%10==0&&new Girl();
+        _.each(girlArr,function(g){
+            g&&g.update();
+        })
+     },100);
+</script>

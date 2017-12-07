@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>05-函数的上下文练习-第五题</title>
+</head>
+<body>
+    <script type="text/javascript">
+      function A(){
+           this.m = 1;
+       }
+      function B(){
+           this.m = 2;
+      }
+      A.call(B);
+      B.call(A);
+     var a = new A();
+     var b = new B();
+     console.log(a.m);
+     console.log(A.m);
+     console.log(B.m);
+     console.log(b.m);
+     console.log(a.m == B.m);
+     console.log(b.m == A.m);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>15-underscore的学习</title>
+    <script type="text/javascript" src="./js/underscore.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+     var arr = [1,2,3,{'name':'小明'}];
+     _.each(arr,function(item){
+        console.log(item);
+     });
+     //max函数求最大值
+     var arr1 = [1,77,99,33,66];
+     console.log(_.max(arr1));
+      //min函数求的是最小值
+      console.log(_.min(arr1));
+
+      var arr2 = [22,44,33,22,77,88,99];
+      console.log(_.uniq(arr2));
+     //对象常用的方法
+     var obj = {
+          name:"小明",
+          age:18,
+          sex:'男'
+     }
+     console.log(_.keys(obj));
+     console.log(_.values(obj));
+</script>
+</body>
+</html>

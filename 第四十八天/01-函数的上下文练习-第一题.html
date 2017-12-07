@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>01-函数的上下文练习-第一题</title>
+</head>
+<body>
+    <script type="text/javascript">
+      var a = 9;
+      var obj ={
+          a:1,
+          add:function(){
+            return this.a++;
+         }
+     }
+    console.log(obj.add());//1
+    console.log(obj.add());//2
+    obj.add.call(window);//正在使用的时候  9
+     alert(a); //10
+    </script>
+</body>
+</html>

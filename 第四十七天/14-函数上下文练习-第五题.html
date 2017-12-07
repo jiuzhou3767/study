@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>14-函数上下文练习-第五题</title>
+</head>
+<body>
+    <script type="text/javascript">
+       var c =1000;
+       var obj = {
+         "a":function(){
+            return this.b;
+         },
+         "b":function(){
+             return this.c;
+         },
+         "c":1
+     };
+     var result = obj.a()();
+     //var result = obj.a().call(obj);
+    console.log(result);
+    </script>
+</body>
+</html>

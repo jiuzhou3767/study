@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>07-规律1,2,3判断函数上下文</title>
+</head>
+<body>
+    <script type="text/javascript">
+         // var a = 200;
+         // function fun(a,b,c,d){
+         //    var a = 100;
+         //    console.log(this);
+         //    console.log(this.a);
+         // }
+         // fun(1,2,3,4);
+         //
+         // var xiaogang = {
+         //    name:'小钢炮',
+         //    age:18,
+         //    say:function(arguments){
+         //        console.log(this);
+         //        console.log(this.age);
+         //    }
+         // }
+         // xiaogang.say();
+         var a = 100;
+         setInterval(function(){
+            this.a++;
+            console.log(this);
+            console.log(this.a);
+         },100)
+    </script>
+</body>
+</html>

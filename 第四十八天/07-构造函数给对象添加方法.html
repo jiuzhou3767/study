@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>07-构造函数给对象添加方法</title>
+</head>
+<body>
+<script type="text/javascript">
+     function People(name,age,sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.eat = function(){
+            console.log('我是：'+this.name+'我爱吃苹果');
+        }
+     }
+     var xiaoming = new People('小明',18,'男');
+     var xiaogangpao = new People('小钢炮',28,'女');
+
+     console.log(xiaoming.name);
+     console.log(xiaogangpao.name);
+     xiaoming.eat();
+     xiaogangpao.eat();
+     console.log(xiaoming.eat === xiaogangpao.eat);
+</script>
+</body>
+</html>

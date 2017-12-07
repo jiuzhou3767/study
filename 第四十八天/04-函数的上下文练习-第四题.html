@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>04-函数的上下文练习-第四题</title>
+</head>
+<body>
+    <script type="text/javascript">
+     var length = 10;
+     function fn(){
+        alert(this.length)
+    };
+    var obj = {
+        length : 5,
+        methed : function(fn){
+            fn();
+            fn.call(this);
+            arguments[0]();
+        }
+    }
+   obj.methed(fn);
+    </script>
+</body>
+</html>

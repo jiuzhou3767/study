@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <button type="">wenzi</button>
+</body>
+</html>
+<script type="text/javascript">
+     var button = document.getElementsByTagName('button')[0];
+     button.onclick = function(){
+        // setTimeout(function(){
+        //     button.style.backgroundColor = 'red';
+        // },2000);
+        var self = this;
+        // setTimeout(change,2000);
+        //     function change(){
+        //         that.style.backgroundColor = 'red';
+        //     }
+        //
+        var time = setTimeout(function(){
+            this.style.backgroundColor = 'red';
+        },2000);
+       button.onclick.time.apply(self);
+     }
+</script>

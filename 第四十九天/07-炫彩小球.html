@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>07-炫彩小球</title>
+    <style type="text/css">
+        body{
+            background-color:black;
+        }
+        div{
+            background: white;
+            position:absolute;
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript">
+
+     function Colorball(x,y){
+        this.dom = null;
+        this.color = ["#CAE1FF","#C0FF3E","#B03060","#66CD00","#EEEE00","#F08080"];
+        this.init();
+        this.x = x;
+        this.y = y;
+        this.r = 20;
+
+        do{
+            this.dx = _.random(-5,5);
+            this.dy = _.random(-5,5);
+        }while(this.dy==0||this.dx==0)
+        this.update();
+        ballArr.push(this);
+
+
+
+     }
+     Colorball.prototype.init = function(){
+        this.dom = document.createElement('div');
+        document.body.appendChild(this.dom);
+
+     }
+     Colorball.prototype.update = function(){
+        this.x +=this.dx;
+        this.y +=this.dy;
+        this.r-=0.5;
+        if(this.r<1){
+            this.goDied();
+            return;
+        }
+          this.dom.style.backgroundColor = this.color[_.random(0,this.color.length-1)];
+        this.dom.style.width = 2*this.r+Math.sin(this.x)+'px';
+        this.dom.style.height = 2*this.r+Math.cos(this.x)+'px';
+        this.dom.style.left = this.x +'px';
+        this.dom.style.top = this.y +'px';
+
+     }
+     Colorball.prototype.goDied = function(){
+        document.body.removeChild(this.dom);
+        for(var i = 0;i < ballArr.length;i++){
+            if(ballArr[i]===this){
+                ballArr.splice(i,1);
+            }
+        }
+     }
+     // var c =  new Colorball();
+     var ballArr = [];
+     document.onmousemove = function(event){
+            new Colorball(event.clientX,event.clientY);
+        }
+     setInterval(function(){
+        _.each(ballArr,function(b){
+            b&&b.update();
+        })
+     },50);
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>11-红绿灯-原生方法</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position:relative;
+            width: 100px;
+            height: 279px;
+            background: url(star/deng.jpg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+
+    </div>
+
+</body>
+</html>
+    <script type="text/javascript">
+        var box1 = document.getElementsByTagName('div')[0];
+        var idx = 0;
+         box1.onclick = function (argument) {
+            idx++;
+            if(idx > 2){
+                idx = 0;
+            }
+            this.style.backgroundPosition = -idx*100+'px 0px';
+        }
+    </script>

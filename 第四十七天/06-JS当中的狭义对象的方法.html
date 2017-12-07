@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>06-JS当中的狭义对象的方法</title>
+</head>
+<body>
+    <script type="text/javascript">
+         var name = '贝勒爷';
+         var xiaoming = {
+            name:'小明',
+            age:18,
+            sex:'男',
+            eat:function(){
+                console.log('我吃饭了');
+            },
+            say:function(){
+                console.log(this);
+                console.log(this.name+':我可以说话');
+            }
+         }
+         console.log(xiaoming.name);
+         console.log(xiaoming.age);
+         xiaoming.eat();
+         xiaoming.say();
+
+         var say = xiaoming.say;
+         window.say();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>02-小女孩行走1.0</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position:absolute;
+            width: 79px;
+            height: 108px;
+            background: url('star/aisidier.png')0px -216px;
+
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript">
+     function Girl(){
+        this.dom = null;
+
+        this.step = 0;
+        this.timer = null;
+        this.speed = _.random(2,12);
+        this.x = 0;
+        this.init();
+        this.isMove = true;
+        this.bindEvent();
+
+     }
+     Girl.prototype.init = function(){
+        this.dom = document.createElement('div');
+        document.body.appendChild(this.dom);
+        var self = this;
+        this.timer = setInterval(function(){
+            self.step++;
+            self.x+=self.speed;
+            self.dom.style.backgroundPosition = self.step * -79+'px -216px';
+            self.dom.style.left = self.x+'px';
+        },100);
+     }
+     Girl.prototype.bindEvent = function(){
+        var self = this;
+        this.dom.onclick = function(){
+            if(self.isMove){
+                clearInterval(self.timer);
+            }else if(self.isMove == false){
+                console.log(1);
+                 clearInterval(self.timer);
+                    self.timer = setInterval(function(){
+                    self.step++;
+                    self.x+=self.speed;
+                    self.dom.style.backgroundPosition = self.step * -79+'px -216px';
+                    self.dom.style.left = self.x+'px';
+                },100);
+            }
+            self.isMove = !self.isMove;
+            console.log(self.isMove)
+        }
+     }
+
+     var g = new Girl();
+</script>

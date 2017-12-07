@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>02-函数的上下文练习-第二题</title>
+</head>
+<body>
+    <script type="text/javascript">
+     var a = 8;
+     var obj = {
+          a:1,
+         add:function(){
+            this.a++;
+         }
+     };
+     var obj2 = {
+         a:66,
+         add2:obj.add
+     };
+     obj2.add2();
+     alert(obj2.a);
+
+    </script>
+</body>
+</html>

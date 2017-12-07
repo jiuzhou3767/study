@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>09-函数的上下文的练习</title>
+     <style type="text/css">
+      button{
+       background:black;
+     }
+     </style>
+</head>
+<body>
+    <button>我是按钮</button>
+    <script type="text/javascript">
+         var button = document.getElementsByTagName('button')[0];
+         button.onclick = function(){
+            // var self = this;
+            // setTimeout(function(){
+            //     self.style.backgroundColor = 'red';
+            // },2000);
+            function timer(){
+                this.style.backgroundColor = 'red';
+            }
+            window.setTimeout.call(button,timer,100);
+         }
+    </script>
+</body>
+</html>

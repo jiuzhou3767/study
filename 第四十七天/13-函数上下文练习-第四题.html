@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>13-函数上下文练习-第四题</title>
+</head>
+<body>
+    <script type="text/javascript">
+     function fun(f,a,b,c){
+         console.log(arguments);
+         arguments[0](5,6);
+    }
+     function fn(p,q,r,s,t){
+        alert(this.length);//6
+        alert(this.callee.length);//4
+        alert(arguments.length); //2
+        alert(arguments.callee.length);//5
+    }
+   fun(fn,8,9,10,11,12);
+    </script>
+</body>
+</html>

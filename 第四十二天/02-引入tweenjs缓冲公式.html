@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>02-引入tweenjs缓冲公式</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            position: relative;
+            left:100px;
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript" src="js/tween.js"></script>
+<script type="text/javascript">
+     var oDiv = document.getElementsByTagName('div');
+     var f = 0;
+     var timer = setInterval(function(){
+        f++;
+        if(f >= 100){
+            clearInterval(timer);
+        }
+        oDiv[0].style.left = Tween.Linear(f,100,700,100) + "px";
+        oDiv[1].style.left = Tween.Quad.easeIn(f,100,700,100) + "px";
+        oDiv[2].style.left = Tween.Cubic.easeInOut(f,100,700,100) + "px";
+        oDiv[3].style.left = Tween.Bounce.easeInOut(f,100,700,100) + "px";
+     },20);
+</script>

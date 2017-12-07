@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>05-打气球</title>
+    <style type="text/css">
+     *{
+        margin: 0;
+        padding: 0;
+     }
+     div{
+         position: absolute;
+         width: 231.25px;
+         height: 300.7px;
+         background: url(./star/balloon.png);
+     }
+     body{
+        background: black;
+     }
+     h1{
+        position:relative;
+        z-index:2;
+        color: white;
+     }
+    </style>
+</head>
+<body>
+    <h1 id='show'>你的分数是：0</h1>
+</body>
+</html>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript">
+    var Allscore = 0;
+    var gameTime = 3;
+    function Balloon(){
+        this.dom = null;
+        this.x =_.random(0,document.documentElement.clientWidth-231.25);
+        this.y = document.documentElement.clientHeight;
+        this.score =_.random(1,12);
+        this.init();
+        this.update();
+        this.bindEvent();
+        ballArr.push(this);
+    }
+    Balloon.prototype.init = function(){
+        this.dom = document.createElement('div');
+        document.body.appendChild(this.dom);
+        var cur_x = this.score%4 - 1;
+        var cur_y = parseInt(this.score/4);
+        this.dom.style.backgroundPosition = -231.25*cur_x+'px '+-300.7*cur_y+'px';
+        this.dom.style.top = this.y+'px';
+        this.dom.style.left = this.x+'px';
+    }
+    Balloon.prototype.update = function(){
+        this.y -= this.score;
+        this.dom.style.top = this.y+'px';
+    }
+    Balloon.prototype.bindEvent = function(){
+        var self = this;
+
+        this.dom.onclick = function(){
+            document.body.removeChild(this);
+             Allscore+=self.score;
+            for(var i = 0;i < ballArr.length;i++){
+                if(ballArr[i] == this){
+                    ballArr.splice(i,1);
+                }
+            }
+        }
+    }
+    var ballArr = [];
+    var frame = 0;
+    var show = document.getElementById('show');
+    setInterval(function(){
+        frame++;
+        show.innerHTML='你的分数是:'+Allscore;
+        frame%50==0&&gameTime--;
+        if(gameTime<0){alert('你的最终分数是:'+Allscore);}
+        frame%10==0&&new Balloon();
+        _.each(ballArr,function(b){
+            b&&b.update();
+            // console.log(Allscore);
+        })
+    },20);
+</script>

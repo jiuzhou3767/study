@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>01-面向对象-红绿灯</title>
+    <style type="text/css">
+     *{
+        margin: 0;
+        padding: 0;
+     }
+     div{
+         position: relative;
+         width: 100px;
+         height: 279px;
+         background: url(./star/deng.jpg);
+     }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+         function Honglvdeng(){
+            this.dom = null;
+            this.singal = 0;
+            this.init();
+            this.bindEvent();
+
+         }
+         Honglvdeng.prototype.init = function(){
+            this.dom = document.createElement('div');
+            document.body.appendChild(this.dom);
+         }
+         Honglvdeng.prototype.bindEvent = function(){
+            var self = this;
+            this.dom.onclick = function(){
+                self.singal++;
+                self.singal = self.singal>2?0:self.singal;
+                self.dom.style.backgroundPosition = -self.singal*100+'px 0px';
+                console.log(self.singal)
+            }
+         }
+         new Honglvdeng();
+    </script>
+</body>
+</html>

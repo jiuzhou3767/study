@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>11-函数上下文练习-第二题</title>
+</head>
+<body>
+    <script type="text/javascript">
+  function fun(m,n,o,p,q,r){
+       console.log(this.callee.length);
+    }
+
+    function f(a,b){
+      //① 形参a fun函数   形参b  5
+       arguments[0](9,10,11,12,13);
+    }
+    //f函数执行的部分
+    f(fun,5,6,7);
+    </script>
+</body>
+</html>

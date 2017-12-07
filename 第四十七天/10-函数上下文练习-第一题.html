@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>10-函数上下文练习-第一题</title>
+</head>
+<body>
+    <script type="text/javascript">
+         function fn(){
+            alert(this.a);
+            console.log(this);
+         }
+
+    var obj = {
+        "a":1,
+        "b":2,
+        "c":[{
+            "a":3,
+            "b":4,
+            "c":fn
+        }]
+    }
+    var a = 5;
+   obj.c[0].c();
+   //输出的结果为3
+    </script>
+</body>
+</html>

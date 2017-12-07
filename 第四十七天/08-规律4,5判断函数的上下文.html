@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>08-规律4,5判断函数的上下文</title>
+    <style type="text/css">
+     *{
+        margin: 0;
+        padding: 0;
+     }
+     p{
+        position: relative;
+        background: red;
+        height: 50px;
+        width: 100px;
+        margin-top: 20px;
+     }
+    </style>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+</html>
+<script type="text/javascript">
+      // var p = document.getElementsByTagName("p")[0];
+      // var p1 = document.getElementsByTagName("p")[1];
+      // var p2= document.getElementsByTagName("p")[2];
+      // var p3 = document.getElementsByTagName("p")[3];
+
+      //   function changeColor(argument) {
+      //       this.style.background = "blue";
+      //   }
+      //  p.onclick = changeColor;
+      //  p1.onclick = changeColor;
+      //  p2.onclick = changeColor;
+      //  p3.onclick = changeColor;
+
+      function fun(){
+        console.log(this);
+        console.log(this === array);
+        console.log(this.length);
+
+      }
+      var array = [fun,1,2,3,4,5,6,7];
+      array[0]();
+</script>

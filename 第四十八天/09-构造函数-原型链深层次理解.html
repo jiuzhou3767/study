@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>09-构造函数-原型链深层次理解</title>
+</head>
+<body>
+    <script type="text/javascript">
+         function Dog(name,sex,color){
+            this.name = name;
+            this.sex = sex;
+            this.color = color;
+         }
+         Dog.prototype = {
+            weight:20,
+            blood:'O',
+            wangwang:function(){
+                console.log("我是:"+this.name+"我的体重:"+this.weight+"我可以咬人");
+            }
+         }
+        var erha = new Dog("哈士奇","公","黑白");
+        console.log(erha.name);
+        console.log(erha.weight);
+        erha.wangwang();
+        console.log(Dog.prototype);
+        console.log(Dog.prototype===erha.__proto__);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>20-构造函数的认知</title>
+</head>
+<body>
+      <script type="text/javascript">
+        function Wife(name,age,sex,height,num) {
+              this.name = name;
+              this.age = age;
+              this.sex = sex;
+              this.height = height;
+              for(var i =1;i<num;i++){
+                  if (i%2==0) {
+                    console.log(i);
+                  }
+              }
+              var a = 10000000;
+              console.log(a);
+        }
+        var xifu = new Wife("位置",18,"女",180,100);
+        console.log(xifu.name);
+      </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>10-面向对象-小案例明星</title>
+</head>
+<body>
+    <script type="text/javascript">
+         function Star(src){
+            this.dom = document.createElement('img');
+            this.dom.src = src;
+            document.body.appendChild(this.dom);
+         }
+         var xiaoming = new Star('./star/10.jpg');
+         console.log(xiaoming);
+    </script>
+</body>
+</html>

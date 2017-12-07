@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>17-构造函数的学习-有形参</title>
+</head>
+<body>
+    <script type="text/javascript">
+         function People (name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.say = function(){
+                console.log('我是'+this.name);
+            }
+         }
+       var xiaoming= new People("小明",18,"男");
+       var xiaogang = new People("小刚",20,"女");
+       var xiaohong = new People("小红",50,"男");
+      console.log(xiaohong.name);
+      console.log(xiaogang.name);
+      console.log(xiaoming.name);
+      xiaoming.say();
+      xiaogang.say();
+      xiaohong.say();
+      console.log(xiaoming);
+    </script>
+</body>
+</html>

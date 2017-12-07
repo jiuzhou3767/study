@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>18-面向对象-小女孩行走键盘版</title>
+    <style type="text/css">
+     *{
+        margin: 0;
+        padding: 0;
+     }
+     div{
+         position: absolute;
+         width: 79px;
+         height: 108px;
+         background: url(./star/aisidier.png) 0px -216px;
+     }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function Girl(){
+            this.dom = null;
+            this.init();
+            this.move();
+            this.singel = 0;
+            this.x = 0;
+            this.speed =10;
+            this.y = 0;
+            this.ismove = 1;
+        }
+        Girl.prototype.init = function(){
+            this.dom = document.createElement('div');
+            document.body.appendChild(this.dom);
+        }
+        Girl.prototype.move = function(){
+            var self = this;
+           document.body.onkeydown = function(event){
+                console.log(event.keyCode);//37 38 39 40
+                var  kc=  event.keyCode;
+                self.singel++;
+                if(kc==37){
+                    self.dom.style.backgroundPosition =-self.singel*79+'px -114px';
+                    self.x -= self.speed;
+                    self.dom.style.left =self.x+'px';
+                }else if(kc==37&&kc==38){
+                    console.log('向左上行走')
+
+                }else if(kc == 38){
+                    self.dom.style.backgroundPosition =-self.singel*79+'px -326px';
+                    self.y -= self.speed;
+                    self.dom.style.top =self.y +'px';
+                }else if(kc == 39){
+                    self.dom.style.backgroundPosition =-self.singel*79+'px -216px';
+                    self.x += self.speed;
+                    self.dom.style.left =self.x +'px';
+                 }else if(kc == 40){
+                    self.dom.style.backgroundPosition = -self.singel*79+'px -9px';
+                    self.y += self.speed;
+                    self.dom.style.top =self.y +'px';
+                 }else{
+                    self.ismove = 0;
+                 }
+
+            }
+        }
+        Girl.prototype.keepmove = function(){
+         setInterval(function(){
+
+            girlArr[0].move();
+            console.log(girlArr[0]);
+         },100)
+        }
+        var g = new Girl();
+        g.move();
+    </script>
+</body>
+</html>

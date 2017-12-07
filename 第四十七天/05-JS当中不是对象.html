@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>05-JS当中不是对象</title>
+</head>
+<body>
+    <script type="text/javascript">
+                 //数字类型
+         var a = 100;
+         a.name = "贝勒爷";
+         a.age = 12;
+         a.sex = "女";
+         console.log(a.age);
+         //字符串
+         var str = "我爱你大中国";
+         str.name = "嘻嘻";
+         str.age = 100;
+         console.log(str.age);
+         //Null
+         console.log(typeof null);
+         null.name = "张杰";
+         console.log(null.name);
+    </script>
+</body>
+</html>

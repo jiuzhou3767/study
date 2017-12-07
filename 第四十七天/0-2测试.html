@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>0-2测试</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+
+     function fun(e,f,g,h,i,j){
+        alert(this.callee.length);
+     }
+     function f(a,b){
+        arguments[0](1,2,3,4,5);
+     }
+     f(fun,5,8,9);
+</script>

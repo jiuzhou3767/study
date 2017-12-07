@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>08-构造函数-原型链的学习</title>
+</head>
+<body>
+    <script type="text/javascript">
+         function People(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+         }
+         console.log(typeof People.prototype);
+
+         People.prototype.eat = function(argument){
+            console.log('我是:'+this.name+'我爱吃苹果');
+         }
+         var xiaoming = new People('小明',18,'男');
+         var xiaogangpao = new People('小钢炮',28,'女');
+         xiaoming.eat();
+         xiaogangpao.eat();
+         console.log(xiaoming.eat === xiaogangpao.eat);
+         console.log(People.prototype === xiaoming.__proto__);
+    </script>
+</body>
+</html>

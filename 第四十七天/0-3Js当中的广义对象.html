@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>0-3Js当中的广义对象</title>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <script type="text/javascript">
+         var div = document.getElementById('box');
+
+         div.name = '小钢炮';
+         div.age = 18;
+         div.sex = '未知';
+         div.hobby = ['打游戏','睡觉'];
+         console.log(typeof div);
+         console.log(div.name);
+         console.log(div.hobby[0]);
+
+        var arr = [1,2,3,4];
+        arr.name = '贝勒爷';
+        arr.age = 18;
+        arr.sex = '男';
+        arr.hobby = ['打游戏','睡觉'];
+         console.log(typeof arr);
+         console.log(arr.name);
+
+         console.log(arr.hobby[0]);
+         console.log(arr.length);
+
+         var reg = /^\.js$/;
+         reg.name = '正则';
+         reg.age = 12;
+         reg.sex = '女';
+         reg.hobby = ['打游戏','睡觉'];
+         console.log(typeof reg);
+         console.log(reg.name);
+
+         console.log(reg.hobby[0]);
+
+
+    </script>
+</body>
+</html>

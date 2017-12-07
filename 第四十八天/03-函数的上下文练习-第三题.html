@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>03-函数的上下文练习-第三题</title>
+</head>
+<body>
+    <script type="text/javascript">
+     function fun(fn,a,b,c,d){
+         arguments[0]();
+     }
+     function fn(a,b,c,d,e,f,g,h){
+        alert(this.length) ;//3
+        alert(this.callee.length);//5
+        alert(arguments.length);//0
+        alert(arguments.callee.length);//8
+    }
+    fun(fn,3,2);
+    </script>
+</body>
+</html>

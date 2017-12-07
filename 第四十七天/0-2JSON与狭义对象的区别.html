@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>0-2JSON与狭义对象的区别</title>
+</head>
+<body>
+    <script type="text/javascript">
+         var json = {
+            'date':123456,
+            'result':'结婚了',
+            'img':'./img/.jpg'
+        }
+        console.log(typeof json);
+        console.log(json.date);
+
+        var obj = {
+            'name':'xiaohong',
+            'age':12,
+            'sex':'girl'
+        }
+        console.log(obj.name);
+    </script>
+</body>
+</html>
